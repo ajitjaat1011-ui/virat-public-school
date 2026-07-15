@@ -108,7 +108,7 @@ export default function ApplyPage() {
         />
         <section className="py-16 md:py-20">
           <div className="container mx-auto px-4 max-w-2xl">
-            <Card className="border-[var(--line)] bg-[var(--surface)] text-center">
+            <Card className="border-line bg-surface rounded-[2rem] shadow-[var(--shadow-lift)] text-center">
               <CardContent className="pt-10 pb-10">
                 <div className="w-16 h-16 rounded-full bg-[var(--success)]/10 flex items-center justify-center mx-auto mb-5">
                   <CheckCircle2 className="w-9 h-9 text-[var(--success)]" />
@@ -119,7 +119,7 @@ export default function ApplyPage() {
                 <p className="text-sm text-[var(--ink)] leading-relaxed mb-5">
                   Thank you. Your application has been submitted successfully. Our admissions team will contact you within 2–3 working days at the phone number and email you provided.
                 </p>
-                <div className="inline-block px-4 py-2 bg-[var(--cream)] rounded-md mb-6">
+                <div className="inline-block px-5 py-3 bg-cream rounded-2xl border border-line mb-6">
                   <p className="text-xs text-[var(--muted-ink)] uppercase tracking-wider mb-1">
                     Your Reference Number
                   </p>
@@ -159,7 +159,7 @@ export default function ApplyPage() {
             <div>
               <form onSubmit={onSubmit} className="space-y-8">
                 {/* Student details */}
-                <Card className="border-[var(--line)] bg-[var(--surface)]">
+                <Card className="border-line bg-surface rounded-[1.5rem] shadow-[var(--shadow-soft)] overflow-hidden">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--accent)] mb-4">
                       Student Details
@@ -206,7 +206,7 @@ export default function ApplyPage() {
                 </Card>
 
                 {/* Parent details */}
-                <Card className="border-[var(--line)] bg-[var(--surface)]">
+                <Card className="border-line bg-surface rounded-[1.5rem] shadow-[var(--shadow-soft)] overflow-hidden">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--accent)] mb-4">
                       Parent / Guardian Details
@@ -241,7 +241,7 @@ export default function ApplyPage() {
                 </Card>
 
                 {/* Previous school */}
-                <Card className="border-[var(--line)] bg-[var(--surface)]">
+                <Card className="border-line bg-surface rounded-[1.5rem] shadow-[var(--shadow-soft)] overflow-hidden">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--accent)] mb-1">
                       Previous School (if applicable)
@@ -263,7 +263,7 @@ export default function ApplyPage() {
                 </Card>
 
                 {/* Documents */}
-                <Card className="border-[var(--line)] bg-[var(--surface)]">
+                <Card className="border-line bg-surface rounded-[1.5rem] shadow-[var(--shadow-soft)] overflow-hidden">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--accent)] mb-1">
                       Document Upload
@@ -274,7 +274,7 @@ export default function ApplyPage() {
 
                     <label
                       htmlFor="documents"
-                      className="flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-[var(--line)] rounded-lg cursor-pointer hover:border-[var(--gold)] transition-colors"
+                      className="flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-line rounded-2xl cursor-pointer hover:border-[var(--maroon)] hover:bg-cream/50 transition-all"
                     >
                       <Upload className="w-8 h-8 text-[var(--maroon)]" />
                       <span className="text-sm font-medium text-[var(--accent)]">
@@ -298,7 +298,7 @@ export default function ApplyPage() {
                         {files.map((f, idx) => (
                           <li
                             key={idx}
-                            className="flex items-center justify-between p-2.5 bg-[var(--cream)]/50 rounded-md text-sm"
+                            className="flex items-center justify-between p-3 bg-cream rounded-xl text-sm border border-line"
                           >
                             <span className="truncate text-[var(--ink)]">{f.name}</span>
                             <div className="flex items-center gap-3 flex-shrink-0">
@@ -332,7 +332,7 @@ export default function ApplyPage() {
                   <Button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="bg-[var(--maroon)] hover:bg-[var(--maroon-deep)] text-white min-w-[180px]"
+                    className="bg-maroon hover:bg-maroon-deep text-white min-w-[200px] rounded-full font-semibold shadow-md"
                   >
                     {status === "submitting" ? (
                       <>

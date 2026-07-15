@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/components/site/language-context";
 import { PageHero } from "@/components/site/page-hero";
 import { SubNav } from "@/components/site/sub-nav";
-import { Card, CardContent } from "@/components/ui/card";
+import { Reveal } from "@/components/site/reveal";
+import { SectionHeading } from "@/components/site/section-heading";
 import { Button } from "@/components/ui/button";
-import { Instagram } from "lucide-react";
+import { Instagram, Quote } from "lucide-react";
 
 export default function ManagementPage() {
   const { t } = useLanguage();
@@ -17,80 +19,64 @@ export default function ManagementPage() {
     { href: "/about-us/management", label: t.aboutSub.management },
   ];
 
-  // Placeholder committee members (apart from the director, who is featured above)
   const committee = [
-    { name: "To be announced", designation: "Chairman", bio: "Profile to be supplied by the management office." },
-    { name: "To be announced", designation: "Secretary", bio: "Profile to be supplied by the management office." },
-    { name: "To be announced", designation: "Treasurer", bio: "Profile to be supplied by the management office." },
-    { name: "To be announced", designation: "Principal (Ex-Officio)", bio: "Profile to be supplied by the management office." },
-    { name: "To be announced", designation: "Member", bio: "Profile to be supplied by the management office." },
-    { name: "To be announced", designation: "Member", bio: "Profile to be supplied by the management office." },
+    { designation: "Chairman" },
+    { designation: "Secretary" },
+    { designation: "Treasurer" },
+    { designation: "Principal (Ex-Officio)" },
+    { designation: "Member" },
+    { designation: "Member" },
   ];
 
   return (
     <>
       <PageHero
+        eyebrow={`${t.nav.about} / ${t.aboutSub.management}`}
         title={t.about.managementTitle}
-        subtitle={t.about.heroBody}
-        breadcrumb={`${t.nav.about} / ${t.aboutSub.management}`}
+        subtitle={t.about.managementBody}
       />
 
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-[280px_1fr] gap-8">
+          <div className="grid lg:grid-cols-[260px_1fr] gap-10">
             <SubNav title={t.nav.about} links={subLinks} />
 
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
-                {t.about.managementTitle}
-              </h2>
-              <div className="gold-divider mt-3" />
-              <p className="mt-5 text-base text-[var(--ink)] leading-relaxed">
-                {t.about.managementBody}
-              </p>
-
+            <div className="space-y-14">
               {/* Director — featured */}
-              <div className="mt-10">
-                <h3 className="text-xl font-bold text-[var(--accent)] mb-5">
-                  {t.about.directorTitle}
-                </h3>
-                <Card className="border-[var(--gold)] bg-[var(--surface)] overflow-hidden shadow-md">
-                  <div className="h-1.5 bg-gradient-to-r from-[var(--gold)] to-[var(--maroon)]" />
-                  <CardContent className="pt-8 pb-8">
-                    <div className="grid md:grid-cols-[200px_1fr] gap-6 items-start">
+              <div>
+                <Reveal>
+                  <SectionHeading eyebrow={t.about.directorTitle} title={t.about.directorName} />
+                </Reveal>
+
+                <Reveal variant="up" delay={100}>
+                  <div className="mt-8 relative overflow-hidden rounded-[2rem] bg-maroon-gradient text-cream shadow-2xl">
+                    <div className="absolute inset-0 bg-pattern-dots opacity-40" aria-hidden />
+                    <div className="relative grid md:grid-cols-[300px_1fr] gap-8 p-8 md:p-10 items-center">
                       {/* Photo */}
-                      <div className="mx-auto md:mx-0">
-                        <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden ring-4 ring-[var(--cream)] shadow-md">
-                          {/* Using next/image would require remote optimisation; we use a plain
-                              img tag since the site is statically exported with unoptimized images. */}
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                      <div className="relative mx-auto md:mx-0">
+                        <div className="absolute -inset-2 rounded-[1.5rem] bg-[var(--gold)]/30 blur-lg" aria-hidden />
+                        <div className="relative w-52 h-64 md:w-60 md:h-72 rounded-[1.5rem] overflow-hidden ring-4 ring-cream/20 shadow-xl">
+                          <Image
                             src="/images/director-mahander-meena.jpg"
                             alt={`${t.about.directorName} — ${t.about.directorTitle}, Virat Public School`}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
+                            fill
+                            sizes="(max-width: 768px) 60vw, 240px"
+                            className="object-cover"
                           />
                         </div>
-                        <p className="text-xs text-[var(--muted-ink)] text-center mt-2 italic">
-                          {t.about.directorName}
-                        </p>
                       </div>
-
                       {/* Bio */}
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--maroon)] mb-1">
+                        <span className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)]/20 border border-[var(--gold)]/30 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-gold mb-4">
                           {t.about.directorTitle}
-                        </p>
-                        <h4 className="text-2xl font-bold text-[var(--accent)] mb-3">
-                          {t.about.directorName}
-                        </h4>
-                        <p className="text-sm text-[var(--ink)] leading-relaxed mb-5">
+                        </span>
+                        <Quote className="w-8 h-8 text-gold/60 mb-3" />
+                        <p className="text-sm md:text-base text-cream/90 leading-relaxed">
                           {t.about.directorBio}
                         </p>
                         <Button
                           asChild
-                          variant="outline"
-                          className="border-[var(--maroon)] text-[var(--maroon)] hover:bg-[var(--maroon)] hover:text-white"
+                          className="mt-6 bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45] text-white rounded-full font-semibold hover:opacity-90"
                         >
                           <a
                             href="https://www.instagram.com/mahander_meena_86?igsh=MWYzZm5ocTM4YjJrNA=="
@@ -103,43 +89,40 @@ export default function ManagementPage() {
                         </Button>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </Reveal>
               </div>
 
-              {/* Other committee members */}
-              <div className="mt-10">
-                <h3 className="text-lg font-bold text-[var(--accent)] mb-5">
-                  Committee Members
-                </h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {/* Committee members */}
+              <div>
+                <Reveal>
+                  <SectionHeading eyebrow="Leadership" title="Management Committee" />
+                </Reveal>
+                <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {committee.map((member, idx) => (
-                    <Card key={idx} className="border-[var(--line)] hover:border-[var(--gold)] transition-colors bg-[var(--surface)] text-center">
-                      <CardContent className="pt-6">
-                        <div className="w-20 h-20 rounded-full bg-[var(--cream)] mx-auto flex items-center justify-center mb-3">
-                          <span className="text-2xl font-bold text-[var(--maroon)]">
+                    <Reveal key={idx} variant="up" delay={idx * 80}>
+                      <div className="card-modern p-6 text-center h-full">
+                        <div className="w-16 h-16 rounded-2xl bg-cream mx-auto flex items-center justify-center mb-4">
+                          <span className="text-xl font-extrabold text-maroon">
                             {String(idx + 1).padStart(2, "0")}
                           </span>
                         </div>
-                        <h4 className="font-semibold text-[var(--accent)] text-sm">
-                          {member.name}
-                        </h4>
-                        <p className="text-xs text-[var(--maroon)] font-medium mt-1 uppercase tracking-wide">
-                          {member.designation}
+                        <h4 className="font-bold text-maroon text-sm">{member.designation}</h4>
+                        <p className="text-xs text-muted-ink mt-2 leading-relaxed">
+                          Profile to be supplied by the management office.
                         </p>
-                        <p className="text-xs text-[var(--muted-ink)] mt-2 leading-relaxed">
-                          {member.bio}
-                        </p>
-                      </CardContent>
-                    </Card>
+                      </div>
+                    </Reveal>
                   ))}
                 </div>
-              </div>
 
-              <div className="mt-8 p-4 bg-[var(--cream)] rounded-lg">
-                <p className="text-xs text-[var(--muted-ink)] leading-relaxed">
-                  The profiles, photographs, and designations of other committee members are placeholders pending final confirmation from the management committee. Updated information will be published as soon as it becomes available.
-                </p>
+                <Reveal variant="up">
+                  <div className="mt-8 p-5 rounded-2xl bg-cream border border-line">
+                    <p className="text-xs text-muted-ink leading-relaxed">
+                      The profiles, photographs, and designations of other committee members are placeholders pending final confirmation from the management committee. Updated information will be published as soon as it becomes available.
+                    </p>
+                  </div>
+                </Reveal>
               </div>
             </div>
           </div>

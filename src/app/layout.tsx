@@ -79,6 +79,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${notoDevanagari.variable} antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
         <LanguageProvider>
+          <ScrollProgress />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

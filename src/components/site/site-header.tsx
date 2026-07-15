@@ -2,8 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Menu, X, GraduationCap, Languages, ChevronDown, Phone } from "lucide-react";
+import { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  GraduationCap,
+  Languages,
+  ChevronDown,
+  Phone,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -26,7 +34,20 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const { t, toggle, locale } = useLanguage();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const groups: NavGroup[] = [
     {
@@ -70,24 +91,29 @@ export function SiteHeader() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--line)]">
-      {/* Top utility strip — hidden on mobile, slim on desktop */}
-      <div className="hidden md:block bg-[var(--accent)] text-white text-xs">
+    <header className="sticky top-0 z-50 w-full">
+      {/* Top utility strip */}
+      <div
+        className={cn(
+          "hidden md:block bg-maroon-deep text-white text-xs transition-all duration-300",
+          scrolled ? "max-h-0 overflow-hidden opacity-0" : "max-h-10 opacity-100"
+        )}
+      >
         <div className="container mx-auto flex items-center justify-between px-4 py-1.5">
-          <p className="italic tracking-wide text-[var(--accent)]/80">
-            {t.motto} — {t.mottoTranslation}
+          <p className="italic tracking-wide text-gold/90">
+            “{t.motto}” — {t.mottoTranslation}
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <a
               href="tel:+919636452501"
-              className="hover:text-[var(--gold)] transition-colors inline-flex items-center gap-1.5"
+              className="hover:text-gold transition-colors inline-flex items-center gap-1.5"
             >
               <Phone className="w-3 h-3" />
               +91 96364 52501
             </a>
             <a
               href="mailto:info@viratpublicschool.in"
-              className="hover:text-[var(--gold)] transition-colors"
+              className="hover:text-gold transition-colors"
             >
               info@viratpublicschool.in
             </a>
@@ -96,124 +122,143 @@ export function SiteHeader() {
       </div>
 
       {/* Main nav */}
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[var(--maroon)] flex items-center justify-center ring-1 ring-[var(--gold)] transition-transform group-hover:scale-105">
-              <GraduationCap className="w-5 h-5 lg:w-7 lg:h-7 text-white" />
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-base lg:text-lg text-[var(--accent)] tracking-tight">
-                {t.schoolName}
-              </span>
-              <span className="text-[10px] lg:text-xs text-[var(--muted-ink)]">
-                Viratnagar · Rajasthan
-              </span>
-            </div>
-          </Link>
+      <div
+        className={cn(
+          "w-full transition-all duration-300 border-b",
+          scrolled
+            ? "glass border-line shadow-[0_4px_24px_rgba(80,20,20,0.06)]"
+            : "bg-background/90 backdrop-blur-sm border-transparent"
+        )}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16 lg:h-[4.75rem]">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3 group shrink-0">
+              <div className="relative">
+                <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-2xl bg-gradient-to-br from-[var(--maroon)] to-[var(--maroon-deep)] flex items-center justify-center ring-1 ring-[var(--gold)]/50 shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+                  <GraduationCap className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+                </div>
+                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[var(--gold)] ring-2 ring-background" />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="font-extrabold text-base lg:text-lg text-maroon tracking-tight">
+                  {t.schoolName}
+                </span>
+                <span className="text-[10px] lg:text-[11px] text-muted-ink font-medium tracking-wide">
+                  Viratnagar · Rajasthan
+                </span>
+              </div>
+            </Link>
 
-          {/* Desktop nav */}
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={navigationMenuTriggerStyle()}
-                    active={isActive("/")}
-                  >
-                    {t.nav.home}
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+            {/* Desktop nav */}
+            <NavigationMenu className="hidden lg:flex">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      active={isActive("/")}
+                    >
+                      {t.nav.home}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
 
-              {groups.map((group) => (
-                <NavigationMenuItem key={group.parent.href}>
-                  <NavigationMenuTrigger
-                    className={cn(isActive(group.parent.href) && "text-[var(--maroon)]")}
-                  >
-                    {group.parent.label}
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[240px] gap-0.5 p-2">
-                      <li>
-                        <Link
-                          href={group.parent.href}
-                          className="block px-3 py-2 rounded-full hover:bg-[var(--cream)] font-medium text-[var(--accent)] text-sm"
-                        >
-                          {group.parent.label} — Overview
-                        </Link>
-                      </li>
-                      {group.items.map((item) => (
-                        <li key={item.href}>
+                {groups.map((group) => (
+                  <NavigationMenuItem key={group.parent.href}>
+                    <NavigationMenuTrigger
+                      className={cn(
+                        isActive(group.parent.href) && "text-maroon font-semibold"
+                      )}
+                    >
+                      {group.parent.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[260px] gap-1 p-2.5 bg-surface rounded-xl shadow-lg border border-line">
+                        <li>
                           <Link
-                            href={item.href}
-                            className="block px-3 py-2 rounded-full hover:bg-[var(--cream)] text-sm text-[var(--ink)]"
+                            href={group.parent.href}
+                            className="flex items-center justify-between rounded-lg px-3 py-2.5 hover:bg-cream font-semibold text-maroon text-sm group"
                           >
-                            {item.label}
+                            {group.parent.label}
+                            <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                           </Link>
                         </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
+                        <li className="my-1 h-px bg-line" />
+                        {group.items.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              className="block px-3 py-2 rounded-lg hover:bg-cream hover:translate-x-1 transition-all text-sm text-ink"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ))}
+
+                <NavigationMenuItem>
+                  <Link href="/contact-us" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      active={isActive("/contact-us")}
+                    >
+                      {t.nav.contact}
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
-              ))}
+              </NavigationMenuList>
+            </NavigationMenu>
 
-              <NavigationMenuItem>
-                <Link href="/contact-us" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={navigationMenuTriggerStyle()}
-                    active={isActive("/contact-us")}
-                  >
-                    {t.nav.contact}
-                  </NavigationMenuLink>
+            {/* Right actions (desktop) */}
+            <div className="hidden lg:flex items-center gap-2.5">
+              <button
+                onClick={toggle}
+                aria-label="Toggle language"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold border border-line hover:border-[var(--gold)] hover:text-maroon transition-all"
+              >
+                <Languages className="w-4 h-4" />
+                {locale === "en" ? "हिंदी" : "EN"}
+              </button>
+              <Button
+                asChild
+                className="bg-maroon hover:bg-maroon-deep text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+              >
+                <Link href="/admissions/apply">
+                  {t.nav.apply}
+                  <ArrowRight className="ml-1.5 w-4 h-4" />
                 </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+              </Button>
+            </div>
 
-          {/* Right actions (desktop) */}
-          <div className="hidden lg:flex items-center gap-2">
-            <button
-              onClick={toggle}
-              aria-label="Toggle language"
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium border border-[var(--line)] hover:border-[var(--gold)] hover:text-[var(--maroon)] transition-colors"
-            >
-              <Languages className="w-4 h-4" />
-              {locale === "en" ? "हिंदी" : "EN"}
-            </button>
-            <Button
-              asChild
-              className="bg-[var(--maroon)] hover:bg-[var(--maroon-deep)] text-white"
-            >
-              <Link href="/admissions/apply">{t.nav.apply}</Link>
-            </Button>
-          </div>
-
-          {/* Mobile actions */}
-          <div className="flex lg:hidden items-center gap-1">
-            <button
-              onClick={toggle}
-              aria-label="Toggle language"
-              className="p-2 text-[var(--accent)] hover:text-[var(--maroon)]"
-            >
-              <Languages className="w-5 h-5" />
-            </button>
-            <button
-              className="p-2 -mr-2 text-[var(--accent)]"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile actions */}
+            <div className="flex lg:hidden items-center gap-1">
+              <button
+                onClick={toggle}
+                aria-label="Toggle language"
+                className="p-2 text-maroon hover:text-maroon-deep"
+              >
+                <Languages className="w-5 h-5" />
+              </button>
+              <button
+                className="p-2 -mr-2 text-maroon"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle menu"
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu — accordion groups instead of flat 16-link list */}
+      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-[var(--line)] bg-[var(--background)]">
+        <div className="lg:hidden border-t border-line glass animate-fade-down">
           <nav className="container mx-auto px-4 py-3 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileLink
               href="/"
@@ -226,25 +271,32 @@ export function SiteHeader() {
               const parentActive = isActive(group.parent.href);
               const isOpen = openGroup === group.parent.href;
               return (
-                <div key={group.parent.href} className="border-b border-[var(--line)] last:border-0">
-                  <div className="flex items-center">
-                    <button
-                      onClick={() => setOpenGroup(isOpen ? null : group.parent.href)}
-                      className="flex-1 flex items-center justify-between px-3 py-3 text-left text-sm font-medium text-[var(--ink)]"
+                <div
+                  key={group.parent.href}
+                  className="border-b border-line/60 last:border-0"
+                >
+                  <button
+                    onClick={() =>
+                      setOpenGroup(isOpen ? null : group.parent.href)
+                    }
+                    className="w-full flex items-center justify-between px-3 py-3 text-left text-sm font-medium text-ink"
+                  >
+                    <span
+                      className={cn(
+                        parentActive && "text-maroon font-semibold"
+                      )}
                     >
-                      <span className={cn(parentActive && "text-[var(--maroon)] font-semibold")}>
-                        {group.parent.label}
-                      </span>
-                      <ChevronDown
-                        className={cn(
-                          "w-4 h-4 text-[var(--muted-ink)] transition-transform",
-                          isOpen && "rotate-180"
-                        )}
-                      />
-                    </button>
-                  </div>
+                      {group.parent.label}
+                    </span>
+                    <ChevronDown
+                      className={cn(
+                        "w-4 h-4 text-muted-ink transition-transform",
+                        isOpen && "rotate-180"
+                      )}
+                    />
+                  </button>
                   {isOpen && (
-                    <div className="pb-2 pl-4 space-y-0.5">
+                    <div className="pb-2 pl-4 space-y-0.5 animate-fade-down">
                       <MobileLink
                         href={group.parent.href}
                         label="Overview"
@@ -273,19 +325,27 @@ export function SiteHeader() {
               onClick={() => setMobileOpen(false)}
             />
 
-            <div className="pt-4 mt-2 border-t border-[var(--line)]">
+            <div className="pt-4 mt-2 border-t border-line/60">
               <Button
                 asChild
-                className="bg-[var(--maroon)] hover:bg-[var(--maroon-deep)] text-white w-full"
-                onClick={() => setMobileOpen(false)}
+                className="bg-maroon hover:bg-maroon-deep text-white w-full rounded-full font-semibold"
               >
-                <Link href="/admissions/apply">{t.nav.apply}</Link>
+                <Link href="/admissions/apply">
+                  {t.nav.apply}
+                  <ArrowRight className="ml-1.5 w-4 h-4" />
+                </Link>
               </Button>
-              <div className="mt-3 flex items-center justify-center gap-4 text-xs text-[var(--muted-ink)]">
-                <a href="tel:+919636452501" className="inline-flex items-center gap-1.5 hover:text-[var(--maroon)]">
+              <div className="mt-3 flex items-center justify-center gap-5 text-xs text-muted-ink">
+                <a
+                  href="tel:+919636452501"
+                  className="inline-flex items-center gap-1.5 hover:text-maroon"
+                >
                   <Phone className="w-3 h-3" /> +91 96364 52501
                 </a>
-                <a href="mailto:info@viratpublicschool.in" className="hover:text-[var(--maroon)]">
+                <a
+                  href="mailto:info@viratpublicschool.in"
+                  className="hover:text-maroon"
+                >
                   Email
                 </a>
               </div>
@@ -313,10 +373,10 @@ function MobileLink({
       href={href}
       onClick={onClick}
       className={cn(
-        "block px-3 py-2.5 rounded-full text-sm transition-colors",
+        "block px-3 py-2.5 rounded-xl text-sm transition-colors",
         active
-          ? "bg-[var(--cream)] text-[var(--maroon)] font-semibold"
-          : "text-[var(--ink)] hover:bg-[var(--cream)]"
+          ? "bg-cream text-maroon font-semibold"
+          : "text-ink hover:bg-cream/60"
       )}
     >
       {label}
