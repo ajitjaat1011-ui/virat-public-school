@@ -4,8 +4,8 @@
   "description": "Virat Public School, Viratnagar (Kotputli-Behror, Rajasthan) — Knowledge. Discipline. Character.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#800000",
+  "background_color": "#F7FCFA",
+  "theme_color": "#063F3B",
   "icons": [
     {
       "src": "/favicon.svg",

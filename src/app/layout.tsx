@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     template: "%s | Virat Public School",
   },
   description:
-    "Virat Public School, Viratnagar (Kotputli-Behror, Rajasthan) — nurturing students with knowledge, discipline, and character. CBSE/RBSE curriculum, experienced faculty, modern facilities.",
+    "Virat Public School, Viratnagar (Kotputli-Behror, Rajasthan) — nurturing students with knowledge, discipline, and character. RBSE curriculum, experienced faculty, modern facilities.",
   keywords: [
     "Virat Public School",
     "school in Viratnagar",
     "school in Kotputli-Behror",
     "Rajasthan school",
-    "CBSE school Rajasthan",
+    "RBSE school Rajasthan",
     "admission Viratnagar",
     "best school near Behror",
   ],

@@ -71,7 +71,7 @@ export default function CurriculumPage() {
                     Board Affiliation
                   </Badge>
                   <span className="text-[var(--ink)]">
-                    CBSE / RBSE — pending confirmation by school management
+                    Rajasthan Board of Secondary Education (RBSE)
                   </span>
                 </div>
               </div>

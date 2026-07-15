@@ -12,10 +12,10 @@ const MONTHS = [
 ];
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Academic: "bg-blue-100 text-blue-800 border-blue-300",
+  Academic: "bg-[var(--cream)] text-[var(--accent)] border-[var(--line)]",
   Cultural: "bg-[var(--gold)]/20 text-[var(--accent)] border-[var(--gold)]",
   Sports: "bg-green-100 text-green-800 border-green-300",
-  Holiday: "bg-red-100 text-red-800 border-red-300",
+  Holiday: "bg-[var(--maroon)]/15 text-[var(--maroon-deep)] border-[var(--maroon)]/30",
 };
 
 export default function CalendarPage() {

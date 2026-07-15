@@ -77,7 +77,7 @@ export default function ClassesPage() {
                   {t.academics.streams.map((stream, idx) => {
                     const colors = [
                       "from-[var(--maroon)] to-[var(--maroon-deep)]",
-                      "from-[var(--gold)] to-blue-800",
+                      "from-[var(--gold)] to-[var(--success)]",
                       "from-[var(--success)] to-[#1B5E20]",
                     ];
                     return (

@@ -8,36 +8,28 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  /* Virat Public School brand tokens */
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  /* Compatibility aliases let existing content inherit the new visual system. */
   --color-maroon: var(--maroon);
   --color-maroon-deep: var(--maroon-deep);
   --color-cream: var(--cream);
@@ -48,151 +40,116 @@
   --color-line: var(--line);
   --color-success: var(--success);
   --color-alert: var(--alert);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 3px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 6px);
 }
 
 :root {
-  --radius: 1rem; /* Softer border radius */
-  /* Brand palette — Virat Public School (refined: off-white base + charcoal text) */
-  --maroon: #800000; /* Primary brand */
-  --maroon-deep: #5C0000; /* Deep maroon */
-  --cream: #F0F4F8; /* Soft blue-grey replacing cream */
-  --gold: #1E3A8A; /* Blue accent replacing gold */
-  --ink: #1e293b; /* Slate dark */
-  --muted-ink: #64748b; /* Slate muted */
-  --surface: #FFFFFF;         /* Cards / raised surfaces */
-  --line: #e2e8f0; /* Slate line */
-  --success: #2E7D32;
-  --alert: #C62828;
-
-  /* Page background — warm off-white (NOT bright white) */
-  --background: #FFFFFF; /* Pure white */
-  --foreground: #1e293b;
-  --card: #FFFFFF;
-  --card-foreground: #1e293b;
-  --popover: #FFFFFF;
-  --popover-foreground: #1e293b;
-  --primary: #800000;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F0F4F8;
-  --secondary-foreground: #1e293b;
-  --muted: #F0F4F8;
-  --muted-foreground: #64748b;
-  --accent: #1E3A8A;
-  --accent-foreground: #FFFFFF;
-  --destructive: #C62828;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #1E3A8A;
-  --chart-1: #800000;
-  --chart-2: #C9A227;
-  --chart-3: #2E7D32;
-  --chart-4: #5C0000;
-  --chart-5: #6B6360;
-  --sidebar: #5C0000;
-  --sidebar-foreground: #F2EFE8;
-  --sidebar-primary: #1E3A8A;
-  --sidebar-primary-foreground: #5C0000;
-  --sidebar-accent: #800000;
-  --sidebar-accent-foreground: #F2EFE8;
-  --sidebar-border: rgba(242, 239, 232, 0.15);
-  --sidebar-ring: #1E3A8A;
-}
-
-.dark {
-  --background: #1A0E0E;
-  --foreground: #F2EFE8;
-  --card: #2A1010;
-  --card-foreground: #F2EFE8;
-  --popover: #2A1010;
-  --popover-foreground: #F2EFE8;
-  --primary: #C9A227;
-  --primary-foreground: #1A0E0E;
-  --secondary: #3A1010;
-  --secondary-foreground: #F2EFE8;
-  --muted: #2A1010;
-  --muted-foreground: #C4B8A8;
-  --accent: #1E3A8A;
-  --accent-foreground: #1A0E0E;
-  --destructive: #E57373;
-  --border: rgba(242, 239, 232, 0.12);
-  --input: rgba(242, 239, 232, 0.12);
-  --ring: #1E3A8A;
+  --radius: 1.125rem;
+  /* 2026 identity: deep teal, vivid coral, mint and citron. No legacy brand colours. */
+  --maroon: #ef5b4c;
+  --maroon-deep: #063f3b;
+  --cream: #e9f7f2;
+  --gold: #b9db74;
+  --ink: #173c3a;
+  --muted-ink: #5c7774;
+  --surface: #ffffff;
+  --line: #cfe4de;
+  --success: #16866f;
+  --alert: #dc4c40;
+  --background: #f7fcfa;
+  --foreground: #173c3a;
+  --card: #ffffff;
+  --card-foreground: #173c3a;
+  --popover: #ffffff;
+  --popover-foreground: #173c3a;
+  --primary: #ef5b4c;
+  --primary-foreground: #ffffff;
+  --secondary: #e9f7f2;
+  --secondary-foreground: #063f3b;
+  --muted: #e9f7f2;
+  --muted-foreground: #5c7774;
+  --accent: #063f3b;
+  --accent-foreground: #ffffff;
+  --destructive: #dc4c40;
+  --border: #cfe4de;
+  --input: #cfe4de;
+  --ring: #ef5b4c;
+  --chart-1: #ef5b4c;
+  --chart-2: #16866f;
+  --chart-3: #b9db74;
+  --chart-4: #063f3b;
+  --chart-5: #5c7774;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    /* Slight font smoothing for the off-white base */
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-image: radial-gradient(circle at 20% 0%, rgba(185,219,116,.12), transparent 28rem);
   }
   h1, h2, h3, h4, h5, h6 {
-    color: var(--accent); /* Headings in Navy Blue */
-    font-weight: 700;
-    letter-spacing: -0.015em;
+    color: var(--accent);
+    font-weight: 750;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
   }
-  /* Reduce default heading size on mobile for better balance */
+  p { text-wrap: pretty; }
+  ::selection { background: var(--gold); color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--maroon); outline-offset: 3px; }
   @media (max-width: 640px) {
-    h1 { font-size: 1.875rem; line-height: 1.2; }
-    h2 { font-size: 1.5rem; line-height: 1.25; }
+    h1 { font-size: 2rem; line-height: 1.08; }
+    h2 { font-size: 1.6rem; line-height: 1.15; }
   }
-  /* Decorative blue accent — slim, modern */
-  .gold-divider {
-    height: 2px;
-    width: 48px;
-    background: var(--gold);
-    border-radius: 1px;
+  .gold-divider, .gold-divider-center {
+    height: 5px;
+    width: 52px;
+    background: var(--maroon);
+    border-radius: 999px;
   }
-  .gold-divider-center {
-    height: 2px;
-    width: 48px;
-    background: var(--gold);
-    border-radius: 1px;
-    margin: 0 auto;
-  }
+  .gold-divider-center { margin-inline: auto; }
 }
 
 @layer utilities {
   .bg-cream { background-color: var(--cream); }
   .bg-surface { background-color: var(--surface); }
   .bg-maroon { background-color: var(--maroon); }
-  .bg-maroon-deep { background-color: var(--accent); /* Headings in Navy Blue */ }
+  .bg-maroon-deep { background-color: var(--maroon-deep); }
   .text-maroon { color: var(--maroon); }
-  .text-maroon-deep { color: var(--accent); /* Headings in Navy Blue */ }
+  .text-maroon-deep { color: var(--maroon-deep); }
   .text-gold { color: var(--gold); }
   .text-ink { color: var(--ink); }
   .text-muted-ink { color: var(--muted-ink); }
   .border-gold { border-color: var(--gold); }
   .border-line { border-color: var(--line); }
   .ring-gold { box-shadow: 0 0 0 2px var(--gold); }
-  /* Subtle elevated card — single hairline border + soft shadow on hover only */
   .card-flat {
-  background: #FFFFFF;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-  transition: all 0.2s ease;
-}
+    background: color-mix(in srgb, var(--surface) 94%, var(--cream));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 40px rgba(6,63,59,.055);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
   .card-flat:hover {
-  border-color: rgba(30, 58, 138, 0.2);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-  /* Subtle dotted/line pattern for hero backgrounds (replaces busy images) */
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--maroon) 45%, var(--line));
+    box-shadow: 0 20px 55px rgba(6,63,59,.1);
+  }
   .bg-pattern-subtle {
-    background-image: radial-gradient(circle at 1px 1px, rgba(30, 58, 138, 0.08) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(6,63,59,.1) 1px, transparent 0);
     background-size: 24px 24px;
   }
   .bg-pattern-dots {
-    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
-    background-size: 20px 20px;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.12) 1px, transparent 0);
+    background-size: 22px 22px;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
