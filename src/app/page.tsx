@@ -25,28 +25,23 @@ export default function HomePage() {
   return (
     <>
       {/* HERO — solid maroon + subtle dot pattern, no busy image overlay */}
-      <section className="relative bg-[var(--accent)] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-60 pointer-events-none" aria-hidden />
-        {/* Subtle gold radial accent in corner */}
-        <div
-          className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-20 pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)",
-          }}
-          aria-hidden
-        />
+      <section className="relative bg-white overflow-hidden">
+        {/* Fluid Blobs for 2026 Glassmorphism */}
+        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" aria-hidden />
+        <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-red-100/60 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" aria-hidden />
+        <div className="absolute -bottom-32 left-[20%] w-96 h-96 bg-blue-100/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" aria-hidden />
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-28 relative">
           <div className="max-w-3xl">
-            <p className="text-blue-100 uppercase tracking-[0.2em] text-[11px] md:text-xs font-semibold mb-4">
+            <p className="text-blue-600 uppercase tracking-[0.2em] text-[11px] md:text-xs font-semibold mb-4">
               {t.motto} — {t.mottoTranslation}
             </p>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--accent)] leading-[1.1] tracking-tight">
               {t.schoolName}
             </h1>
-            <p className="mt-3 text-lg md:text-2xl text-blue-100 font-medium">
+            <p className="mt-3 text-lg md:text-2xl text-blue-700 font-medium">
               {t.tagline}
             </p>
-            <p className="mt-5 text-sm md:text-base lg:text-lg text-white/80 leading-relaxed max-w-2xl">
+            <p className="mt-5 text-sm md:text-base lg:text-lg text-[var(--muted-ink)] leading-relaxed max-w-2xl">
               {t.home.heroSubtitle}
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
@@ -64,7 +59,7 @@ export default function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-[var(--surface)] hover:text-[var(--accent)] bg-transparent"
+                className="border-blue-200 text-[var(--accent)] hover:bg-white hover:text-[var(--maroon)] bg-white/50 backdrop-blur-sm shadow-sm hover:-translate-y-0.5 transition-transform duration-300 relative z-10"
               >
                 <Link href="/academics">
                   {t.home.heroCtaAcademics}
@@ -333,15 +328,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA BANNER — slim maroon strip */}
-      <section className="bg-[var(--accent)] py-12 md:py-14">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-blue-50/50">
+        <div className="absolute inset-0 bg-blue-100/30 backdrop-blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-200/40 rounded-full blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-xl md:text-3xl font-bold text-white mb-3">
+          <h2 className="text-xl md:text-3xl font-bold text-[var(--accent)] mb-3 relative z-10">
             Ready to join the Virat Public School family?
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto mb-6 text-sm md:text-base">
+          <p className="text-[var(--muted-ink)] max-w-2xl mx-auto mb-6 text-sm md:text-base relative z-10">
             Take the first step today — our admissions team is here to guide you through every step of the process.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center relative z-10">
             <Button
               asChild
               size="lg"
@@ -356,7 +353,7 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white/30 text-white hover:bg-[var(--surface)] hover:text-[var(--maroon)] bg-transparent"
+              className="border-blue-200 text-[var(--accent)] hover:bg-white hover:text-[var(--maroon)] bg-white/50 backdrop-blur-sm shadow-sm hover:-translate-y-0.5 transition-transform duration-300 relative z-10"
             >
               <Link href="/contact-us">{t.nav.contact}</Link>
             </Button>

@@ -15,12 +15,14 @@ export function PageHero({ title, subtitle, breadcrumb, className }: PageHeroPro
   return (
     <section
       className={cn(
-        "bg-[var(--accent)] text-white relative overflow-hidden",
+        "bg-slate-50 text-[var(--accent)] relative overflow-hidden",
         className
       )}
     >
-      {/* Subtle dot pattern */}
-      <div className="absolute inset-0 bg-pattern-dots opacity-50 pointer-events-none" aria-hidden />
+      {/* Fluid Glass Blobs */}
+      <div className="absolute top-0 left-[-10%] w-[40%] h-full bg-blue-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" aria-hidden />
+      <div className="absolute top-[-20%] right-[-5%] w-[35%] h-[120%] bg-red-100/60 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" aria-hidden />
+      <div className="absolute -bottom-[20%] left-[20%] w-[40%] h-[100%] bg-blue-100/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" aria-hidden />
       {/* Subtle gold corner accent */}
       <div
         className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-15 pointer-events-none"
@@ -31,16 +33,16 @@ export function PageHero({ title, subtitle, breadcrumb, className }: PageHeroPro
       />
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 relative">
         {breadcrumb && (
-          <p className="text-[11px] uppercase tracking-[0.2em] text-blue-200 mb-3 font-semibold">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-blue-600 mb-3 font-semibold">
             {breadcrumb}
           </p>
         )}
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[var(--accent)] tracking-tight">
           {title}
         </h1>
         <div className="h-1 w-12 bg-[var(--maroon)] rounded-full mt-4" />
         {subtitle && (
-          <p className="mt-5 text-sm md:text-lg text-white/80 max-w-3xl leading-relaxed">
+          <p className="mt-5 text-sm md:text-lg text-[var(--muted-ink)] max-w-3xl leading-relaxed">
             {subtitle}
           </p>
         )}
