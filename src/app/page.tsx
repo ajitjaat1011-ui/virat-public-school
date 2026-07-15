@@ -30,7 +30,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-6 h-auto md:h-[500px]">
             
             {/* Main Hero Box (2x2) */}
-            <div className="bg-white border border-[var(--line)] rounded-[2rem] p-8 md:p-12 md:col-span-2 md:row-span-2 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+            <div className="bg-gradient-to-br from-white to-blue-50/50 border border-[var(--line)] rounded-[2rem] p-8 md:p-12 md:col-span-2 md:row-span-2 flex flex-col justify-center shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl group-hover:bg-blue-200/40 transition-colors duration-700" aria-hidden />
               <span className="text-[var(--accent)] text-xs md:text-sm font-bold tracking-widest uppercase mb-4">
                 {t.motto}
               </span>
@@ -54,15 +55,21 @@ export default function HomePage() {
             </div>
 
             {/* Quick Stats Box (1x1) */}
-            <div className="bg-[var(--accent)] text-white rounded-[2rem] p-8 md:col-span-1 md:row-span-1 flex flex-col justify-center shadow-sm relative overflow-hidden group">
-              <div className="absolute -right-4 -top-4 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700" aria-hidden />
-              <span className="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2 relative z-10">RBSE 2025-26</span>
-              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 relative z-10 tracking-tight">98.20%</h4>
-              <p className="text-sm text-blue-100 relative z-10 font-medium">District Topper Score</p>
+            <div className="bg-gradient-to-br from-[#1E3A8A] to-[#172554] text-white rounded-[2rem] p-8 md:col-span-1 md:row-span-1 flex flex-col justify-center shadow-md relative overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
+              <div className="absolute -right-4 -top-4 w-32 h-32 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" aria-hidden />
+              <div className="relative z-10 flex items-center justify-between mb-4">
+                <span className="text-blue-200 text-xs font-bold uppercase tracking-widest bg-white/10 px-2.5 py-1 rounded-full border border-white/10 backdrop-blur-sm">RBSE 2025-26</span>
+                <Trophy className="w-5 h-5 text-yellow-400" />
+              </div>
+              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 relative z-10 tracking-tight drop-shadow-sm text-white">
+                98.20%
+              </h4>
+              <p className="text-lg md:text-xl font-bold text-white relative z-10 mt-1">{t.home.toppers[0].name}</p>
+              <p className="text-xs text-blue-300 relative z-10 font-bold uppercase tracking-widest mt-1">District Topper</p>
             </div>
 
             {/* Quick Contact Box (1x1) */}
-            <div className="bg-[var(--maroon)] text-white rounded-[2rem] p-8 md:col-span-1 md:row-span-1 flex flex-col justify-center shadow-sm relative overflow-hidden group">
+            <div className="bg-gradient-to-br from-[#800000] to-[#5c0000] text-white rounded-[2rem] p-8 md:col-span-1 md:row-span-1 flex flex-col justify-center shadow-md relative overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
               <div className="absolute -left-4 -bottom-4 w-24 h-24 bg-black/10 rounded-full group-hover:scale-150 transition-transform duration-700" aria-hidden />
               <Phone className="w-7 h-7 mb-4 relative z-10 text-white/90" />
               <span className="text-red-200 text-xs font-bold uppercase tracking-widest mb-2 relative z-10">Quick Contact</span>
@@ -72,7 +79,7 @@ export default function HomePage() {
             </div>
 
             {/* Announcements Box (2x1) */}
-            <div className="bg-white border border-[var(--line)] rounded-[2rem] p-8 md:col-span-2 md:row-span-1 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white border border-[var(--line)] rounded-[2rem] p-8 md:col-span-2 md:row-span-1 flex flex-col justify-center shadow-sm hover:shadow-md transition-all group">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-[var(--accent)] text-xs font-bold tracking-widest uppercase">{t.home.latestNews}</span>
                 <Link href="/news-events/announcements" className="text-[var(--maroon)] text-sm font-semibold hover:underline flex items-center">
@@ -138,10 +145,15 @@ export default function HomePage() {
                 <div
                   key={idx}
                   className={
-                    "card-flat p-5 text-center " +
-                    (isFirst ? "ring-1 ring-[var(--accent)] border-[var(--accent)]" : "")
+                    "card-flat p-5 text-center relative " +
+                    (isFirst ? "ring-1 ring-[var(--accent)] border-[var(--accent)] shadow-md bg-blue-50/20" : "")
                   }
                 >
+                  {isFirst && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 w-6 h-6 rounded-full flex items-center justify-center shadow-sm ring-2 ring-white">
+                      <Trophy className="w-3 h-3" />
+                    </div>
+                  )}
                   <p className="text-[11px] uppercase tracking-wider text-[var(--muted-ink)] font-semibold mb-1">
                     Rank #{topper.position}
                   </p>
