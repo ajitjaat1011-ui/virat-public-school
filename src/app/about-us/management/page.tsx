@@ -35,8 +35,8 @@ export default function ManagementPage() {
         breadcrumb={`${t.nav.about} / ${t.aboutSub.management}`}
       />
 
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="inner-page-section py-12 md:py-20">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-[280px_1fr] gap-8">
             <SubNav title={t.nav.about} links={subLinks} />
 
@@ -63,7 +63,6 @@ export default function ManagementPage() {
                         <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden ring-4 ring-[var(--cream)] shadow-md">
                           {/* Using next/image would require remote optimisation; we use a plain
                               img tag since the site is statically exported with unoptimized images. */}
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src="/images/director-mahander-meena.jpg"
                             alt={`${t.about.directorName} — ${t.about.directorTitle}, Virat Public School`}

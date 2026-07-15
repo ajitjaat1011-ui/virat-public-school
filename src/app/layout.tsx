@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { MobileActionDock } from "@/components/site/mobile-action-dock";
 import { LanguageProvider } from "@/components/site/language-context";
 import { SchoolJsonLd } from "@/components/site/school-json-ld";
 
@@ -88,9 +89,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${notoDevanagari.variable} antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
         <LanguageProvider>
+          <a href="#main-content" className="skip-link">Skip to main content</a>
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">{children}</main>
           <SiteFooter />
+          <MobileActionDock />
         </LanguageProvider>
         <Toaster />
       </body>

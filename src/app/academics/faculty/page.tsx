@@ -59,8 +59,8 @@ export default function FacultyPage() {
         breadcrumb={`${t.nav.academics} / ${t.academicsSub.faculty}`}
       />
 
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="inner-page-section py-12 md:py-20">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-[280px_1fr] gap-8">
             <SubNav title={t.nav.academics} links={subLinks} />
 

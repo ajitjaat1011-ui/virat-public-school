@@ -56,8 +56,8 @@ export default function ContactPage() {
         breadcrumb={t.nav.contact}
       />
 
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="inner-page-section py-12 md:py-20">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-2 gap-10">
             {/* Contact info */}
             <div className="space-y-6">

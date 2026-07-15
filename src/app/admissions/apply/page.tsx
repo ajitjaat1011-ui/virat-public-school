@@ -106,7 +106,7 @@ export default function ApplyPage() {
           subtitle="Complete the form in a few simple steps. Keep the student’s details, parent contact information and supporting documents ready."
           breadcrumb={`${t.nav.admissions} / ${t.admissionsSub.apply}`}
         />
-        <section className="py-16 md:py-20">
+        <section className="inner-page-section py-12 md:py-20">
           <div className="container mx-auto px-4 max-w-2xl">
             <Card className="border-[var(--line)] bg-[var(--surface)] text-center">
               <CardContent className="pt-10 pb-10">
@@ -151,8 +151,8 @@ export default function ApplyPage() {
         breadcrumb={`${t.nav.admissions} / ${t.admissionsSub.apply}`}
       />
 
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="inner-page-section py-12 md:py-20">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="grid min-w-0 grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
             <SubNav title={t.nav.admissions} links={subLinks} />
 

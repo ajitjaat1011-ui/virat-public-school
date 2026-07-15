@@ -50,8 +50,8 @@ export default function GalleryPage() {
         breadcrumb={`${t.nav.news} / ${t.newsSub.gallery}`}
       />
 
-      <section className="py-16 md:py-20" onKeyDown={handleKey}>
-        <div className="container mx-auto px-4">
+      <section className="inner-page-section py-12 md:py-20" onKeyDown={handleKey}>
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-[280px_1fr] gap-8">
             <SubNav title={t.nav.news} links={subLinks} />
 
