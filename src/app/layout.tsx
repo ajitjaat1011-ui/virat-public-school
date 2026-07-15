@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Noto_Sans_Devanagari } from "next/font/google";
+import { Manrope, Lora, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { SiteHeader } from "@/components/site/site-header";
@@ -8,13 +8,13 @@ import { MobileActionDock } from "@/components/site/mobile-action-dock";
 import { LanguageProvider } from "@/components/site/language-context";
 import { SchoolJsonLd } from "@/components/site/school-json-ld";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
 });
 
@@ -30,7 +30,7 @@ export const viewport: Viewport = {
   minimumScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#102A72",
+  themeColor: "#183A37",
 };
 
 export const metadata: Metadata = {
@@ -86,7 +86,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.webmanifest" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${notoDevanagari.variable} antialiased bg-background text-foreground min-h-screen flex flex-col`}
+        className={`${manrope.variable} ${lora.variable} ${notoDevanagari.variable} antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
         <LanguageProvider>
           <a href="#main-content" className="skip-link">Skip to main content</a>

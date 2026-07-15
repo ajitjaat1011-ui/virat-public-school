@@ -6,7 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-manrope);
   --font-mono: var(--font-geist-mono);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -49,39 +49,39 @@
 :root {
   --radius: 1.125rem;
   /* Royal blue, sky blue, white and glass identity. */
-  --maroon: #2563EB;
-  --maroon-deep: #102A72;
-  --cream: #EAF7FF;
-  --gold: #38BDF8;
-  --ink: #152554;
-  --muted-ink: #5B6B96;
+  --maroon: #F06B45;
+  --maroon-deep: #183A37;
+  --cream: #E6F1EC;
+  --gold: #9CCBB9;
+  --ink: #203331;
+  --muted-ink: #637572;
   --surface: #ffffff;
-  --line: #CFE8FF;
-  --success: #0284C7;
+  --line: #D6E4DE;
+  --success: #3C8D78;
   --alert: #DC2626;
-  --background: #F8FCFF;
-  --foreground: #152554;
+  --background: #FAF8F3;
+  --foreground: #203331;
   --card: #ffffff;
-  --card-foreground: #152554;
+  --card-foreground: #203331;
   --popover: #ffffff;
-  --popover-foreground: #152554;
-  --primary: #2563EB;
+  --popover-foreground: #203331;
+  --primary: #F06B45;
   --primary-foreground: #ffffff;
-  --secondary: #EAF7FF;
-  --secondary-foreground: #102A72;
-  --muted: #EAF7FF;
-  --muted-foreground: #5B6B96;
-  --accent: #102A72;
+  --secondary: #E6F1EC;
+  --secondary-foreground: #183A37;
+  --muted: #E6F1EC;
+  --muted-foreground: #637572;
+  --accent: #183A37;
   --accent-foreground: #ffffff;
   --destructive: #DC2626;
-  --border: #CFE8FF;
-  --input: #CFE8FF;
-  --ring: #2563EB;
-  --chart-1: #2563EB;
-  --chart-2: #0284C7;
-  --chart-3: #38BDF8;
-  --chart-4: #102A72;
-  --chart-5: #5B6B96;
+  --border: #D6E4DE;
+  --input: #D6E4DE;
+  --ring: #F06B45;
+  --chart-1: #F06B45;
+  --chart-2: #3C8D78;
+  --chart-3: #9CCBB9;
+  --chart-4: #183A37;
+  --chart-5: #637572;
 }
 
 @layer base {
@@ -173,8 +173,8 @@
 
 /* Premium 2026 system: image-led, highly legible and conversion focused. */
 @layer components {
-  .editorial-display { font-family: var(--font-geist-sans), var(--font-devanagari), sans-serif; font-weight: 900; letter-spacing: -.055em; }
-  .eyebrow { font-size: .7rem; line-height: 1; font-weight: 900; text-transform: uppercase; letter-spacing: .22em; color: #2563eb; }
+  .editorial-display { font-family: var(--font-manrope), var(--font-devanagari), sans-serif; font-weight: 900; letter-spacing: -.055em; }
+  .eyebrow { font-size: .7rem; line-height: 1; font-weight: 900; text-transform: uppercase; letter-spacing: .22em; color: #F06B45; }
   .premium-card { background: rgba(255,255,255,.82); border: 1px solid rgba(191,219,254,.8); border-radius: 1.5rem; box-shadow: 0 20px 60px rgba(15,42,114,.08); backdrop-filter: blur(16px); transition: transform .3s ease, box-shadow .3s ease; }
   .premium-card:hover { transform: translateY(-5px); box-shadow: 0 28px 70px rgba(15,42,114,.14); }
   [data-slot="card"] { border-radius: 1.25rem; background: rgba(255,255,255,.9); box-shadow: 0 12px 40px rgba(15,42,114,.07); }
@@ -183,16 +183,16 @@
 
 /* Unified interior-page experience */
 @layer components {
-  .inner-page-section { position: relative; background: linear-gradient(180deg, #f8fcff 0%, #fff 12rem); }
+  .inner-page-section { position: relative; background: linear-gradient(180deg, #FAF8F3 0%, #fff 12rem); }
   .inner-page-section [data-slot="card"] { border: 1px solid #dbeafe; background: #fff; box-shadow: 0 10px 35px rgba(15,42,114,.06); }
   .inner-page-section h2 { font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.12; font-weight: 850; }
   .inner-page-section h3 { font-weight: 800; }
   .inner-page-section p { line-height: 1.75; }
   .inner-page-section table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; }
-  .inner-page-section th { background: #102a72; color: #fff; font-size: .75rem; letter-spacing: .05em; text-transform: uppercase; }
+  .inner-page-section th { background: #183A37; color: #fff; font-size: .75rem; letter-spacing: .05em; text-transform: uppercase; }
   .inner-page-section th, .inner-page-section td { padding: .9rem 1rem; }
   .inner-page-section input, .inner-page-section textarea, .inner-page-section button[role="combobox"] { min-height: 3rem; border-radius: .75rem; }
-  .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; border-radius: .75rem; background: #fff; color: #102a72; padding: .75rem 1rem; font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+  .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; border-radius: .75rem; background: #fff; color: #183A37; padding: .75rem 1rem; font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,.2); }
   .skip-link:focus { top: 1rem; }
 }
 @media (max-width: 640px) {
@@ -201,4 +201,21 @@
   .inner-page-section [data-slot="card-content"] { padding-inline: 1rem; }
   .inner-page-section table { font-size: .78rem; }
   .inner-page-section th, .inner-page-section td { padding: .7rem .6rem; }
+}
+
+/* Virat 2026 identity — warm, human and unmistakably educational. */
+@layer base {
+  body { font-family: var(--font-manrope), var(--font-devanagari), sans-serif; background-color: #FAF8F3; background-image: radial-gradient(circle at 8% 4%, rgba(156,203,185,.22), transparent 24rem), radial-gradient(circle at 92% 18%, rgba(240,107,69,.10), transparent 22rem); }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-lora), var(--font-devanagari), serif; letter-spacing: -.035em; }
+}
+@layer components {
+  .editorial-display { font-family: var(--font-lora), var(--font-devanagari), serif; font-weight: 700; letter-spacing: -.055em; }
+  .eyebrow { color: #D95836; }
+  .premium-card { border-color: rgba(156,203,185,.55); border-radius: 2rem .75rem 2rem .75rem; box-shadow: 0 18px 55px rgba(24,58,55,.09); }
+  .premium-card:hover { box-shadow: 0 26px 70px rgba(24,58,55,.15); }
+  [data-slot="card"] { border-color: #D6E4DE; border-radius: 1.5rem .5rem 1.5rem .5rem; box-shadow: 0 12px 36px rgba(24,58,55,.07); }
+  .glass-panel { border-color: rgba(156,203,185,.7); background: rgba(250,248,243,.9); box-shadow: 0 16px 50px rgba(24,58,55,.1); }
+  .inner-page-section { background: linear-gradient(180deg, #F1F6F2 0%, #FAF8F3 14rem); }
+  .inner-page-section [data-slot="card"] { border-color: #D6E4DE; background: rgba(255,255,255,.86); box-shadow: 0 12px 40px rgba(24,58,55,.07); }
+  .inner-page-section th { background: #183A37; }
 }
