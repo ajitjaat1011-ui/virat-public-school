@@ -1,0 +1,128 @@
+// Prisma schema for Virat Public School website
+// Uses libSQL (Turso) for edge-ready deployment on Cloudflare Pages
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Submissions from the "Apply Online" admission form
+model AdmissionApplication {
+  id              String   @id @default(cuid())
+  // Student details
+  studentName     String
+  dob             String
+  gender          String
+  applyingClass   String
+  // Parent details
+  fatherName      String
+  motherName      String
+  parentPhone     String
+  parentEmail     String
+  parentOccupation String?
+  address         String
+  // Previous school
+  previousSchool  String?
+  previousClass   String?
+  // Documents — stored as file URLs/names (uploads go to R2 in production)
+  documentUrls    String   @default("[]") // JSON array of file names
+  // Meta
+  status          String   @default("submitted") // submitted | reviewed | accepted | rejected
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Submissions from the Contact Us form
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  status    String   @default("new") // new | read | replied | archived
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// News and announcements — managed by school staff
+model NewsPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String?
+  content     String
+  category    String   @default("announcement") // announcement | event | news
+  imageUrl    String?
+  attachmentUrl String?
+  published   Boolean  @default(true)
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([published])
+  @@index([publishedAt])
+}
+
+// Calendar events — color-coded by category
+model CalendarEvent {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  category    String   @default("academic") // academic | cultural | sports | holiday
+  startDate   DateTime
+  endDate     DateTime?
+  location    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([startDate])
+}
+
+// Photo gallery albums
+model GalleryAlbum {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  coverUrl    String?
+  // JSON array of image URLs
+  images      String   @default("[]")
+  eventDate   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([eventDate])
+}
+
+// Faculty members
+model Faculty {
+  id            String   @id @default(cuid())
+  name          String
+  designation   String
+  qualification String?
+  subject       String?
+  department    String?
+  photoUrl      String?
+  bio           String?
+  displayOrder  Int      @default(0)
+  published     Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([department])
+  @@index([published])
+}
