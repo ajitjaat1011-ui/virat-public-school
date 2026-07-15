@@ -80,11 +80,11 @@ export const translations = {
       resultsBody:
         "We are proud of our students' outstanding performance in the RBSE examinations. The toppers listed below reflect the hard work of our students, the dedication of our teachers, and the trust placed in us by parents. Congratulations to all!",
       toppers: [
-        { name: "Ritesh Rajgarh", percent: "98.20%", position: "1" },
-        { name: "Furti Rajgarh", percent: "95.80%", position: "2" },
-        { name: "Aniket Rajgarh", percent: "95.00%", position: "3" },
-        { name: "Shri Ram Sisodia", percent: "91.40%", position: "4" },
-        { name: "Anurag", percent: "90.20%", position: "5" },
+        { name: "Rohit Yadav", subject: "Math", percent: "98.20%", position: "1" },
+        { name: "Prince Saini", subject: "Agriculture", percent: "95.80%", position: "2" },
+        { name: "Monika Saini", subject: "Bio", percent: "95.00%", position: "3" },
+        { name: "Aryan Dodwadiya", subject: "Bio", percent: "91.40%", position: "4" },
+        { name: "Bhagyashree", subject: "Math", percent: "90.20%", position: "5" },
       ],
       resultsMore: "View All Results",
       quickContactTitle: "Visit Our Campus",
@@ -338,11 +338,11 @@ export const translations = {
       resultsBody:
         "हम अपने छात्रों के RBSE परीक्षाओं में उत्कृष्ट प्रदर्शन पर गर्व महसूस करते हैं। नीचे सूचीबद्ध टॉपर्स हमारे छात्रों की मेहनत, हमारे शिक्षकों के समर्पण और अभिभावकों द्वारा हम पर रखे गए विश्वास को दर्शाते हैं। सभी को बधाई!",
       toppers: [
-        { name: "रितेश राजगढ़", percent: "98.20%", position: "1" },
-        { name: "फूर्ति राजगढ़", percent: "95.80%", position: "2" },
-        { name: "अनिकेत राजगढ़", percent: "95.00%", position: "3" },
-        { name: "श्रीराम सिसोदिया", percent: "91.40%", position: "4" },
-        { name: "अनुराग", percent: "90.20%", position: "5" },
+        { name: "रोहित यादव", subject: "math", percent: "98.20%", position: "1" },
+        { name: "प्रिंस सैनी", subject: "agriculture", percent: "95.80%", position: "2" },
+        { name: "मोनिका सैनी", subject: "bio", percent: "95.00%", position: "3" },
+        { name: "आर्यन डोडवाड़िया", subject: "bio", percent: "91.40%", position: "4" },
+        { name: "भाग्यश्री", subject: "math", percent: "90.20%", position: "5" },
       ],
       resultsMore: "सभी परिणाम देखें",
       quickContactTitle: "हमारे परिसर में आइए",

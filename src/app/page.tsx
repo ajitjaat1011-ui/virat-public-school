@@ -57,7 +57,7 @@ export default function HomePage() {
             <div className="bg-[var(--accent)] text-white rounded-[2rem] p-8 md:col-span-1 md:row-span-1 flex flex-col justify-center shadow-sm relative overflow-hidden group">
               <div className="absolute -right-4 -top-4 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700" aria-hidden />
               <span className="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2 relative z-10">RBSE 2025-26</span>
-              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 relative z-10 tracking-tight">98.5%</h4>
+              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 relative z-10 tracking-tight">98.20%</h4>
               <p className="text-sm text-blue-100 relative z-10 font-medium">District Topper Score</p>
             </div>
 
@@ -148,8 +148,11 @@ export default function HomePage() {
                   <p className="text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--accent)]">
                     {topper.percent}
                   </p>
-                  <p className="mt-2 text-xs md:text-sm font-medium text-[var(--ink)] leading-tight">
+                  <p className="mt-2 text-xs md:text-sm font-bold text-[var(--ink)] leading-tight">
                     {topper.name}
+                  </p>
+                  <p className="mt-1 text-[10px] md:text-xs font-semibold text-[var(--maroon)] uppercase tracking-wider">
+                    ({topper.subject})
                   </p>
                 </div>
               );
