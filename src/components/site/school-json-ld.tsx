@@ -19,14 +19,15 @@ export function SchoolJsonLd() {
       streetAddress: "Viratnagar",
       addressLocality: "Viratnagar",
       addressRegion: "Rajasthan",
+      postalCode: "324015",
       addressCountry: "IN",
     },
     areaServed: "Kotputli-Behror district, Rajasthan",
-    telephone: "+91-0000000000",
+    telephone: "+91-9636452501",
     email: "info@viratpublicschool.in",
     sameAs: [
+      "https://www.instagram.com/mahander_meena_86",
       "https://facebook.com",
-      "https://instagram.com",
       "https://youtube.com",
     ],
   };

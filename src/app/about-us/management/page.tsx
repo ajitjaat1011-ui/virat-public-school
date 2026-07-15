@@ -4,6 +4,8 @@ import { useLanguage } from "@/components/site/language-context";
 import { PageHero } from "@/components/site/page-hero";
 import { SubNav } from "@/components/site/sub-nav";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Instagram } from "lucide-react";
 
 export default function ManagementPage() {
   const { t } = useLanguage();
@@ -15,7 +17,7 @@ export default function ManagementPage() {
     { href: "/about-us/management", label: t.aboutSub.management },
   ];
 
-  // Placeholder committee members — to be replaced with real data from school office
+  // Placeholder committee members (apart from the director, who is featured above)
   const committee = [
     { name: "To be announced", designation: "Chairman", bio: "Profile to be supplied by the management office." },
     { name: "To be announced", designation: "Secretary", bio: "Profile to be supplied by the management office." },
@@ -47,32 +49,96 @@ export default function ManagementPage() {
                 {t.about.managementBody}
               </p>
 
-              <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {committee.map((member, idx) => (
-                  <Card key={idx} className="border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-lg transition-all bg-white text-center">
-                    <CardContent className="pt-6">
-                      <div className="w-20 h-20 rounded-full bg-[var(--cream)] mx-auto flex items-center justify-center mb-3">
-                        <span className="text-2xl font-bold text-[var(--maroon)]">
-                          {String(idx + 1).padStart(2, "0")}
-                        </span>
+              {/* Director — featured */}
+              <div className="mt-10">
+                <h3 className="text-xl font-bold text-[var(--maroon-deep)] mb-5">
+                  {t.about.directorTitle}
+                </h3>
+                <Card className="border-[var(--gold)] bg-white overflow-hidden shadow-md">
+                  <div className="h-1.5 bg-gradient-to-r from-[var(--gold)] to-[var(--maroon)]" />
+                  <CardContent className="pt-8 pb-8">
+                    <div className="grid md:grid-cols-[200px_1fr] gap-6 items-start">
+                      {/* Photo */}
+                      <div className="mx-auto md:mx-0">
+                        <div className="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden ring-4 ring-[var(--cream)] shadow-md">
+                          {/* Using next/image would require remote optimisation; we use a plain
+                              img tag since the site is statically exported with unoptimized images. */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src="/images/director-mahander-meena.jpg"
+                            alt={`${t.about.directorName} — ${t.about.directorTitle}, Virat Public School`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                        <p className="text-xs text-[var(--muted-ink)] text-center mt-2 italic">
+                          {t.about.directorName}
+                        </p>
                       </div>
-                      <h3 className="font-semibold text-[var(--maroon-deep)] text-sm">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs text-[var(--maroon)] font-medium mt-1 uppercase tracking-wide">
-                        {member.designation}
-                      </p>
-                      <p className="text-xs text-[var(--muted-ink)] mt-2 leading-relaxed">
-                        {member.bio}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
+
+                      {/* Bio */}
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--maroon)] mb-1">
+                          {t.about.directorTitle}
+                        </p>
+                        <h4 className="text-2xl font-bold text-[var(--maroon-deep)] mb-3">
+                          {t.about.directorName}
+                        </h4>
+                        <p className="text-sm text-[var(--ink)] leading-relaxed mb-5">
+                          {t.about.directorBio}
+                        </p>
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="border-[var(--maroon)] text-[var(--maroon)] hover:bg-[var(--maroon)] hover:text-white"
+                        >
+                          <a
+                            href="https://www.instagram.com/mahander_meena_86?igsh=MWYzZm5ocTM4YjJrNA=="
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Instagram className="mr-2 w-4 h-4" />
+                            {t.about.directorInstagram}
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Other committee members */}
+              <div className="mt-10">
+                <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-5">
+                  Committee Members
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {committee.map((member, idx) => (
+                    <Card key={idx} className="border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-lg transition-all bg-white text-center">
+                      <CardContent className="pt-6">
+                        <div className="w-20 h-20 rounded-full bg-[var(--cream)] mx-auto flex items-center justify-center mb-3">
+                          <span className="text-2xl font-bold text-[var(--maroon)]">
+                            {String(idx + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+                        <h4 className="font-semibold text-[var(--maroon-deep)] text-sm">
+                          {member.name}
+                        </h4>
+                        <p className="text-xs text-[var(--maroon)] font-medium mt-1 uppercase tracking-wide">
+                          {member.designation}
+                        </p>
+                        <p className="text-xs text-[var(--muted-ink)] mt-2 leading-relaxed">
+                          {member.bio}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
 
               <div className="mt-8 p-4 bg-[var(--cream)] rounded-lg">
                 <p className="text-xs text-[var(--muted-ink)] leading-relaxed">
-                  The profiles, photographs, and designations shown here are placeholders pending final confirmation from the management committee. Updated information will be published as soon as it becomes available.
+                  The profiles, photographs, and designations of other committee members are placeholders pending final confirmation from the management committee. Updated information will be published as soon as it becomes available.
                 </p>
               </div>
             </div>

@@ -124,7 +124,7 @@ export default function ContactPage() {
                   className="bg-[#25D366] hover:bg-[#1DA851] text-white"
                 >
                   <a
-                    href="https://wa.me/910000000000?text=Hello%2C%20I%20have%20an%20enquiry%20about%20Virat%20Public%20School."
+                    href="https://wa.me/919636452501?text=Hello%2C%20I%20have%20an%20enquiry%20about%20Virat%20Public%20School."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -140,7 +140,7 @@ export default function ContactPage() {
                   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full bg-[var(--cream)] hover:bg-[var(--maroon)] hover:text-white flex items-center justify-center transition-colors">
                     <Facebook className="w-4 h-4 text-[var(--maroon)]" />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-[var(--cream)] hover:bg-[var(--maroon)] hover:text-white flex items-center justify-center transition-colors">
+                  <a href="https://www.instagram.com/mahander_meena_86?igsh=MWYzZm5ocTM4YjJrNA==" target="_blank" rel="noopener noreferrer" aria-label="Director on Instagram" title="Director on Instagram" className="w-10 h-10 rounded-full bg-[var(--cream)] hover:bg-[var(--maroon)] hover:text-white flex items-center justify-center transition-colors">
                     <Instagram className="w-4 h-4 text-[var(--maroon)]" />
                   </a>
                   <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-full bg-[var(--cream)] hover:bg-[var(--maroon)] hover:text-white flex items-center justify-center transition-colors">

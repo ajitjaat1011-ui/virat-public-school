@@ -59,7 +59,7 @@ export const translations = {
         "Nurturing young minds in Viratnagar with knowledge, discipline, and character — rooted in values, ready for tomorrow.",
       welcomeTitle: "Welcome to Virat Public School",
       welcomeBody:
-        "Virat Public School is a premier educational institution in Viratnagar, Kotputli-Behror district of Rajasthan, dedicated to holistic development of every child. We blend India's rich educational heritage with modern pedagogy, supported by experienced faculty, well-equipped facilities, and a caring community. Our mission is to shape confident, compassionate, and capable citizens who carry the values of humility, discipline, and lifelong learning wherever they go.",
+        "Virat Public School is a premier educational institution in Viratnagar, Kotputli-Behror district of Rajasthan, dedicated to holistic development of every child. Affiliated with the Rajasthan Board of Secondary Education (RBSE), we blend India's rich educational heritage with modern pedagogy, supported by experienced faculty, well-equipped facilities, and a caring community. Our mission is to shape confident, compassionate, and capable citizens who carry the values of humility, discipline, and lifelong learning wherever they go.",
       featuresTitle: "Why Families Choose Us",
       features: [
         {
@@ -76,6 +76,17 @@ export const translations = {
         },
       ],
       latestNews: "Latest News & Announcements",
+      resultsTitle: "RBSE Results 2025-26 — Our Toppers",
+      resultsBody:
+        "We are proud of our students' outstanding performance in the RBSE examinations. The toppers listed below reflect the hard work of our students, the dedication of our teachers, and the trust placed in us by parents. Congratulations to all!",
+      toppers: [
+        { name: "Ritesh Rajgarh", percent: "98.20%", position: "1" },
+        { name: "Furti Rajgarh", percent: "95.80%", position: "2" },
+        { name: "Aniket Rajgarh", percent: "95.00%", position: "3" },
+        { name: "Shri Ram Sisodia", percent: "91.40%", position: "4" },
+        { name: "Anurag", percent: "90.20%", position: "5" },
+      ],
+      resultsMore: "View All Results",
       quickContactTitle: "Visit Our Campus",
       quickContactBody:
         "Located in the heart of Viratnagar. We welcome prospective parents for a campus tour and conversation with our admissions team.",
@@ -110,6 +121,11 @@ export const translations = {
       managementTitle: "Management Committee",
       managementBody:
         "The Virat Public School management committee brings together educators, community leaders, and professionals who collectively steward the institution's mission. Their guidance ensures that the school remains financially sound, academically ambitious, and deeply connected to the community it serves.",
+      directorTitle: "Director",
+      directorName: "Mahander Kumar Meena",
+      directorBio:
+        "Mahander Kumar Meena serves as the Director of Virat Public School, providing visionary leadership and unwavering commitment to value-based education in rural Rajasthan. Under his guidance, the school has grown into a trusted centre of learning, with a strong record of academic excellence — including outstanding RBSE results year after year — and a deep commitment to nurturing character, discipline, and curiosity in every child.",
+      directorInstagram: "Follow on Instagram",
     },
 
     // Academics
@@ -121,7 +137,7 @@ export const translations = {
         "At Virat Public School, our academic program is built on the belief that every child can learn deeply when taught with care, challenged with high expectations, and supported with patience. We follow a structured curriculum aligned with national and state board standards, enriched with project-based learning, digital tools, and continuous assessment. Our teachers do not simply deliver content; they mentor, question, and inspire — guiding students to think critically, communicate clearly, and apply their learning to the world around them. The sections below describe in detail what we teach, the classes we offer, the people who teach them, and the assessment rhythm that anchors our academic year.",
       curriculumTitle: "Curriculum",
       curriculumBody:
-        "Our curriculum is aligned with the affiliation granted by the relevant board (CBSE or RBSE — confirmation pending with school management) and is structured across three stages: primary (Classes I–V), upper primary (Classes VI–VIII), and secondary/senior secondary (Classes IX–XII). At the primary stage, the focus is on foundational literacy, numeracy, and curiosity-driven exploration through stories, play, and observation. Upper primary introduces formal subject disciplines — mathematics, science, social studies, languages — alongside computer literacy and creative arts. The secondary stage emphasises conceptual depth, laboratory practice, and analytical writing, culminating in board examinations. Senior secondary students choose one of three streams — Science, Commerce, or Arts — and follow a specialisation path that prepares them for higher education and competitive examinations. Throughout, our pedagogical approach favours understanding over memorisation, classroom dialogue over one-way lectures, and continuous formative assessment alongside summative tests.",
+        "Our curriculum is aligned with the Rajasthan Board of Secondary Education (RBSE) and is structured across three stages: primary (Classes I–V), upper primary (Classes VI–VIII), and secondary/senior secondary (Classes IX–XII). At the primary stage, the focus is on foundational literacy, numeracy, and curiosity-driven exploration through stories, play, and observation. Upper primary introduces formal subject disciplines — mathematics, science, social studies, languages — alongside computer literacy and creative arts. The secondary stage emphasises conceptual depth, laboratory practice, and analytical writing, culminating in the RBSE board examinations. Senior secondary students choose one of three streams — Science, Commerce, or Arts — and follow a specialisation path that prepares them for higher education and competitive examinations. Throughout, our pedagogical approach favours understanding over memorisation, classroom dialogue over one-way lectures, and continuous formative assessment alongside summative tests. Our students' consistent performance in RBSE board examinations — with multiple toppers scoring above 95% — is a testament to the rigour and care of our academic program.",
       classesTitle: "Classes Offered",
       classesIntro:
         "We offer continuous education from primary to senior secondary, with three streams at the senior secondary level. Each stage is designed to smoothly transition students to the next phase of learning.",
@@ -219,10 +235,10 @@ export const translations = {
       formTitle: "Send Us a Message",
       formBody: "Use the form below for general enquiries. For admission-specific queries, please use the Online Application page. We aim to respond within two working days.",
       addressTitle: "Our Address",
-      address: "Virat Public School, Viratnagar, Kotputli-Behror district, Rajasthan — 301704 (indicative PIN, please confirm with office).",
+      address: "Virat Public School, Viratnagar, Kotputli-Behror district, Rajasthan — 324015.",
       phoneTitle: "Phone",
-      phoneOffice: "Office: +91 — (to be confirmed)",
-      phoneAdmissions: "Admissions: +91 — (to be confirmed)",
+      phoneOffice: "Head Office: +91 96364 52501",
+      phoneAdmissions: "Education Officer: +91 94141 53736",
       emailTitle: "Email",
       emailGeneral: "info@viratpublicschool.in",
       emailAdmissions: "admissions@viratpublicschool.in",
@@ -310,7 +326,7 @@ export const translations = {
         "विराटनगर में ज्ञान, अनुशासन और चरित्र के साथ युवा मनों का संवर्धन — मूल्यों में जड़ित, कल के लिए तैयार।",
       welcomeTitle: "विराट पब्लिक स्कूल में आपका स्वागत है",
       welcomeBody:
-        "विराट पब्लिक स्कूल राजस्थान के कोटपुतली-बहरोर जिले के विराटनगर में एक प्रमुख शैक्षणिक संस्थान है, जो प्रत्येक बच्चे के समग्र विकास के लिए समर्पित है। हम भारत की समृद्ध शैक्षणिक विरासत को आधुनिक शिक्षण पद्धति के साथ जोड़ते हैं, जिसमें अनुभवी शिक्षक, सुसज्जित सुविधाएँ और एक चौकस समुदाय हमारे साथ है।",
+        "विराट पब्लिक स्कूल राजस्थान के कोटपुतली-बहरोर जिले के विराटनगर में एक प्रमुख शैक्षणिक संस्थान है, जो प्रत्येक बच्चे के समग्र विकास के लिए समर्पित है। राजस्थान माध्यमिक शिक्षा बोर्ड (RBSE) से संबद्ध, हम भारत की समृद्ध शैक्षणिक विरासत को आधुनिक शिक्षण पद्धति के साथ जोड़ते हैं, जिसमें अनुभवी शिक्षक, सुसज्जित सुविधाएँ और एक चौकस समुदाय हमारे साथ है।",
       featuresTitle: "परिवार हमें क्यों चुनते हैं",
       features: [
         { title: "अनुभवी शिक्षक मंडल", body: "दशकों के संयुक्त अनुभव वाले योग्य, चौकस शिक्षक प्रत्येक शिक्षार्थी का मार्गदर्शन करते हैं।" },
@@ -318,6 +334,17 @@ export const translations = {
         { title: "समग्र विकास", body: "खेल, कला, सांस्कृतिक कार्यक्रमों और मूल्य-आधारित शिक्षा के साथ संतुलित अध्ययन।" },
       ],
       latestNews: "ताज़ा समाचार एवं घोषणाएँ",
+      resultsTitle: "RBSE परिणाम 2025-26 — हमारे टॉपर्स",
+      resultsBody:
+        "हम अपने छात्रों के RBSE परीक्षाओं में उत्कृष्ट प्रदर्शन पर गर्व महसूस करते हैं। नीचे सूचीबद्ध टॉपर्स हमारे छात्रों की मेहनत, हमारे शिक्षकों के समर्पण और अभिभावकों द्वारा हम पर रखे गए विश्वास को दर्शाते हैं। सभी को बधाई!",
+      toppers: [
+        { name: "रितेश राजगढ़", percent: "98.20%", position: "1" },
+        { name: "फूर्ति राजगढ़", percent: "95.80%", position: "2" },
+        { name: "अनिकेत राजगढ़", percent: "95.00%", position: "3" },
+        { name: "श्रीराम सिसोदिया", percent: "91.40%", position: "4" },
+        { name: "अनुराग", percent: "90.20%", position: "5" },
+      ],
+      resultsMore: "सभी परिणाम देखें",
       quickContactTitle: "हमारे परिसर में आइए",
       quickContactBody:
         "विराटनगर के मध्य में स्थित। हम भावी अभिभावकों का परिसर भ्रमण और प्रवेश टीम से बातचीत के लिए स्वागत करते हैं।",
@@ -346,6 +373,11 @@ export const translations = {
       principalBody: "यह मेरे लिए सम्मान की बात है कि आपका विराट पब्लिक स्कूल में स्वागत करूँ। हमारे लिए शिक्षा केवल तथ्यों का संप्रेषण नहीं है — यह चरित्र का कोमल शिल्प, जिज्ञासा का सावधानीपूर्वक खेती, और आजीवन बनी रहने वाली आत्मविश्वास की स्थिर नींव है।",
       managementTitle: "प्रबंध समिति",
       managementBody: "विराट पब्लिक स्कूल की प्रबंध समिति शिक्षाविदों, समुदाय नेताओं और पेशेवरों को एक साथ लाती है जो सामूहिक रूप से संस्थान के मिशन का मार्गदर्शन करते हैं।",
+      directorTitle: "निदेशक",
+      directorName: "महांदेर कुमार मीणा",
+      directorBio:
+        "महांदेर कुमार मीणा विराट पब्लिक स्कूल के निदेशक के रूप में कार्य करते हैं, ग्रामीण राजस्थान में मूल्य-आधारित शिक्षा के लिए दूरदर्शी नेतृत्व और अटूट प्रतिबद्धता प्रदान करते हैं। उनके मार्गदर्शन में, स्कूल सीखने का एक भरोसेमंद केंद्र बन गया है, जिसमें शैक्षणिक उत्कृष्टता का मजबूत रिकॉर्ड है — जिसमें हर वर्ष उत्कृष्ट RBSE परिणाम शामिल हैं — और हर बच्चे में चरित्र, अनुशासन और जिज्ञासा को पोषित करने की गहरी प्रतिबद्धता है।",
+      directorInstagram: "इंस्टाग्राम पर फ़ॉलो करें",
     },
 
     academics: {
@@ -353,7 +385,7 @@ export const translations = {
       heroBody: "एक पाठ्यक्रम जो कठोरता को जिज्ञासा के साथ संतुलित करता है — स्वतंत्र चिंतकों और आजीवन शिक्षार्थियों के विकास हेतु डिज़ाइन किया गया।",
       overview: "विराट पब्लिक स्कूल में, हमारा शैक्षणिक कार्यक्रम इस विश्वास पर निर्मित है कि प्रत्येक बच्चा गहराई से सीख सकता है जब उसे देखभाल के साथ पढ़ाया जाए, उच्च अपेक्षाओं के साथ चुनौती दी जाए, और धैर्य के साथ सहारा दिया जाए।",
       curriculumTitle: "पाठ्यक्रम",
-      curriculumBody: "हमारा पाठ्यक्रम संबंधित बोर्ड (CBSE या RBSE — पुष्टि स्कूल प्रबंधन से लंबित) द्वारा प्रदत्त संबद्धता के अनुरूप है और तीन चरणों में संरचित है।",
+      curriculumBody: "हमारा पाठ्यक्रम राजस्थान माध्यमिक शिक्षा बोर्ड (RBSE) के अनुरूप है और तीन चरणों में संरचित है — प्राथमिक (कक्षा I–V), उच्च प्राथमिक (कक्षा VI–VIII), और माध्यमिक/वरिष्ठ माध्यमिक (कक्षा IX–XII)। प्राथमिक चरण में, ध्यान बुनियादी साक्षरता, संख्या ज्ञान और कहानियों, खेल और अवलोकन के माध्यम से जिज्ञासा-संचालित अन्वेषण पर है। उच्च प्राथमिक औपचारिक विषय अनुशासन प्रस्तुत करता है। माध्यमिक चरण RBSE बोर्ड परीक्षाओं में समापन होता है। वरिष्ठ माध्यमिक छात्र तीन धाराओं में से एक चुनते हैं — विज्ञान, वाणिज्य, या कला। हमारे छात्रों का RBSE बोर्ड परीक्षाओं में निरंतर प्रदर्शन — कई टॉपर्स 95% से ऊपर — हमारे शैक्षणिक कार्यक्रम की कठोरता और देखभाल का प्रमाण है।",
       classesTitle: "पेश की जाने वाली कक्षाएँ",
       classesIntro: "हम प्राथमिक से वरिष्ठ माध्यमिक तक निरंतर शिक्षा प्रदान करते हैं, वरिष्ठ माध्यमिक स्तर पर तीन धाराएँ के साथ।",
       classes: [
@@ -434,10 +466,10 @@ export const translations = {
       formTitle: "हमें संदेश भेजें",
       formBody: "सामान्य पूछताछ के लिए नीचे दिए फ़ॉर्म का उपयोग करें।",
       addressTitle: "हमारा पता",
-      address: "विराट पब्लिक स्कूल, विराटनगर, कोटपुतली-बहरोर जिला, राजस्थान।",
+      address: "विराट पब्लिक स्कूल, विराटनगर, कोटपुतली-बहरोर जिला, राजस्थान — 324015।",
       phoneTitle: "फ़ोन",
-      phoneOffice: "कार्यालय: +91 — (पुष्टि की जाएगी)",
-      phoneAdmissions: "प्रवेश: +91 — (पुष्टि की जाएगी)",
+      phoneOffice: "हेड ऑफिस: +91 96364 52501",
+      phoneAdmissions: "शिक्षा अधिकारी: +91 94141 53736",
       emailTitle: "ईमेल",
       emailGeneral: "info@viratpublicschool.in",
       emailAdmissions: "admissions@viratpublicschool.in",

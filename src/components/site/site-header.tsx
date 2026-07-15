@@ -62,10 +62,10 @@ export function SiteHeader() {
           </p>
           <div className="flex items-center gap-3 ml-auto">
             <a
-              href="tel:+910000000000"
+              href="tel:+919636452501"
               className="hover:text-[var(--gold)] transition-colors"
             >
-              +91 00000 00000
+              +91 96364 52501
             </a>
             <span className="text-white/30">|</span>
             <a

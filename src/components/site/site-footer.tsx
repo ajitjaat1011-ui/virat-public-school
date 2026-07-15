@@ -69,7 +69,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[var(--gold)] flex-shrink-0" />
-                <a href="tel:+910000000000" className="text-white/80 hover:text-[var(--gold)]">
+                <a href="tel:+919636452501" className="text-white/80 hover:text-[var(--gold)]">
                   {t.contact.phoneOffice}
                 </a>
               </li>
@@ -86,8 +86,18 @@ export function SiteFooter() {
             </ul>
 
             {/* Social */}
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-5 flex items-center gap-3 flex-wrap">
               <span className="text-sm text-white/70 mr-2">{t.contact.social}:</span>
+              <a
+                href="https://www.instagram.com/mahander_meena_86?igsh=MWYzZm5ocTM4YjJrNA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Director on Instagram"
+                title="Director on Instagram"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[var(--gold)] hover:text-[var(--maroon-deep)] flex items-center justify-center transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
               <a
                 href="https://facebook.com"
                 target="_blank"
@@ -96,15 +106,6 @@ export function SiteFooter() {
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-[var(--gold)] hover:text-[var(--maroon-deep)] flex items-center justify-center transition-colors"
               >
                 <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[var(--gold)] hover:text-[var(--maroon-deep)] flex items-center justify-center transition-colors"
-              >
-                <Instagram className="w-4 h-4" />
               </a>
               <a
                 href="https://youtube.com"
