@@ -73,7 +73,7 @@ export default function ContactPage() {
 
               {/* Info cards */}
               <div className="grid sm:grid-cols-2 gap-4">
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <MapPin className="w-5 h-5 text-[var(--maroon)]" />
@@ -82,7 +82,7 @@ export default function ContactPage() {
                     <p className="text-xs text-[var(--ink)] leading-relaxed">{t.contact.address}</p>
                   </CardContent>
                 </Card>
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <Phone className="w-5 h-5 text-[var(--maroon)]" />
@@ -92,7 +92,7 @@ export default function ContactPage() {
                     <p className="text-xs text-[var(--ink)]">{t.contact.phoneAdmissions}</p>
                   </CardContent>
                 </Card>
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <Mail className="w-5 h-5 text-[var(--maroon)]" />
@@ -106,7 +106,7 @@ export default function ContactPage() {
                     </a>
                   </CardContent>
                 </Card>
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <Clock className="w-5 h-5 text-[var(--maroon)]" />
@@ -166,7 +166,7 @@ export default function ContactPage() {
 
             {/* Contact form */}
             <div>
-              <Card className="border-[var(--cream)] bg-white">
+              <Card className="border-[var(--line)] bg-[var(--surface)]">
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1">
                     {t.contact.formTitle}

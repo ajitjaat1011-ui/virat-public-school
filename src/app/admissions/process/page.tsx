@@ -73,7 +73,7 @@ export default function AdmissionProcessPage() {
               {/* Detailed steps */}
               <div className="space-y-6">
                 {detailedSteps.map((s) => (
-                  <Card key={s.step} className="border-[var(--cream)] bg-white overflow-hidden">
+                  <Card key={s.step} className="border-[var(--line)] bg-[var(--surface)] overflow-hidden">
                     <div className="flex flex-col md:flex-row">
                       <div className="bg-[var(--maroon)] text-white p-5 md:w-32 flex flex-row md:flex-col items-center justify-center gap-2">
                         <span className="text-4xl font-bold">{s.step}</span>
@@ -91,7 +91,7 @@ export default function AdmissionProcessPage() {
                         <p className="text-sm text-[var(--ink)] leading-relaxed mb-3">
                           {s.body}
                         </p>
-                        <div className="pt-3 border-t border-[var(--cream)]">
+                        <div className="pt-3 border-t border-[var(--line)]">
                           <p className="text-xs font-semibold uppercase tracking-wider text-[var(--maroon)] mb-1">
                             What to bring
                           </p>

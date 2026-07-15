@@ -79,7 +79,7 @@ export default function CurriculumPage() {
               {/* Stage-by-stage */}
               <div className="space-y-6">
                 {stages.map((s, idx) => (
-                  <Card key={idx} className="border-[var(--cream)] bg-white overflow-hidden">
+                  <Card key={idx} className="border-[var(--line)] bg-[var(--surface)] overflow-hidden">
                     <div className="h-1 bg-[var(--gold)]" />
                     <CardContent className="pt-6">
                       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-3">

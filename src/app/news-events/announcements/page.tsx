@@ -79,7 +79,7 @@ export default function AnnouncementsPage() {
               </p>
 
               {announcements.map((item, idx) => (
-                <Card key={idx} className="border-[var(--cream)] bg-white hover:shadow-md transition-shadow">
+                <Card key={idx} className="border-[var(--line)] bg-[var(--surface)] transition-colors">
                   <CardContent className="pt-5">
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                       {/* Date block */}

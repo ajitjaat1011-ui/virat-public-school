@@ -54,7 +54,7 @@ export default function AboutPage() {
                     href={href}
                     className="group"
                   >
-                    <Card className="h-full border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-lg transition-all bg-white">
+                    <Card className="h-full border-[var(--line)] hover:border-[var(--gold)] transition-colors bg-[var(--surface)]">
                       <CardContent className="pt-6">
                         <div className="w-12 h-12 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3 group-hover:bg-[var(--maroon)] transition-colors">
                           <Icon className="w-6 h-6 text-[var(--maroon)] group-hover:text-white transition-colors" />

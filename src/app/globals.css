@@ -44,6 +44,8 @@
   --color-gold: var(--gold);
   --color-ink: var(--ink);
   --color-muted-ink: var(--muted-ink);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
   --color-success: var(--success);
   --color-alert: var(--alert);
   --radius-sm: calc(var(--radius) - 4px);
@@ -54,69 +56,71 @@
 
 :root {
   --radius: 0.5rem;
-  /* Brand palette — Virat Public School */
+  /* Brand palette — Virat Public School (refined: off-white base + charcoal text) */
   --maroon: #800000;          /* Primary brand */
   --maroon-deep: #5C0000;     /* Cover backgrounds, footer, hover */
-  --cream: #F5F1E8;           /* Surface / section background */
-  --gold: #D4AF37;            /* Accent — dividers, links, badges */
-  --ink: #1A1A1A;             /* Body text */
-  --muted-ink: #6B5B5B;       /* Captions, meta */
+  --cream: #F2EFE8;           /* Soft warm grey-cream for section backgrounds */
+  --gold: #C9A227;            /* Accent — slightly muted gold (classier than #D4AF37) */
+  --ink: #1F1B1A;             /* Body text — dark charcoal, not pure black */
+  --muted-ink: #6B6360;       /* Captions, meta — warm grey */
+  --surface: #FFFFFF;         /* Cards / raised surfaces */
+  --line: #E8E3DA;            /* Hairline borders — soft warm grey */
   --success: #2E7D32;
   --alert: #C62828;
 
-  /* Mapped shadcn tokens → brand */
-  --background: #FFFFFF;
-  --foreground: #1A1A1A;
+  /* Page background — warm off-white (NOT bright white) */
+  --background: #FAF8F4;
+  --foreground: #1F1B1A;
   --card: #FFFFFF;
-  --card-foreground: #1A1A1A;
+  --card-foreground: #1F1B1A;
   --popover: #FFFFFF;
-  --popover-foreground: #1A1A1A;
-  --primary: #800000;             /* Maroon */
+  --popover-foreground: #1F1B1A;
+  --primary: #800000;
   --primary-foreground: #FFFFFF;
-  --secondary: #F5F1E8;           /* Cream */
+  --secondary: #F2EFE8;
   --secondary-foreground: #5C0000;
-  --muted: #F5F1E8;
-  --muted-foreground: #6B5B5B;
-  --accent: #D4AF37;              /* Gold */
+  --muted: #F2EFE8;
+  --muted-foreground: #6B6360;
+  --accent: #C9A227;
   --accent-foreground: #5C0000;
   --destructive: #C62828;
-  --border: #E8DFC8;              /* Cream-tinted border */
-  --input: #E8DFC8;
-  --ring: #D4AF37;
+  --border: #E8E3DA;
+  --input: #E8E3DA;
+  --ring: #C9A227;
   --chart-1: #800000;
-  --chart-2: #D4AF37;
+  --chart-2: #C9A227;
   --chart-3: #2E7D32;
   --chart-4: #5C0000;
-  --chart-5: #6B5B5B;
-  --sidebar: #5C0000;             /* Deep maroon sidebar */
-  --sidebar-foreground: #F5F1E8;
-  --sidebar-primary: #D4AF37;
+  --chart-5: #6B6360;
+  --sidebar: #5C0000;
+  --sidebar-foreground: #F2EFE8;
+  --sidebar-primary: #C9A227;
   --sidebar-primary-foreground: #5C0000;
   --sidebar-accent: #800000;
-  --sidebar-accent-foreground: #F5F1E8;
-  --sidebar-border: rgba(245, 241, 232, 0.15);
-  --sidebar-ring: #D4AF37;
+  --sidebar-accent-foreground: #F2EFE8;
+  --sidebar-border: rgba(242, 239, 232, 0.15);
+  --sidebar-ring: #C9A227;
 }
 
 .dark {
   --background: #1A0E0E;
-  --foreground: #F5F1E8;
+  --foreground: #F2EFE8;
   --card: #2A1010;
-  --card-foreground: #F5F1E8;
+  --card-foreground: #F2EFE8;
   --popover: #2A1010;
-  --popover-foreground: #F5F1E8;
-  --primary: #D4AF37;
+  --popover-foreground: #F2EFE8;
+  --primary: #C9A227;
   --primary-foreground: #1A0E0E;
   --secondary: #3A1010;
-  --secondary-foreground: #F5F1E8;
+  --secondary-foreground: #F2EFE8;
   --muted: #2A1010;
   --muted-foreground: #C4B8A8;
-  --accent: #D4AF37;
+  --accent: #C9A227;
   --accent-foreground: #1A0E0E;
   --destructive: #E57373;
-  --border: rgba(245, 241, 232, 0.12);
-  --input: rgba(245, 241, 232, 0.12);
-  --ring: #D4AF37;
+  --border: rgba(242, 239, 232, 0.12);
+  --input: rgba(242, 239, 232, 0.12);
+  --ring: #C9A227;
 }
 
 @layer base {
@@ -126,30 +130,39 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Slight font smoothing for the off-white base */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
     color: var(--maroon-deep);
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
-  /* Decorative gold divider */
+  /* Reduce default heading size on mobile for better balance */
+  @media (max-width: 640px) {
+    h1 { font-size: 1.875rem; line-height: 1.2; }
+    h2 { font-size: 1.5rem; line-height: 1.25; }
+  }
+  /* Decorative gold accent — slim, modern */
   .gold-divider {
-    height: 3px;
-    width: 64px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    border-radius: 2px;
+    height: 2px;
+    width: 48px;
+    background: var(--gold);
+    border-radius: 1px;
   }
   .gold-divider-center {
-    height: 3px;
-    width: 64px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    border-radius: 2px;
+    height: 2px;
+    width: 48px;
+    background: var(--gold);
+    border-radius: 1px;
     margin: 0 auto;
   }
 }
 
 @layer utilities {
   .bg-cream { background-color: var(--cream); }
+  .bg-surface { background-color: var(--surface); }
   .bg-maroon { background-color: var(--maroon); }
   .bg-maroon-deep { background-color: var(--maroon-deep); }
   .text-maroon { color: var(--maroon); }
@@ -158,5 +171,26 @@
   .text-ink { color: var(--ink); }
   .text-muted-ink { color: var(--muted-ink); }
   .border-gold { border-color: var(--gold); }
+  .border-line { border-color: var(--line); }
   .ring-gold { box-shadow: 0 0 0 2px var(--gold); }
+  /* Subtle elevated card — single hairline border + soft shadow on hover only */
+  .card-flat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .card-flat:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 16px -8px rgba(92, 0, 0, 0.08);
+  }
+  /* Subtle dotted/line pattern for hero backgrounds (replaces busy images) */
+  .bg-pattern-subtle {
+    background-image: radial-gradient(circle at 1px 1px, rgba(201, 162, 39, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .bg-pattern-dots {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
 }

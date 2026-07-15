@@ -77,12 +77,12 @@ export default function FacultyPage() {
 
               {departments.map((dept) => (
                 <div key={dept.name}>
-                  <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4 pb-2 border-b border-[var(--cream)]">
+                  <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4 pb-2 border-b border-[var(--line)]">
                     {dept.name}
                   </h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {dept.members.map((m, idx) => (
-                      <Card key={idx} className="border-[var(--cream)] bg-white hover:shadow-md transition-shadow">
+                      <Card key={idx} className="border-[var(--line)] bg-[var(--surface)] transition-colors">
                         <CardContent className="pt-5 pb-5">
                           <div className="flex items-center gap-3">
                             <div className="w-12 h-12 rounded-full bg-[var(--cream)] flex items-center justify-center flex-shrink-0">

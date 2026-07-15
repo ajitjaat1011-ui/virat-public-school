@@ -108,7 +108,7 @@ export default function ApplyPage() {
         />
         <section className="py-16 md:py-20">
           <div className="container mx-auto px-4 max-w-2xl">
-            <Card className="border-[var(--cream)] bg-white text-center">
+            <Card className="border-[var(--line)] bg-[var(--surface)] text-center">
               <CardContent className="pt-10 pb-10">
                 <div className="w-16 h-16 rounded-full bg-[var(--success)]/10 flex items-center justify-center mx-auto mb-5">
                   <CheckCircle2 className="w-9 h-9 text-[var(--success)]" />
@@ -159,7 +159,7 @@ export default function ApplyPage() {
             <div>
               <form onSubmit={onSubmit} className="space-y-8">
                 {/* Student details */}
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4">
                       Student Details
@@ -206,7 +206,7 @@ export default function ApplyPage() {
                 </Card>
 
                 {/* Parent details */}
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4">
                       Parent / Guardian Details
@@ -241,7 +241,7 @@ export default function ApplyPage() {
                 </Card>
 
                 {/* Previous school */}
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1">
                       Previous School (if applicable)
@@ -263,7 +263,7 @@ export default function ApplyPage() {
                 </Card>
 
                 {/* Documents */}
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1">
                       Document Upload
@@ -274,7 +274,7 @@ export default function ApplyPage() {
 
                     <label
                       htmlFor="documents"
-                      className="flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-[var(--cream)] rounded-lg cursor-pointer hover:border-[var(--gold)] transition-colors"
+                      className="flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-[var(--line)] rounded-lg cursor-pointer hover:border-[var(--gold)] transition-colors"
                     >
                       <Upload className="w-8 h-8 text-[var(--maroon)]" />
                       <span className="text-sm font-medium text-[var(--maroon-deep)]">

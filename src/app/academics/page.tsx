@@ -51,7 +51,7 @@ export default function AcademicsPage() {
               <div className="grid sm:grid-cols-2 gap-5">
                 {linkCards.map(({ href, icon: Icon, title, body }) => (
                   <Link key={href} href={href} className="group">
-                    <Card className="h-full border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-lg transition-all bg-white">
+                    <Card className="h-full border-[var(--line)] hover:border-[var(--gold)] transition-colors bg-[var(--surface)]">
                       <CardContent className="pt-6">
                         <div className="flex items-start gap-3">
                           <div className="w-11 h-11 rounded-lg bg-[var(--cream)] flex items-center justify-center group-hover:bg-[var(--maroon)] transition-colors flex-shrink-0">

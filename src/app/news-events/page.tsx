@@ -97,7 +97,7 @@ export default function NewsEventsPage() {
                 <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4">Recent Updates</h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {recent.map((item, idx) => (
-                    <Card key={idx} className="border-[var(--cream)] bg-white hover:shadow-md transition-shadow flex flex-col">
+                    <Card key={idx} className="border-[var(--line)] bg-[var(--surface)] transition-colors flex flex-col">
                       <div className="h-1.5 bg-[var(--gold)] rounded-t-lg" />
                       <CardContent className="pt-5 flex-1 flex flex-col">
                         <div className="flex items-center gap-2 text-xs text-[var(--muted-ink)] mb-2">
@@ -130,7 +130,7 @@ export default function NewsEventsPage() {
               <div className="grid sm:grid-cols-3 gap-5">
                 {linkCards.map(({ href, title, body }) => (
                   <Link key={href} href={href} className="group">
-                    <Card className="h-full border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-md transition-all bg-white">
+                    <Card className="h-full border-[var(--line)] hover:border-[var(--gold)] hover:shadow-md transition-all bg-[var(--surface)]">
                       <CardContent className="pt-5">
                         <h4 className="font-semibold text-[var(--maroon-deep)] mb-2 group-hover:text-[var(--maroon)] transition-colors">
                           {title}

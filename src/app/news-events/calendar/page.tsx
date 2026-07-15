@@ -99,7 +99,7 @@ export default function CalendarPage() {
                 const [year, month] = monthKey.split("-");
                 const monthName = MONTHS[parseInt(month) - 1];
                 return (
-                  <Card key={monthKey} className="border-[var(--cream)] bg-white overflow-hidden">
+                  <Card key={monthKey} className="border-[var(--line)] bg-[var(--surface)] overflow-hidden">
                     <div className="bg-[var(--maroon)] text-white px-5 py-3 flex items-center justify-between">
                       <h3 className="font-bold">{monthName} {year}</h3>
                       <span className="text-xs text-white/80">{monthEvents.length} event{monthEvents.length !== 1 ? "s" : ""}</span>

@@ -42,7 +42,7 @@ export default function ClassesPage() {
               {/* Classes grid */}
               <div className="grid sm:grid-cols-2 gap-5">
                 {t.academics.classes.map((cls, idx) => (
-                  <Card key={idx} className="border-[var(--cream)] bg-white hover:border-[var(--gold)] transition-colors">
+                  <Card key={idx} className="border-[var(--line)] bg-[var(--surface)] hover:border-[var(--gold)] transition-colors">
                     <CardContent className="pt-6">
                       <div className="flex items-baseline gap-3 mb-2">
                         <span className="text-3xl font-bold text-[var(--gold)]">

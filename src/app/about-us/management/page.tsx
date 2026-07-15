@@ -54,7 +54,7 @@ export default function ManagementPage() {
                 <h3 className="text-xl font-bold text-[var(--maroon-deep)] mb-5">
                   {t.about.directorTitle}
                 </h3>
-                <Card className="border-[var(--gold)] bg-white overflow-hidden shadow-md">
+                <Card className="border-[var(--gold)] bg-[var(--surface)] overflow-hidden shadow-md">
                   <div className="h-1.5 bg-gradient-to-r from-[var(--gold)] to-[var(--maroon)]" />
                   <CardContent className="pt-8 pb-8">
                     <div className="grid md:grid-cols-[200px_1fr] gap-6 items-start">
@@ -114,7 +114,7 @@ export default function ManagementPage() {
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {committee.map((member, idx) => (
-                    <Card key={idx} className="border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-lg transition-all bg-white text-center">
+                    <Card key={idx} className="border-[var(--line)] hover:border-[var(--gold)] transition-colors bg-[var(--surface)] text-center">
                       <CardContent className="pt-6">
                         <div className="w-20 h-20 rounded-full bg-[var(--cream)] mx-auto flex items-center justify-center mb-3">
                           <span className="text-2xl font-bold text-[var(--maroon)]">

@@ -32,7 +32,7 @@ export default function VisionMissionPage() {
             <div className="space-y-10">
               {/* Vision & Mission cards */}
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-lg bg-[var(--maroon)] flex items-center justify-center mb-2">
                       <Compass className="w-6 h-6 text-white" />
@@ -46,7 +46,7 @@ export default function VisionMissionPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-lg bg-[var(--maroon)] flex items-center justify-center mb-2">
                       <Target className="w-6 h-6 text-white" />
@@ -76,7 +76,7 @@ export default function VisionMissionPage() {
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {t.about.values.map((value, idx) => (
-                    <Card key={idx} className="border-[var(--cream)] hover:border-[var(--gold)] transition-colors bg-white">
+                    <Card key={idx} className="border-[var(--line)] hover:border-[var(--gold)] transition-colors bg-[var(--surface)]">
                       <CardContent className="pt-6">
                         <div className="text-3xl font-bold text-[var(--gold)] mb-2">
                           0{idx + 1}

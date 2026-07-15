@@ -67,7 +67,7 @@ export default function GalleryPage() {
                     onClick={() => setLightbox(album)}
                     className="group text-left focus:outline-none focus:ring-2 focus:ring-[var(--gold)] rounded-lg overflow-hidden"
                   >
-                    <Card className="border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-lg transition-all bg-white overflow-hidden h-full">
+                    <Card className="border-[var(--line)] hover:border-[var(--gold)] transition-colors bg-[var(--surface)] overflow-hidden h-full">
                       {/* Thumbnail */}
                       <div className={`aspect-[4/3] bg-gradient-to-br ${album.gradient} relative flex items-center justify-center`}>
                         <span className="text-5xl opacity-50">{album.emoji}</span>
@@ -147,7 +147,7 @@ export default function GalleryPage() {
               <Button
                 onClick={() => setLightbox(null)}
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[var(--maroon-deep)]"
+                className="border-white text-white hover:bg-[var(--surface)] hover:text-[var(--maroon-deep)]"
               >
                 Close
               </Button>

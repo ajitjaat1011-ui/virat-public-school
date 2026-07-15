@@ -49,10 +49,10 @@ export default function HistoryPage() {
               <h3 className="text-xl font-bold text-[var(--maroon-deep)] mt-12 mb-6">
                 Our Journey — Key Milestones
               </h3>
-              <ol className="relative border-l-2 border-[var(--cream)] ml-3 space-y-8">
+              <ol className="relative border-l-2 border-[var(--line)] ml-3 space-y-8">
                 {milestones.map((m, idx) => (
                   <li key={idx} className="ml-6">
-                    <span className="absolute -left-[11px] w-5 h-5 rounded-full bg-[var(--gold)] ring-4 ring-white" />
+                    <span className="absolute -left-[11px] w-5 h-5 rounded-full bg-[var(--gold)] ring-1 ring-[var(--line)]" />
                     <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
                       <span className="text-sm font-bold text-[var(--maroon)] uppercase tracking-wide">
                         {m.year}

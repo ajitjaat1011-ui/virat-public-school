@@ -52,7 +52,7 @@ export default function ExaminationsPage() {
               </div>
 
               {/* Schedule table */}
-              <div className="overflow-x-auto rounded-lg border border-[var(--cream)]">
+              <div className="overflow-x-auto rounded-lg border border-[var(--line)]">
                 <table className="w-full text-sm">
                   <thead className="bg-[var(--maroon)] text-white">
                     <tr>
@@ -66,7 +66,7 @@ export default function ExaminationsPage() {
                     {schedule.map((row, idx) => (
                       <tr
                         key={idx}
-                        className={idx % 2 === 0 ? "bg-white" : "bg-[var(--cream)]/50"}
+                        className={idx % 2 === 0 ? "bg-[var(--surface)]" : "bg-[var(--cream)]/50"}
                       >
                         <td className="px-4 py-3 font-medium text-[var(--maroon-deep)]">
                           {row.exam}

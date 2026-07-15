@@ -44,7 +44,7 @@ export default function AdmissionsPage() {
               {/* 4-step process */}
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 {t.admissions.steps.map((step, idx) => (
-                  <Card key={idx} className="border-[var(--cream)] bg-white hover:border-[var(--gold)] transition-colors">
+                  <Card key={idx} className="border-[var(--line)] bg-[var(--surface)] hover:border-[var(--gold)] transition-colors">
                     <CardContent className="pt-6">
                       <div className="w-10 h-10 rounded-full bg-[var(--maroon)] text-white flex items-center justify-center font-bold mb-3">
                         {idx + 1}
@@ -69,7 +69,7 @@ export default function AdmissionsPage() {
                   { href: "/admissions/eligibility", title: t.admissionsSub.eligibility, body: "Age criteria by class and the document checklist." },
                 ].map(({ href, title, body }) => (
                   <Link key={href} href={href} className="group">
-                    <Card className="h-full border-[var(--cream)] hover:border-[var(--gold)] hover:shadow-md transition-all bg-white">
+                    <Card className="h-full border-[var(--line)] hover:border-[var(--gold)] hover:shadow-md transition-all bg-[var(--surface)]">
                       <CardContent className="pt-6 flex items-start justify-between gap-3">
                         <div>
                           <h3 className="font-semibold text-[var(--maroon-deep)] mb-1">{title}</h3>

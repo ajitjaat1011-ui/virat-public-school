@@ -49,7 +49,7 @@ export default function EligibilityPage() {
                 <p className="text-xs text-[var(--muted-ink)] mb-4">
                   Minimum age required for admission to each class. Children must have completed the stated age by 31 March of the academic year for which admission is sought.
                 </p>
-                <div className="overflow-x-auto rounded-lg border border-[var(--cream)]">
+                <div className="overflow-x-auto rounded-lg border border-[var(--line)]">
                   <table className="w-full text-sm">
                     <thead className="bg-[var(--maroon)] text-white">
                       <tr>
@@ -60,7 +60,7 @@ export default function EligibilityPage() {
                     </thead>
                     <tbody>
                       {t.admissions.ageCriteria.map((row, idx) => (
-                        <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-[var(--cream)]/50"}>
+                        <tr key={idx} className={idx % 2 === 0 ? "bg-[var(--surface)]" : "bg-[var(--cream)]/50"}>
                           <td className="px-4 py-3 font-medium text-[var(--maroon-deep)]">{row.class}</td>
                           <td className="px-4 py-3 text-[var(--ink)]">{row.age}</td>
                           <td className="px-4 py-3 text-[var(--ink)]">
@@ -85,7 +85,7 @@ export default function EligibilityPage() {
                 <p className="text-xs text-[var(--muted-ink)] mb-4">
                   The following documents must be submitted along with the application form. Incomplete applications will not be processed.
                 </p>
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
                     <ul className="space-y-2.5">
                       {t.admissions.documents.map((doc, idx) => (

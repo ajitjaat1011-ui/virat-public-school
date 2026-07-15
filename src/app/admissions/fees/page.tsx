@@ -70,7 +70,7 @@ export default function FeesPage() {
               </Card>
 
               {/* Main fee table */}
-              <div className="overflow-x-auto rounded-lg border border-[var(--cream)]">
+              <div className="overflow-x-auto rounded-lg border border-[var(--line)]">
                 <table className="w-full text-sm">
                   <thead className="bg-[var(--maroon)] text-white">
                     <tr>
@@ -82,7 +82,7 @@ export default function FeesPage() {
                   </thead>
                   <tbody>
                     {feeRows.map((row, idx) => (
-                      <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-[var(--cream)]/50"}>
+                      <tr key={idx} className={idx % 2 === 0 ? "bg-[var(--surface)]" : "bg-[var(--cream)]/50"}>
                         <td className="px-4 py-3 font-medium text-[var(--maroon-deep)]">{row.class}</td>
                         <td className="px-4 py-3 text-[var(--ink)]">{row.admission}</td>
                         <td className="px-4 py-3 text-[var(--ink)]">{row.annual}</td>
@@ -113,7 +113,7 @@ export default function FeesPage() {
 
               {/* Concessions */}
               <div className="grid md:grid-cols-2 gap-4">
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
                     <h4 className="font-semibold text-[var(--maroon-deep)] mb-2">Sibling Concession</h4>
                     <p className="text-sm text-[var(--ink)] leading-relaxed">
@@ -121,7 +121,7 @@ export default function FeesPage() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="border-[var(--cream)] bg-white">
+                <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
                     <h4 className="font-semibold text-[var(--maroon-deep)] mb-2">Need-Based Scholarship</h4>
                     <p className="text-sm text-[var(--ink)] leading-relaxed">
