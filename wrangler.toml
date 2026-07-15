@@ -1,0 +1,10 @@
+name = "virat-public-school"
+compatibility_date = "2025-05-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "out"
+
+# Environment variables are set via the Cloudflare dashboard or:
+#   wrangler pages secret put DATABASE_URL --project-name=virat-public-school
+#   wrangler pages secret put DATABASE_AUTH_TOKEN --project-name=virat-public-school
+#
+# Do NOT put secrets in this file — it gets committed to Git.
