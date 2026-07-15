@@ -4,7 +4,7 @@ type PageHeroProps = { title: string; subtitle?: string; breadcrumb?: string; cl
 
 export function PageHero({ title, subtitle, breadcrumb, className }: PageHeroProps) {
   return (
-    <section className={cn("relative overflow-hidden border-b border-[var(--line)] bg-[var(--cream)]", className)}>
+    <section className={cn("relative overflow-hidden border-b border-white/70 bg-gradient-to-br from-[#EAF7FF] via-white to-[#DBF2FF]", className)}>
       <div className="absolute inset-0 bg-pattern-subtle opacity-50" aria-hidden />
       <div className="absolute -right-20 -top-24 size-72 rounded-full bg-[var(--gold)]/35 blur-3xl" aria-hidden />
       <div className="absolute right-[18%] -bottom-24 size-56 rounded-full bg-[var(--maroon)]/15 blur-3xl" aria-hidden />

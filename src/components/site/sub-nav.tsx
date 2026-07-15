@@ -22,7 +22,7 @@ export function SubNav({ title, links }: SubNavProps) {
   const pathname = usePathname();
 
   return (
-    <aside className="lg:sticky lg:top-28 lg:self-start">
+    <aside className="glass-panel rounded-2xl p-3 lg:sticky lg:top-28 lg:self-start">
       {/* Mobile label */}
       <p className="lg:hidden text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2 px-1">
         {title}

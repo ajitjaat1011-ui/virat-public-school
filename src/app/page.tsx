@@ -15,7 +15,7 @@ export default function HomePage() {
   ];
 
   return <>
-    <section className="relative overflow-hidden bg-[var(--maroon-deep)] text-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#102A72] via-[#1746C4] to-[#0284C7] text-white">
       <div className="absolute inset-0 bg-pattern-dots" aria-hidden />
       <div className="absolute -right-24 top-10 size-96 rounded-full bg-[var(--gold)]/20 blur-3xl" aria-hidden />
       <div className="container relative mx-auto grid min-h-[620px] max-w-7xl items-center gap-12 px-4 py-20 lg:grid-cols-[1.15fr_.85fr] lg:py-28">
@@ -28,7 +28,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/72 md:text-xl">{t.home.heroSubtitle}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-13 rounded-full bg-[var(--maroon)] px-7 text-white hover:bg-[#d94a3d]">
+            <Button asChild size="lg" className="h-13 rounded-full bg-[var(--maroon)] px-7 text-white hover:bg-[#1D4ED8]">
               <Link href="/admissions/apply">{t.home.heroCtaApply}<ArrowRight className="ml-2 size-4" /></Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-13 rounded-full border-white/30 bg-white/5 px-7 text-white hover:bg-white hover:text-[var(--accent)]">
@@ -37,12 +37,12 @@ export default function HomePage() {
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:rotate-1">
-          <div className="rounded-[2rem] bg-[var(--gold)] p-7 text-[var(--accent)] sm:col-span-2">
+          <div className="glass-panel rounded-[2rem] bg-white/85 p-7 text-[var(--accent)] sm:col-span-2">
             <div className="flex items-center justify-between"><span className="text-xs font-black uppercase tracking-[.18em]">RBSE 2025–26</span><Trophy className="size-6" /></div>
             <div className="mt-8 flex items-end justify-between gap-4"><div><p className="text-6xl font-black tracking-[-.06em]">98.20%</p><p className="mt-2 font-bold">Rohit Yadav · District Topper</p></div><span className="rounded-full bg-[var(--accent)] px-3 py-1 text-xs font-bold text-white">#1</span></div>
           </div>
-          <a href="tel:+919636452501" className="rounded-[2rem] bg-white p-6 text-[var(--accent)] transition-transform hover:-translate-y-1"><Phone className="size-6 text-[var(--maroon)]" /><p className="mt-8 text-xs font-bold uppercase tracking-widest text-[var(--muted-ink)]">Talk to us</p><p className="mt-1 text-xl font-extrabold">+91 96364 52501</p></a>
-          <Link href="/news-events/announcements" className="rounded-[2rem] border border-white/15 bg-white/10 p-6 backdrop-blur transition-transform hover:-translate-y-1"><Newspaper className="size-6 text-[var(--gold)]" /><p className="mt-8 text-xs font-bold uppercase tracking-widest text-white/55">Latest</p><p className="mt-1 font-bold text-white">Admissions open 2026–27</p></Link>
+          <a href="tel:+919636452501" className="glass-panel rounded-[2rem] bg-white/80 p-6 text-[var(--accent)] transition-transform hover:-translate-y-1"><Phone className="size-6 text-[var(--maroon)]" /><p className="mt-8 text-xs font-bold uppercase tracking-widest text-[var(--muted-ink)]">Talk to us</p><p className="mt-1 text-xl font-extrabold">+91 96364 52501</p></a>
+          <Link href="/news-events/announcements" className="glass-panel rounded-[2rem] bg-white/15 p-6 transition-transform hover:-translate-y-1"><Newspaper className="size-6 text-[var(--gold)]" /><p className="mt-8 text-xs font-bold uppercase tracking-widest text-white/55">Latest</p><p className="mt-1 font-bold text-white">Admissions open 2026–27</p></Link>
         </div>
       </div>
     </section>
@@ -70,10 +70,10 @@ export default function HomePage() {
     <section className="py-20 md:py-28">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex items-end justify-between"><div><p className="text-xs font-black uppercase tracking-[.2em] text-[var(--maroon)]">Stay connected</p><h2 className="mt-4 text-4xl font-extrabold md:text-5xl">School updates</h2></div><Link href="/news-events" className="hidden items-center gap-2 font-bold text-[var(--maroon)] md:flex">View all <ArrowRight className="size-4" /></Link></div>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">{news.map(item => <article key={item.title} className="group rounded-[1.75rem] border border-[var(--line)] bg-white p-7"><div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--muted-ink)]"><CalendarDays className="size-4 text-[var(--maroon)]" />{item.date} · {item.type}</div><h3 className="mt-8 text-2xl leading-tight group-hover:text-[var(--maroon)]">{item.title}</h3><p className="mt-4 text-sm leading-6 text-[var(--muted-ink)]">{item.body}</p><Link href="/news-events/announcements" className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[var(--maroon)]">Read update <ArrowRight className="size-4" /></Link></article>)}</div>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">{news.map(item => <article key={item.title} className="group card-flat rounded-[1.75rem] p-7"><div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--muted-ink)]"><CalendarDays className="size-4 text-[var(--maroon)]" />{item.date} · {item.type}</div><h3 className="mt-8 text-2xl leading-tight group-hover:text-[var(--maroon)]">{item.title}</h3><p className="mt-4 text-sm leading-6 text-[var(--muted-ink)]">{item.body}</p><Link href="/news-events/announcements" className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[var(--maroon)]">Read update <ArrowRight className="size-4" /></Link></article>)}</div>
       </div>
     </section>
 
-    <section className="px-4 pb-20 md:pb-28"><div className="container mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[var(--maroon)] text-white"><div className="grid lg:grid-cols-[1.15fr_.85fr]"><div className="p-8 md:p-14"><MapPin className="size-7" /><h2 className="mt-8 text-4xl font-extrabold text-white md:text-5xl">Come see learning in action.</h2><p className="mt-5 max-w-xl text-white/75">Visit our Viratnagar campus, meet the team and find the right path for your child.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild className="rounded-full bg-[var(--maroon-deep)] text-white"><Link href="/contact-us">Plan a visit</Link></Button><Button asChild variant="outline" className="rounded-full border-white/35 bg-transparent text-white hover:bg-white hover:text-[var(--accent)]"><Link href="/admissions/apply">Apply online</Link></Button></div></div><div className="min-h-72 bg-[var(--maroon-deep)]"><iframe title="Virat Public School location" src="https://www.google.com/maps?q=Viratnagar,Kotputli-Behror,Rajasthan&output=embed" width="100%" height="100%" className="min-h-72 grayscale-[20%]" loading="lazy" /></div></div></div></section>
+    <section className="px-4 pb-20 md:pb-28"><div className="container mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#1746C4] to-[#0284C7] text-white"><div className="grid lg:grid-cols-[1.15fr_.85fr]"><div className="p-8 md:p-14"><MapPin className="size-7" /><h2 className="mt-8 text-4xl font-extrabold text-white md:text-5xl">Come see learning in action.</h2><p className="mt-5 max-w-xl text-white/75">Visit our Viratnagar campus, meet the team and find the right path for your child.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild className="rounded-full bg-[var(--maroon-deep)] text-white"><Link href="/contact-us">Plan a visit</Link></Button><Button asChild variant="outline" className="rounded-full border-white/35 bg-transparent text-white hover:bg-white hover:text-[var(--accent)]"><Link href="/admissions/apply">Apply online</Link></Button></div></div><div className="min-h-72 bg-[var(--maroon-deep)]"><iframe title="Virat Public School location" src="https://www.google.com/maps?q=Viratnagar,Kotputli-Behror,Rajasthan&output=embed" width="100%" height="100%" className="min-h-72 grayscale-[20%]" loading="lazy" /></div></div></div></section>
   </>;
 }

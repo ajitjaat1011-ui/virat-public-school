@@ -9,7 +9,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--accent)] text-white mt-auto">
+    <footer className="bg-gradient-to-br from-[var(--maroon-deep)] via-[#173B9C] to-[#075985] text-white mt-auto">
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid gap-6 md:gap-10 md:grid-cols-12">
           {/* Brand — spans 4 cols on desktop */}

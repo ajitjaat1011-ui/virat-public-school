@@ -70,7 +70,7 @@ export function SiteHeader() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--line)]">
+    <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60 border-b shadow-[0_8px_32px_rgba(16,42,114,.06)] border-[var(--line)]">
       {/* Top utility strip — hidden on mobile, slim on desktop */}
       <div className="hidden md:block bg-[var(--maroon-deep)] text-white text-xs">
         <div className="container mx-auto flex items-center justify-between px-4 py-1.5">
@@ -184,7 +184,7 @@ export function SiteHeader() {
             </button>
             <Button
               asChild
-              className="bg-[var(--maroon)] hover:bg-[#d94a3d] text-white"
+              className="bg-[var(--maroon)] hover:bg-[#1D4ED8] text-white"
             >
               <Link href="/admissions/apply">{t.nav.apply}</Link>
             </Button>
@@ -276,7 +276,7 @@ export function SiteHeader() {
             <div className="pt-4 mt-2 border-t border-[var(--line)]">
               <Button
                 asChild
-                className="bg-[var(--maroon)] hover:bg-[#d94a3d] text-white w-full"
+                className="bg-[var(--maroon)] hover:bg-[#1D4ED8] text-white w-full"
                 onClick={() => setMobileOpen(false)}
               >
                 <Link href="/admissions/apply">{t.nav.apply}</Link>

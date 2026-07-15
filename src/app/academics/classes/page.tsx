@@ -78,7 +78,7 @@ export default function ClassesPage() {
                     const colors = [
                       "from-[var(--maroon)] to-[var(--maroon-deep)]",
                       "from-[var(--gold)] to-[var(--success)]",
-                      "from-[var(--success)] to-[#1B5E20]",
+                      "from-[var(--success)] to-[#0369A1]",
                     ];
                     return (
                       <Card key={idx} className="overflow-hidden border-0 shadow-md">
