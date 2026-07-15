@@ -103,7 +103,7 @@ export default function ApplyPage() {
       <>
         <PageHero
           title={t.admissions.applyTitle}
-          subtitle={t.admissions.applyBody}
+          subtitle="Complete the form in a few simple steps. Keep the student’s details, parent contact information and supporting documents ready."
           breadcrumb={`${t.nav.admissions} / ${t.admissionsSub.apply}`}
         />
         <section className="py-16 md:py-20">
@@ -147,7 +147,7 @@ export default function ApplyPage() {
     <>
       <PageHero
         title={t.admissions.applyTitle}
-        subtitle={t.admissions.applyBody}
+        subtitle="Complete the form in a few simple steps. Keep the student’s details, parent contact information and supporting documents ready."
         breadcrumb={`${t.nav.admissions} / ${t.admissionsSub.apply}`}
       />
 
@@ -157,6 +157,12 @@ export default function ApplyPage() {
             <SubNav title={t.nav.admissions} links={subLinks} />
 
             <div className="min-w-0 max-w-full">
+              <div className="mb-6 grid gap-3 sm:grid-cols-3">
+                {["1. Student details", "2. Parent details", "3. Documents & submit"].map((step) => (
+                  <div key={step} className="rounded-xl border border-[var(--line)] bg-white/70 px-4 py-3 text-sm font-semibold text-[var(--accent)]">{step}</div>
+                ))}
+              </div>
+              <p className="mb-6 rounded-xl bg-[var(--cream)] px-4 py-3 text-sm text-[var(--muted-ink)]">Fields marked * are required. Your information is encrypted in transit and used only for admission processing.</p>
               <form onSubmit={onSubmit} className="min-w-0 max-w-full space-y-8">
                 {/* Student details */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">

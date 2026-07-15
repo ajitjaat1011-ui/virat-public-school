@@ -101,7 +101,7 @@
   img, video, iframe, svg { max-width: 100%; }
   input, textarea, select, button { max-width: 100%; }
   .container { width: 100%; min-width: 0; max-width: 80rem; }
-  .grid > *, .flex > * { min-width: 0; }
+  .grid > * { min-width: 0; }
   h1, h2, h3, h4, h5, h6 {
     color: var(--accent);
     font-weight: 750;

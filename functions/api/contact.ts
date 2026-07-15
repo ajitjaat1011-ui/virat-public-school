@@ -32,13 +32,25 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   const headers = {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
   };
 
   if (request.method === "OPTIONS") {
     return new Response(null, { status: 204, headers });
+  }
+
+  const origin = request.headers.get("Origin");
+  const siteOrigin = new URL(request.url).origin;
+  if (origin && origin !== siteOrigin) {
+    return new Response(JSON.stringify({ error: "Forbidden origin" }), { status: 403, headers });
+  }
+  if (!request.headers.get("Content-Type")?.toLowerCase().startsWith("application/json")) {
+    return new Response(JSON.stringify({ error: "Content-Type must be application/json" }), { status: 415, headers });
+  }
+  const contentLength = Number(request.headers.get("Content-Length") || 0);
+  if (contentLength > 100_000) {
+    return new Response(JSON.stringify({ error: "Request is too large" }), { status: 413, headers });
   }
 
   if (!env.DATABASE_URL) {
@@ -70,6 +82,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           JSON.stringify({ error: `Missing required field: ${field}` }),
           { status: 400, headers }
         );
+      }
+    }
+
+    const fieldLimits: Record<string, number> = { name: 120, studentName: 120, fatherName: 120, motherName: 120, email: 254, parentEmail: 254, phone: 20, parentPhone: 20, subject: 160, message: 5000, address: 1000, parentOccupation: 120, previousSchool: 180, previousClass: 40 };
+    for (const [field, max] of Object.entries(fieldLimits)) {
+      const value = (body as Record<string, unknown>)[field];
+      if (typeof value === "string" && value.length > max) {
+        return new Response(JSON.stringify({ error: `Field is too long: ${field}` }), { status: 400, headers });
       }
     }
 
@@ -128,8 +148,7 @@ export const onRequestOptions: PagesFunction = async () => {
   return new Response(null, {
     status: 204,
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     },
   });
