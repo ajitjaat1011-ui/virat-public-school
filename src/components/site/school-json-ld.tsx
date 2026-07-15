@@ -27,8 +27,6 @@ export function SchoolJsonLd() {
     email: "info@viratpublicschool.in",
     sameAs: [
       "https://www.instagram.com/mahander_meena_86",
-      "https://facebook.com",
-      "https://youtube.com",
     ],
   };
 

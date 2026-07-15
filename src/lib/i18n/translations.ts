@@ -509,4 +509,4 @@ export const translations = {
   },
 } as const;
 
-export type Dictionary = (typeof translations)["en"];
+export type Dictionary = (typeof translations)[Locale];

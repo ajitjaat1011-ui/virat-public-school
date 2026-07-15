@@ -27,9 +27,6 @@ const notoDevanagari = Noto_Sans_Devanagari({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  minimumScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: "#183A37",
 };
 
@@ -62,12 +59,14 @@ export const metadata: Metadata = {
     siteName: "Virat Public School",
     type: "website",
     locale: "en_IN",
+    images: [{ url: "/images/virat-learning.jpg", width: 1672, height: 941, alt: "Students learning together at Virat Public School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Virat Public School",
     description:
       "A premier school in Viratnagar, Rajasthan — Knowledge. Discipline. Character.",
+    images: ["/images/virat-learning.jpg"],
   },
   alternates: {
     canonical: "https://viratpublicschool.pages.dev",

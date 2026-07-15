@@ -10,15 +10,8 @@ const nextConfig: NextConfig = {
   },
   // Generate trailing slashes for cleaner URLs on static hosting
   trailingSlash: true,
-  // Skip TypeScript errors during build — we've already verified types in dev
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  // Skip ESLint during build — we've already verified code quality in dev
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  reactStrictMode: false,
+  // Keep production checks enabled; broken types must fail the build.
+  reactStrictMode: true,
 };
 
 export default nextConfig;

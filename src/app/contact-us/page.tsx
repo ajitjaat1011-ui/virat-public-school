@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Facebook, Instagram, Youtube, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Instagram, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -135,18 +135,8 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <p className="text-xs font-semibold text-[var(--muted-ink)] uppercase tracking-wider mb-2">{t.contact.social}</p>
-                <div className="flex items-center gap-3">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full bg-[var(--cream)] hover:bg-[var(--maroon)] hover:text-white flex items-center justify-center transition-colors">
-                    <Facebook className="w-4 h-4 text-[var(--maroon)]" />
-                  </a>
-                  <a href="https://www.instagram.com/mahander_meena_86?igsh=MWYzZm5ocTM4YjJrNA==" target="_blank" rel="noopener noreferrer" aria-label="Director on Instagram" title="Director on Instagram" className="w-10 h-10 rounded-full bg-[var(--cream)] hover:bg-[var(--maroon)] hover:text-white flex items-center justify-center transition-colors">
-                    <Instagram className="w-4 h-4 text-[var(--maroon)]" />
-                  </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-full bg-[var(--cream)] hover:bg-[var(--maroon)] hover:text-white flex items-center justify-center transition-colors">
-                    <Youtube className="w-4 h-4 text-[var(--maroon)]" />
-                  </a>
-                </div>
+                <p className="text-xs font-semibold text-[var(--muted-ink)] uppercase tracking-wider mb-2">Verified social profile</p>
+                <a href="https://www.instagram.com/mahander_meena_86" target="_blank" rel="noopener noreferrer" aria-label="Director Mahander Kumar Meena on Instagram" className="inline-flex items-center gap-2 rounded-full bg-[var(--cream)] px-4 py-2 text-sm font-bold text-[var(--accent)] hover:bg-[var(--maroon)] hover:text-white"><Instagram className="w-4 h-4" /> Director on Instagram</a>
               </div>
 
               {/* Map */}

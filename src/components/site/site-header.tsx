@@ -184,7 +184,7 @@ export function SiteHeader() {
             </button>
             <Button
               asChild
-              className="bg-[var(--maroon)] hover:bg-[#1D4ED8] text-white"
+              className="bg-[var(--maroon)] hover:bg-[var(--maroon-deep)] text-white"
             >
               <Link href="/admissions/apply">{t.nav.apply}</Link>
             </Button>
@@ -276,7 +276,7 @@ export function SiteHeader() {
             <div className="pt-4 mt-2 border-t border-[var(--line)]">
               <Button
                 asChild
-                className="bg-[var(--maroon)] hover:bg-[#1D4ED8] text-white w-full"
+                className="bg-[var(--maroon)] hover:bg-[var(--maroon-deep)] text-white w-full"
                 onClick={() => setMobileOpen(false)}
               >
                 <Link href="/admissions/apply">{t.nav.apply}</Link>

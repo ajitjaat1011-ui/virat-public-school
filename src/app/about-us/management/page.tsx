@@ -64,7 +64,7 @@ export default function ManagementPage() {
                           {/* Using next/image would require remote optimisation; we use a plain
                               img tag since the site is statically exported with unoptimized images. */}
                           <img
-                            src="/images/director-mahander-meena.jpg"
+                            src="/images/director-mahander-meena.webp"
                             alt={`${t.about.directorName} — ${t.about.directorTitle}, Virat Public School`}
                             className="w-full h-full object-cover"
                             loading="lazy"

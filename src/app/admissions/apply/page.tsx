@@ -16,13 +16,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Upload, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-
-type FileEntry = { name: string; size: number };
+import { FileCheck2, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 export default function ApplyPage() {
   const { t } = useLanguage();
-  const [files, setFiles] = useState<FileEntry[]>([]);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [reference, setReference] = useState<string>("");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -33,27 +30,6 @@ export default function ApplyPage() {
     { href: "/admissions/apply", label: t.admissionsSub.apply },
     { href: "/admissions/eligibility", label: t.admissionsSub.eligibility },
   ];
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const fileList = e.target.files;
-    if (!fileList) return;
-    const newFiles: FileEntry[] = [];
-    for (let i = 0; i < fileList.length; i++) {
-      const f = fileList[i];
-      // 5 MB limit per spec
-      if (f.size > 5 * 1024 * 1024) {
-        setErrorMsg(`File "${f.name}" exceeds the 5 MB limit and was not added.`);
-        continue;
-      }
-      newFiles.push({ name: f.name, size: f.size });
-    }
-    setFiles((prev) => [...prev, ...newFiles]);
-    setErrorMsg("");
-  };
-
-  const removeFile = (idx: number) => {
-    setFiles((prev) => prev.filter((_, i) => i !== idx));
-  };
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,7 +50,7 @@ export default function ApplyPage() {
       address: formData.get("address"),
       previousSchool: formData.get("previousSchool") || "",
       previousClass: formData.get("previousClass") || "",
-      documents: files,
+      honeypot: formData.get("website") || "",
     };
 
     try {
@@ -91,7 +67,6 @@ export default function ApplyPage() {
       setStatus("success");
       // Reset form
       (e.target as HTMLFormElement).reset();
-      setFiles([]);
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Submission failed");
       setStatus("error");
@@ -164,6 +139,7 @@ export default function ApplyPage() {
               </div>
               <p className="mb-6 rounded-xl bg-[var(--cream)] px-4 py-3 text-sm text-[var(--muted-ink)]">Fields marked * are required. Your information is encrypted in transit and used only for admission processing.</p>
               <form onSubmit={onSubmit} className="min-w-0 max-w-full space-y-8">
+                <div className="hidden" aria-hidden><label htmlFor="website">Website (leave empty)</label><input id="website" name="website" type="text" autoComplete="off" tabIndex={-1} /></div>
                 {/* Student details */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
@@ -268,68 +244,13 @@ export default function ApplyPage() {
                   </CardContent>
                 </Card>
 
-                {/* Documents */}
+                {/* Document verification */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-bold text-[var(--accent)] mb-1">
-                      Document Upload
-                    </h3>
-                    <p className="text-xs text-[var(--muted-ink)] mb-4">
-                      Upload birth certificate, photographs, previous school records, etc. Max 5 MB per file. Multiple files allowed.
-                    </p>
-
-                    <label
-                      htmlFor="documents"
-                      className="flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-[var(--line)] rounded-lg cursor-pointer hover:border-[var(--gold)] transition-colors"
-                    >
-                      <Upload className="w-8 h-8 text-[var(--maroon)]" />
-                      <span className="text-sm font-medium text-[var(--accent)]">
-                        Click to upload documents
-                      </span>
-                      <span className="text-xs text-[var(--muted-ink)]">
-                        PDF, JPG, PNG — up to 5 MB each
-                      </span>
-                      <input
-                        id="documents"
-                        type="file"
-                        multiple
-                        accept=".pdf,.jpg,.jpeg,.png"
-                        onChange={handleFileChange}
-                        className="sr-only"
-                      />
-                    </label>
-
-                    {files.length > 0 && (
-                      <ul className="mt-4 space-y-2">
-                        {files.map((f, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-center justify-between p-2.5 bg-[var(--cream)]/50 rounded-md text-sm"
-                          >
-                            <span className="truncate text-[var(--ink)]">{f.name}</span>
-                            <div className="flex items-center gap-3 flex-shrink-0">
-                              <span className="text-xs text-[var(--muted-ink)]">
-                                {(f.size / 1024).toFixed(0)} KB
-                              </span>
-                              <button
-                                type="button"
-                                onClick={() => removeFile(idx)}
-                                className="text-xs text-[var(--alert)] hover:underline"
-                              >
-                                Remove
-                              </button>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {errorMsg && (
-                      <p className="mt-3 text-xs text-[var(--alert)] flex items-center gap-1.5">
-                        <AlertCircle className="w-3.5 h-3.5" />
-                        {errorMsg}
-                      </p>
-                    )}
+                    <div className="flex items-start gap-4">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--cream)]"><FileCheck2 className="h-5 w-5 text-[var(--maroon)]" /></span>
+                      <div><h3 className="text-lg font-bold text-[var(--accent)]">Documents are verified at school</h3><p className="mt-2 text-sm text-[var(--muted-ink)]">For your privacy, this form does not upload identity documents. Please bring the student’s birth certificate, photographs, previous report card and transfer certificate (where applicable) when the admissions team schedules your visit.</p><a href="/admissions/eligibility" className="mt-3 inline-flex text-sm font-bold text-[var(--maroon)] hover:underline">View the complete document checklist</a></div>
+                    </div>
                   </CardContent>
                 </Card>
 

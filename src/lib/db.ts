@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { PrismaLibSQL } from '@prisma/adapter-libsql'
-import { createClient } from '@libsql/client'
+import { PrismaLibSql } from '@prisma/adapter-libsql'
 
 /**
  * Database client for Virat Public School.
@@ -18,11 +17,10 @@ function createPrismaClient(): PrismaClient {
   const url = process.env.DATABASE_URL ?? 'file:./db/local.db'
   const authToken = process.env.DATABASE_AUTH_TOKEN
 
-  const libsql = createClient({
+  const adapter = new PrismaLibSql({
     url,
     authToken: authToken && authToken.length > 0 ? authToken : undefined,
   })
-  const adapter = new PrismaLibSQL(libsql)
   return new PrismaClient({ adapter })
 }
 

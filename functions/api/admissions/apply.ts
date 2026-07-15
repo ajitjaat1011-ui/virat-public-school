@@ -38,6 +38,7 @@ interface ApplicationPayload {
   previousSchool?: string;
   previousClass?: string;
   documents?: Array<{ name?: string }>;
+  honeypot?: string;
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -81,6 +82,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
     const body = (await request.json()) as ApplicationPayload;
 
+    // Honeypot: acknowledge automated submissions without storing personal data.
+    if (body.honeypot?.trim()) {
+      return new Response(JSON.stringify({ success: true, reference: "VPS-RECEIVED" }), { status: 200, headers });
+    }
+
     // Server-side validation
     const required: Array<keyof ApplicationPayload> = [
       "studentName", "dob", "gender", "applyingClass",
@@ -102,6 +108,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       if (typeof value === "string" && value.length > max) {
         return new Response(JSON.stringify({ error: `Field is too long: ${field}` }), { status: 400, headers });
       }
+    }
+
+    const allowedGenders = new Set(["male", "female", "other"]);
+    const allowedClasses = new Set(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"].map((x) => `Class ${x}`));
+    if (!allowedGenders.has(body.gender!) || !allowedClasses.has(body.applyingClass!)) {
+      return new Response(JSON.stringify({ error: "Invalid selection" }), { status: 400, headers });
+    }
+    const dob = new Date(body.dob!);
+    if (Number.isNaN(dob.getTime()) || dob >= new Date() || dob.getFullYear() < 2005) {
+      return new Response(JSON.stringify({ error: "Invalid date of birth" }), { status: 400, headers });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
