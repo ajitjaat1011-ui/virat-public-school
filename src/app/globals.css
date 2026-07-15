@@ -55,38 +55,38 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 1rem; /* Softer border radius */
   /* Brand palette — Virat Public School (refined: off-white base + charcoal text) */
-  --maroon: #800000;          /* Primary brand */
-  --maroon-deep: #5C0000;     /* Cover backgrounds, footer, hover */
-  --cream: #F2EFE8;           /* Soft warm grey-cream for section backgrounds */
-  --gold: #C9A227;            /* Accent — slightly muted gold (classier than #D4AF37) */
-  --ink: #1F1B1A;             /* Body text — dark charcoal, not pure black */
-  --muted-ink: #6B6360;       /* Captions, meta — warm grey */
+  --maroon: #800000; /* Primary brand */
+  --maroon-deep: #5C0000; /* Deep maroon */
+  --cream: #F0F4F8; /* Soft blue-grey replacing cream */
+  --gold: #1E3A8A; /* Blue accent replacing gold */
+  --ink: #1e293b; /* Slate dark */
+  --muted-ink: #64748b; /* Slate muted */
   --surface: #FFFFFF;         /* Cards / raised surfaces */
-  --line: #E8E3DA;            /* Hairline borders — soft warm grey */
+  --line: #e2e8f0; /* Slate line */
   --success: #2E7D32;
   --alert: #C62828;
 
   /* Page background — warm off-white (NOT bright white) */
-  --background: #FAF8F4;
-  --foreground: #1F1B1A;
+  --background: #FFFFFF; /* Pure white */
+  --foreground: #1e293b;
   --card: #FFFFFF;
-  --card-foreground: #1F1B1A;
+  --card-foreground: #1e293b;
   --popover: #FFFFFF;
-  --popover-foreground: #1F1B1A;
+  --popover-foreground: #1e293b;
   --primary: #800000;
   --primary-foreground: #FFFFFF;
-  --secondary: #F2EFE8;
-  --secondary-foreground: #5C0000;
-  --muted: #F2EFE8;
-  --muted-foreground: #6B6360;
-  --accent: #C9A227;
-  --accent-foreground: #5C0000;
+  --secondary: #F0F4F8;
+  --secondary-foreground: #1e293b;
+  --muted: #F0F4F8;
+  --muted-foreground: #64748b;
+  --accent: #1E3A8A;
+  --accent-foreground: #FFFFFF;
   --destructive: #C62828;
-  --border: #E8E3DA;
-  --input: #E8E3DA;
-  --ring: #C9A227;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #1E3A8A;
   --chart-1: #800000;
   --chart-2: #C9A227;
   --chart-3: #2E7D32;
@@ -94,12 +94,12 @@
   --chart-5: #6B6360;
   --sidebar: #5C0000;
   --sidebar-foreground: #F2EFE8;
-  --sidebar-primary: #C9A227;
+  --sidebar-primary: #1E3A8A;
   --sidebar-primary-foreground: #5C0000;
   --sidebar-accent: #800000;
   --sidebar-accent-foreground: #F2EFE8;
   --sidebar-border: rgba(242, 239, 232, 0.15);
-  --sidebar-ring: #C9A227;
+  --sidebar-ring: #1E3A8A;
 }
 
 .dark {
@@ -115,12 +115,12 @@
   --secondary-foreground: #F2EFE8;
   --muted: #2A1010;
   --muted-foreground: #C4B8A8;
-  --accent: #C9A227;
+  --accent: #1E3A8A;
   --accent-foreground: #1A0E0E;
   --destructive: #E57373;
   --border: rgba(242, 239, 232, 0.12);
   --input: rgba(242, 239, 232, 0.12);
-  --ring: #C9A227;
+  --ring: #1E3A8A;
 }
 
 @layer base {
@@ -135,7 +135,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
-    color: var(--maroon-deep);
+    color: var(--accent); /* Headings in Navy Blue */
     font-weight: 700;
     letter-spacing: -0.015em;
   }
@@ -144,7 +144,7 @@
     h1 { font-size: 1.875rem; line-height: 1.2; }
     h2 { font-size: 1.5rem; line-height: 1.25; }
   }
-  /* Decorative gold accent — slim, modern */
+  /* Decorative blue accent — slim, modern */
   .gold-divider {
     height: 2px;
     width: 48px;
@@ -164,9 +164,9 @@
   .bg-cream { background-color: var(--cream); }
   .bg-surface { background-color: var(--surface); }
   .bg-maroon { background-color: var(--maroon); }
-  .bg-maroon-deep { background-color: var(--maroon-deep); }
+  .bg-maroon-deep { background-color: var(--accent); /* Headings in Navy Blue */ }
   .text-maroon { color: var(--maroon); }
-  .text-maroon-deep { color: var(--maroon-deep); }
+  .text-maroon-deep { color: var(--accent); /* Headings in Navy Blue */ }
   .text-gold { color: var(--gold); }
   .text-ink { color: var(--ink); }
   .text-muted-ink { color: var(--muted-ink); }
@@ -182,11 +182,11 @@
   }
   .card-flat:hover {
     border-color: var(--gold);
-    box-shadow: 0 4px 16px -8px rgba(92, 0, 0, 0.08);
+    box-shadow: 0 4px 16px -8px rgba(30, 58, 138, 0.08);
   }
   /* Subtle dotted/line pattern for hero backgrounds (replaces busy images) */
   .bg-pattern-subtle {
-    background-image: radial-gradient(circle at 1px 1px, rgba(201, 162, 39, 0.08) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(30, 58, 138, 0.08) 1px, transparent 0);
     background-size: 24px 24px;
   }
   .bg-pattern-dots {

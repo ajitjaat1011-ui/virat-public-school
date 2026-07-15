@@ -48,7 +48,7 @@ export default function FeesPage() {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.admissions.feesTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -83,7 +83,7 @@ export default function FeesPage() {
                   <tbody>
                     {feeRows.map((row, idx) => (
                       <tr key={idx} className={idx % 2 === 0 ? "bg-[var(--surface)]" : "bg-[var(--cream)]/50"}>
-                        <td className="px-4 py-3 font-medium text-[var(--maroon-deep)]">{row.class}</td>
+                        <td className="px-4 py-3 font-medium text-[var(--accent)]">{row.class}</td>
                         <td className="px-4 py-3 text-[var(--ink)]">{row.admission}</td>
                         <td className="px-4 py-3 text-[var(--ink)]">{row.annual}</td>
                         <td className="px-4 py-3 text-[var(--ink)] font-semibold">{row.tuition}</td>
@@ -95,7 +95,7 @@ export default function FeesPage() {
 
               {/* Optional charges */}
               <div>
-                <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4">
+                <h3 className="text-lg font-bold text-[var(--accent)] mb-4">
                   Optional Charges
                 </h3>
                 <div className="space-y-2">
@@ -105,7 +105,7 @@ export default function FeesPage() {
                       className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 p-3 bg-[var(--cream)]/40 rounded-md"
                     >
                       <span className="text-sm text-[var(--ink)]">{row.item}</span>
-                      <span className="text-sm font-semibold text-[var(--maroon-deep)]">{row.fee}</span>
+                      <span className="text-sm font-semibold text-[var(--accent)]">{row.fee}</span>
                     </div>
                   ))}
                 </div>
@@ -115,7 +115,7 @@ export default function FeesPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
-                    <h4 className="font-semibold text-[var(--maroon-deep)] mb-2">Sibling Concession</h4>
+                    <h4 className="font-semibold text-[var(--accent)] mb-2">Sibling Concession</h4>
                     <p className="text-sm text-[var(--ink)] leading-relaxed">
                       A 10% concession on tuition fee is offered for the second child (and subsequent children) of the same family enrolled at the school. Please inform the accounts office at the time of admission to claim this concession.
                     </p>
@@ -123,7 +123,7 @@ export default function FeesPage() {
                 </Card>
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-5">
-                    <h4 className="font-semibold text-[var(--maroon-deep)] mb-2">Need-Based Scholarship</h4>
+                    <h4 className="font-semibold text-[var(--accent)] mb-2">Need-Based Scholarship</h4>
                     <p className="text-sm text-[var(--ink)] leading-relaxed">
                       Limited need-based scholarships are available for deserving students. Application forms can be collected from the school office. Decisions are made by a committee and are confidential. Please contact the principal&apos;s office for details.
                     </p>

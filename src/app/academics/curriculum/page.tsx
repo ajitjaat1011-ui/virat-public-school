@@ -58,7 +58,7 @@ export default function CurriculumPage() {
 
             <article className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.academics.curriculumTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -83,7 +83,7 @@ export default function CurriculumPage() {
                     <div className="h-1 bg-[var(--gold)]" />
                     <CardContent className="pt-6">
                       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-3">
-                        <h3 className="text-xl font-bold text-[var(--maroon-deep)]">
+                        <h3 className="text-xl font-bold text-[var(--accent)]">
                           {s.stage}
                         </h3>
                         <span className="text-xs font-semibold uppercase tracking-wider text-[var(--maroon)]">
@@ -99,7 +99,7 @@ export default function CurriculumPage() {
                           {s.subjects.map((subj) => (
                             <span
                               key={subj}
-                              className="px-2.5 py-1 text-xs rounded bg-[var(--cream)] text-[var(--maroon-deep)] font-medium"
+                              className="px-2.5 py-1 text-xs rounded bg-[var(--cream)] text-[var(--accent)] font-medium"
                             >
                               {subj}
                             </span>

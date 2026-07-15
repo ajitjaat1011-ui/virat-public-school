@@ -37,7 +37,7 @@ export default function VisionMissionPage() {
                     <div className="w-12 h-12 rounded-lg bg-[var(--maroon)] flex items-center justify-center mb-2">
                       <Compass className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl text-[var(--maroon-deep)]">Our Vision</CardTitle>
+                    <CardTitle className="text-xl text-[var(--accent)]">Our Vision</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-base text-[var(--ink)] leading-relaxed italic">
@@ -51,7 +51,7 @@ export default function VisionMissionPage() {
                     <div className="w-12 h-12 rounded-lg bg-[var(--maroon)] flex items-center justify-center mb-2">
                       <Target className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl text-[var(--maroon-deep)]">Our Mission</CardTitle>
+                    <CardTitle className="text-xl text-[var(--accent)]">Our Mission</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-base text-[var(--ink)] leading-relaxed">
@@ -65,7 +65,7 @@ export default function VisionMissionPage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <Heart className="w-7 h-7 text-[var(--maroon)]" />
-                  <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                     Our Core Values
                   </h2>
                 </div>
@@ -81,7 +81,7 @@ export default function VisionMissionPage() {
                         <div className="text-3xl font-bold text-[var(--gold)] mb-2">
                           0{idx + 1}
                         </div>
-                        <h3 className="font-semibold text-[var(--maroon-deep)] mb-1.5">
+                        <h3 className="font-semibold text-[var(--accent)] mb-1.5">
                           {value.title}
                         </h3>
                         <p className="text-sm text-[var(--ink)] leading-relaxed">

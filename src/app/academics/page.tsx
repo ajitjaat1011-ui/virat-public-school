@@ -39,7 +39,7 @@ export default function AcademicsPage() {
 
             <div className="space-y-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.academics.heroTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -58,7 +58,7 @@ export default function AcademicsPage() {
                             <Icon className="w-5 h-5 text-[var(--maroon)] group-hover:text-white transition-colors" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-[var(--maroon-deep)] mb-1">{title}</h3>
+                            <h3 className="font-semibold text-[var(--accent)] mb-1">{title}</h3>
                             <p className="text-sm text-[var(--ink)] leading-relaxed">{body}</p>
                             <span className="mt-2 inline-flex items-center text-xs font-medium text-[var(--maroon)]">
                               {t.common.learnMore}

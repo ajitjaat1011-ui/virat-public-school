@@ -113,7 +113,7 @@ export default function ApplyPage() {
                 <div className="w-16 h-16 rounded-full bg-[var(--success)]/10 flex items-center justify-center mx-auto mb-5">
                   <CheckCircle2 className="w-9 h-9 text-[var(--success)]" />
                 </div>
-                <h2 className="text-2xl font-bold text-[var(--maroon-deep)] mb-2">
+                <h2 className="text-2xl font-bold text-[var(--accent)] mb-2">
                   Application Received
                 </h2>
                 <p className="text-sm text-[var(--ink)] leading-relaxed mb-5">
@@ -161,7 +161,7 @@ export default function ApplyPage() {
                 {/* Student details */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4">
+                    <h3 className="text-lg font-bold text-[var(--accent)] mb-4">
                       Student Details
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -208,7 +208,7 @@ export default function ApplyPage() {
                 {/* Parent details */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4">
+                    <h3 className="text-lg font-bold text-[var(--accent)] mb-4">
                       Parent / Guardian Details
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -243,7 +243,7 @@ export default function ApplyPage() {
                 {/* Previous school */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1">
+                    <h3 className="text-lg font-bold text-[var(--accent)] mb-1">
                       Previous School (if applicable)
                     </h3>
                     <p className="text-xs text-[var(--muted-ink)] mb-4">
@@ -265,7 +265,7 @@ export default function ApplyPage() {
                 {/* Documents */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1">
+                    <h3 className="text-lg font-bold text-[var(--accent)] mb-1">
                       Document Upload
                     </h3>
                     <p className="text-xs text-[var(--muted-ink)] mb-4">
@@ -277,7 +277,7 @@ export default function ApplyPage() {
                       className="flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-[var(--line)] rounded-lg cursor-pointer hover:border-[var(--gold)] transition-colors"
                     >
                       <Upload className="w-8 h-8 text-[var(--maroon)]" />
-                      <span className="text-sm font-medium text-[var(--maroon-deep)]">
+                      <span className="text-sm font-medium text-[var(--accent)]">
                         Click to upload documents
                       </span>
                       <span className="text-xs text-[var(--muted-ink)]">

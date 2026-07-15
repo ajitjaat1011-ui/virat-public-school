@@ -41,7 +41,7 @@ export default function ManagementPage() {
             <SubNav title={t.nav.about} links={subLinks} />
 
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                 {t.about.managementTitle}
               </h2>
               <div className="gold-divider mt-3" />
@@ -51,7 +51,7 @@ export default function ManagementPage() {
 
               {/* Director — featured */}
               <div className="mt-10">
-                <h3 className="text-xl font-bold text-[var(--maroon-deep)] mb-5">
+                <h3 className="text-xl font-bold text-[var(--accent)] mb-5">
                   {t.about.directorTitle}
                 </h3>
                 <Card className="border-[var(--gold)] bg-[var(--surface)] overflow-hidden shadow-md">
@@ -81,7 +81,7 @@ export default function ManagementPage() {
                         <p className="text-xs font-semibold uppercase tracking-wider text-[var(--maroon)] mb-1">
                           {t.about.directorTitle}
                         </p>
-                        <h4 className="text-2xl font-bold text-[var(--maroon-deep)] mb-3">
+                        <h4 className="text-2xl font-bold text-[var(--accent)] mb-3">
                           {t.about.directorName}
                         </h4>
                         <p className="text-sm text-[var(--ink)] leading-relaxed mb-5">
@@ -109,7 +109,7 @@ export default function ManagementPage() {
 
               {/* Other committee members */}
               <div className="mt-10">
-                <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-5">
+                <h3 className="text-lg font-bold text-[var(--accent)] mb-5">
                   Committee Members
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -121,7 +121,7 @@ export default function ManagementPage() {
                             {String(idx + 1).padStart(2, "0")}
                           </span>
                         </div>
-                        <h4 className="font-semibold text-[var(--maroon-deep)] text-sm">
+                        <h4 className="font-semibold text-[var(--accent)] text-sm">
                           {member.name}
                         </h4>
                         <p className="text-xs text-[var(--maroon)] font-medium mt-1 uppercase tracking-wide">

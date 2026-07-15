@@ -38,7 +38,7 @@ export default function AboutPage() {
 
             <div className="space-y-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.about.heroTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -59,7 +59,7 @@ export default function AboutPage() {
                         <div className="w-12 h-12 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3 group-hover:bg-[var(--maroon)] transition-colors">
                           <Icon className="w-6 h-6 text-[var(--maroon)] group-hover:text-white transition-colors" />
                         </div>
-                        <h3 className="font-semibold text-[var(--maroon-deep)] mb-2">{title}</h3>
+                        <h3 className="font-semibold text-[var(--accent)] mb-2">{title}</h3>
                         <p className="text-sm text-[var(--ink)] leading-relaxed">{body}</p>
                       </CardContent>
                     </Card>

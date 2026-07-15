@@ -32,7 +32,7 @@ export default function AdmissionsPage() {
 
             <div className="space-y-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-white">
                   {t.admissions.heroTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -49,7 +49,7 @@ export default function AdmissionsPage() {
                       <div className="w-10 h-10 rounded-full bg-[var(--maroon)] text-white flex items-center justify-center font-bold mb-3">
                         {idx + 1}
                       </div>
-                      <h3 className="font-semibold text-[var(--maroon-deep)] mb-1.5">
+                      <h3 className="font-semibold text-white mb-1.5">
                         {step.title}
                       </h3>
                       <p className="text-sm text-[var(--ink)] leading-relaxed">
@@ -72,7 +72,7 @@ export default function AdmissionsPage() {
                     <Card className="h-full border-[var(--line)] hover:border-[var(--gold)] hover:shadow-md transition-all bg-[var(--surface)]">
                       <CardContent className="pt-6 flex items-start justify-between gap-3">
                         <div>
-                          <h3 className="font-semibold text-[var(--maroon-deep)] mb-1">{title}</h3>
+                          <h3 className="font-semibold text-white mb-1">{title}</h3>
                           <p className="text-sm text-[var(--ink)] leading-relaxed">{body}</p>
                         </div>
                         <ArrowRight className="w-4 h-4 text-[var(--maroon)] flex-shrink-0 mt-1 group-hover:translate-x-1 transition-transform" />
@@ -90,7 +90,7 @@ export default function AdmissionsPage() {
                 </p>
                 <Link
                   href="/admissions/apply"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[var(--gold)] text-[var(--maroon-deep)] font-semibold hover:bg-[var(--gold)]/90 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[var(--gold)] text-white font-semibold hover:bg-[var(--gold)]/90 transition-colors"
                 >
                   {t.nav.apply}
                   <ArrowRight className="w-4 h-4" />

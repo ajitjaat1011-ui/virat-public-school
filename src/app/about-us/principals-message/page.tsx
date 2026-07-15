@@ -38,7 +38,7 @@ export default function PrincipalMessagePage() {
                       <div className="w-24 h-24 rounded-full bg-[var(--maroon)] mx-auto flex items-center justify-center text-white text-3xl font-bold mb-3">
                         P
                       </div>
-                      <p className="text-sm font-semibold text-[var(--maroon-deep)]">
+                      <p className="text-sm font-semibold text-[var(--accent)]">
                         {t.about.principalName}
                       </p>
                       <p className="text-xs text-[var(--muted-ink)] mt-1">
@@ -55,7 +55,7 @@ export default function PrincipalMessagePage() {
                 <div>
                   <div className="flex items-start gap-3 mb-4">
                     <Quote className="w-8 h-8 text-[var(--gold)] flex-shrink-0 mt-1" />
-                    <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                       {t.about.principalTitle}
                     </h2>
                   </div>
@@ -69,7 +69,7 @@ export default function PrincipalMessagePage() {
 
                   <Card className="mt-8 bg-[var(--cream)] border-0">
                     <CardContent className="pt-6">
-                      <p className="text-sm text-[var(--maroon-deep)] font-semibold mb-1">
+                      <p className="text-sm text-[var(--accent)] font-semibold mb-1">
                         {t.about.principalName}
                       </p>
                       <p className="text-xs text-[var(--muted-ink)]">

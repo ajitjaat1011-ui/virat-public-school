@@ -24,7 +24,7 @@ export function SubNav({ title, links }: SubNavProps) {
   return (
     <aside className="lg:sticky lg:top-28 lg:self-start">
       {/* Mobile label */}
-      <p className="lg:hidden text-xs font-bold uppercase tracking-wider text-[var(--maroon-deep)] mb-2 px-1">
+      <p className="lg:hidden text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2 px-1">
         {title}
       </p>
       <nav className="flex lg:flex-col gap-1.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 -mx-1 px-1">

@@ -37,7 +37,7 @@ export default function HistoryPage() {
             <SubNav title={t.nav.about} links={subLinks} />
 
             <article className="prose prose-lg max-w-none">
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                 {t.about.historyTitle}
               </h2>
               <div className="gold-divider mt-3" />
@@ -46,7 +46,7 @@ export default function HistoryPage() {
               </p>
 
               {/* Timeline */}
-              <h3 className="text-xl font-bold text-[var(--maroon-deep)] mt-12 mb-6">
+              <h3 className="text-xl font-bold text-[var(--accent)] mt-12 mb-6">
                 Our Journey — Key Milestones
               </h3>
               <ol className="relative border-l-2 border-[var(--line)] ml-3 space-y-8">
@@ -57,7 +57,7 @@ export default function HistoryPage() {
                       <span className="text-sm font-bold text-[var(--maroon)] uppercase tracking-wide">
                         {m.year}
                       </span>
-                      <h4 className="text-lg font-semibold text-[var(--maroon-deep)]">
+                      <h4 className="text-lg font-semibold text-[var(--accent)]">
                         {m.title}
                       </h4>
                     </div>
@@ -71,7 +71,7 @@ export default function HistoryPage() {
               {/* Archival photos placeholder */}
               <Card className="mt-12 bg-[var(--cream)] border-0">
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold text-[var(--maroon-deep)] mb-2">
+                  <h4 className="font-semibold text-[var(--accent)] mb-2">
                     Archival Photographs
                   </h4>
                   <p className="text-sm text-[var(--muted-ink)] leading-relaxed">

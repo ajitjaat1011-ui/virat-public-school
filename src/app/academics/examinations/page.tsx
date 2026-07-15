@@ -42,7 +42,7 @@ export default function ExaminationsPage() {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.academics.examsTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -68,14 +68,14 @@ export default function ExaminationsPage() {
                         key={idx}
                         className={idx % 2 === 0 ? "bg-[var(--surface)]" : "bg-[var(--cream)]/50"}
                       >
-                        <td className="px-4 py-3 font-medium text-[var(--maroon-deep)]">
+                        <td className="px-4 py-3 font-medium text-[var(--accent)]">
                           {row.exam}
                         </td>
                         <td className="px-4 py-3 text-[var(--ink)]">{row.classes}</td>
                         <td className="px-4 py-3 text-[var(--ink)]">{row.dates}</td>
                         <td className="px-4 py-3">
                           <button
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--maroon)] hover:text-[var(--maroon-deep)] disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--maroon)] hover:text-[var(--accent)] disabled:opacity-50 disabled:cursor-not-allowed"
                             disabled
                             title="PDF timetable will be available closer to the examination date"
                           >

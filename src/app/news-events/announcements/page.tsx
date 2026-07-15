@@ -104,7 +104,7 @@ export default function AnnouncementsPage() {
                             {item.type}
                           </span>
                         </div>
-                        <h3 className="font-semibold text-[var(--maroon-deep)] mb-1.5">
+                        <h3 className="font-semibold text-[var(--accent)] mb-1.5">
                           {item.title}
                         </h3>
                         <p className="text-sm text-[var(--ink)] leading-relaxed">
@@ -113,7 +113,7 @@ export default function AnnouncementsPage() {
                         {item.attachment && (
                           <button
                             disabled
-                            className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--maroon)] hover:text-[var(--maroon-deep)] disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--maroon)] hover:text-[var(--accent)] disabled:opacity-50 disabled:cursor-not-allowed"
                             title="PDF attachment will be available soon"
                           >
                             <Download className="w-3.5 h-3.5" />

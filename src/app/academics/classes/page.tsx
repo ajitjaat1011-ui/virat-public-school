@@ -30,7 +30,7 @@ export default function ClassesPage() {
 
             <div className="space-y-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.academics.classesTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -48,7 +48,7 @@ export default function ClassesPage() {
                         <span className="text-3xl font-bold text-[var(--gold)]">
                           0{idx + 1}
                         </span>
-                        <h3 className="text-lg font-bold text-[var(--maroon-deep)]">
+                        <h3 className="text-lg font-bold text-[var(--accent)]">
                           {cls.stage}
                         </h3>
                       </div>
@@ -65,7 +65,7 @@ export default function ClassesPage() {
 
               {/* Senior secondary streams */}
               <div>
-                <h3 className="text-xl font-bold text-[var(--maroon-deep)] mb-2">
+                <h3 className="text-xl font-bold text-[var(--accent)] mb-2">
                   Senior Secondary Streams
                 </h3>
                 <div className="gold-divider mb-5" />
@@ -77,7 +77,7 @@ export default function ClassesPage() {
                   {t.academics.streams.map((stream, idx) => {
                     const colors = [
                       "from-[var(--maroon)] to-[var(--maroon-deep)]",
-                      "from-[var(--gold)] to-[#B8941E]",
+                      "from-[var(--gold)] to-blue-800",
                       "from-[var(--success)] to-[#1B5E20]",
                     ];
                     return (
@@ -103,7 +103,7 @@ export default function ClassesPage() {
               <Card className="bg-[var(--cream)] border-0">
                 <CardContent className="pt-6">
                   <p className="text-sm text-[var(--ink)] leading-relaxed">
-                    <strong className="text-[var(--maroon-deep)]">Note:</strong> The availability of optional subjects within each stream depends on the number of students opting for them and the staffing for the academic year. Final subject combinations will be confirmed at the time of admission to Class XI.
+                    <strong className="text-[var(--accent)]">Note:</strong> The availability of optional subjects within each stream depends on the number of students opting for them and the staffing for the academic year. Final subject combinations will be confirmed at the time of admission to Class XI.
                   </p>
                 </CardContent>
               </Card>

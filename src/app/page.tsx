@@ -25,25 +25,25 @@ export default function HomePage() {
   return (
     <>
       {/* HERO — solid maroon + subtle dot pattern, no busy image overlay */}
-      <section className="relative bg-[var(--maroon-deep)] text-white overflow-hidden">
+      <section className="relative bg-[var(--accent)] text-white overflow-hidden">
         <div className="absolute inset-0 bg-pattern-dots opacity-60 pointer-events-none" aria-hidden />
         {/* Subtle gold radial accent in corner */}
         <div
           className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-20 pointer-events-none"
           style={{
-            background: "radial-gradient(circle, var(--gold) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)",
           }}
           aria-hidden
         />
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-28 relative">
           <div className="max-w-3xl">
-            <p className="text-[var(--gold)] uppercase tracking-[0.2em] text-[11px] md:text-xs font-semibold mb-4">
+            <p className="text-blue-100 uppercase tracking-[0.2em] text-[11px] md:text-xs font-semibold mb-4">
               {t.motto} — {t.mottoTranslation}
             </p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
               {t.schoolName}
             </h1>
-            <p className="mt-3 text-lg md:text-2xl text-[var(--gold)] font-medium">
+            <p className="mt-3 text-lg md:text-2xl text-blue-100 font-medium">
               {t.tagline}
             </p>
             <p className="mt-5 text-sm md:text-base lg:text-lg text-white/80 leading-relaxed max-w-2xl">
@@ -53,7 +53,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[var(--gold)] hover:bg-[var(--gold)]/90 text-[var(--maroon-deep)] font-semibold"
+                className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold shadow-sm rounded-full"
               >
                 <Link href="/admissions/apply">
                   {t.home.heroCtaApply}
@@ -64,7 +64,7 @@ export default function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-[var(--surface)] hover:text-[var(--maroon-deep)] bg-transparent"
+                className="border-white/30 text-white hover:bg-[var(--surface)] hover:text-[var(--accent)] bg-transparent"
               >
                 <Link href="/academics">
                   {t.home.heroCtaAcademics}
@@ -82,7 +82,7 @@ export default function HomePage() {
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[var(--cream)] mb-5">
               <GraduationCap className="w-7 h-7 text-[var(--maroon)]" />
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold text-[var(--maroon-deep)]">
+            <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)]">
               {t.home.welcomeTitle}
             </h2>
             <div className="gold-divider-center mt-4" />
@@ -104,7 +104,7 @@ export default function HomePage() {
                   <div className="w-11 h-11 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5 text-[var(--maroon)]" />
                   </div>
-                  <h3 className="text-lg font-semibold text-[var(--maroon-deep)] mb-2">
+                  <h3 className="text-lg font-semibold text-[var(--accent)] mb-2">
                     {feature.title}
                   </h3>
                   <p className="text-sm text-[var(--ink)] leading-relaxed">
@@ -125,7 +125,7 @@ export default function HomePage() {
               <Trophy className="w-3 h-3" />
               RBSE 2025-26
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold text-[var(--maroon-deep)]">
+            <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)]">
               {t.home.resultsTitle}
             </h2>
             <div className="gold-divider-center mt-4" />
@@ -143,13 +143,13 @@ export default function HomePage() {
                   key={idx}
                   className={
                     "card-flat p-5 text-center " +
-                    (isFirst ? "ring-1 ring-[var(--gold)] border-[var(--gold)]" : "")
+                    (isFirst ? "ring-1 ring-[var(--accent)] border-[var(--accent)]" : "")
                   }
                 >
                   <p className="text-[11px] uppercase tracking-wider text-[var(--muted-ink)] font-semibold mb-1">
                     Rank #{topper.position}
                   </p>
-                  <p className="text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--maroon-deep)]">
+                  <p className="text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--accent)]">
                     {topper.percent}
                   </p>
                   <p className="mt-2 text-xs md:text-sm font-medium text-[var(--ink)] leading-tight">
@@ -180,7 +180,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex items-end justify-between mb-8 gap-4">
             <div>
-              <h2 className="text-2xl md:text-4xl font-bold text-[var(--maroon-deep)] flex items-center gap-3">
+              <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)] flex items-center gap-3">
                 <Newspaper className="w-6 h-6 md:w-8 md:h-8 text-[var(--maroon)]" />
                 {t.home.latestNews}
               </h2>
@@ -229,12 +229,12 @@ export default function HomePage() {
                   <div className="flex items-center gap-2 text-xs text-[var(--muted-ink)] mb-3">
                     <CalendarDays className="w-3.5 h-3.5" />
                     <span>{item.date}</span>
-                    <span className="text-[var(--gold)]">·</span>
+                    <span className="text-blue-100">·</span>
                     <span className="font-semibold uppercase tracking-wide text-[var(--maroon)]">
                       {item.cat}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-[var(--maroon-deep)] mb-2 leading-snug">
+                  <h3 className="font-semibold text-[var(--accent)] mb-2 leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-sm text-[var(--ink)] leading-relaxed flex-1">
@@ -242,7 +242,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href="/news-events/announcements"
-                    className="mt-4 text-sm font-medium text-[var(--maroon)] hover:text-[var(--maroon-deep)] inline-flex items-center"
+                    className="mt-4 text-sm font-medium text-[var(--maroon)] hover:text-[var(--accent)] inline-flex items-center"
                   >
                     {t.news.readMore}
                     <ArrowRight className="ml-1 w-3.5 h-3.5" />
@@ -269,7 +269,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid gap-10 md:grid-cols-2 items-center">
             <div>
-              <h2 className="text-2xl md:text-4xl font-bold text-[var(--maroon-deep)]">
+              <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)]">
                 {t.home.quickContactTitle}
               </h2>
               <div className="gold-divider mt-4" />
@@ -303,7 +303,7 @@ export default function HomePage() {
 
               <Button
                 asChild
-                className="mt-6 bg-[var(--maroon)] hover:bg-[var(--maroon-deep)] text-white"
+                className="mt-6 bg-[var(--maroon)] hover:bg-[var(--maroon)] text-white"
               >
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Viratnagar+Rajasthan"
@@ -333,7 +333,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA BANNER — slim maroon strip */}
-      <section className="bg-[var(--maroon)] py-12 md:py-14">
+      <section className="bg-[var(--accent)] py-12 md:py-14">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-xl md:text-3xl font-bold text-white mb-3">
             Ready to join the Virat Public School family?
@@ -345,7 +345,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-[var(--gold)] hover:bg-[var(--gold)]/90 text-[var(--maroon-deep)] font-semibold"
+              className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold shadow-sm rounded-full"
             >
               <Link href="/admissions/apply">
                 {t.nav.apply}

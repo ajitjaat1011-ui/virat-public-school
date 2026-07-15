@@ -72,7 +72,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--line)]">
       {/* Top utility strip — hidden on mobile, slim on desktop */}
-      <div className="hidden md:block bg-[var(--maroon-deep)] text-white text-xs">
+      <div className="hidden md:block bg-[var(--accent)] text-white text-xs">
         <div className="container mx-auto flex items-center justify-between px-4 py-1.5">
           <p className="italic tracking-wide text-white/85">
             {t.motto} — {t.mottoTranslation}
@@ -104,7 +104,7 @@ export function SiteHeader() {
               <GraduationCap className="w-5 h-5 lg:w-7 lg:h-7 text-white" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-bold text-base lg:text-lg text-[var(--maroon-deep)] tracking-tight">
+              <span className="font-bold text-base lg:text-lg text-[var(--accent)] tracking-tight">
                 {t.schoolName}
               </span>
               <span className="text-[10px] lg:text-xs text-[var(--muted-ink)]">
@@ -139,7 +139,7 @@ export function SiteHeader() {
                       <li>
                         <Link
                           href={group.parent.href}
-                          className="block px-3 py-2 rounded-md hover:bg-[var(--cream)] font-medium text-[var(--maroon-deep)] text-sm"
+                          className="block px-3 py-2 rounded-full hover:bg-[var(--cream)] font-medium text-[var(--accent)] text-sm"
                         >
                           {group.parent.label} — Overview
                         </Link>
@@ -148,7 +148,7 @@ export function SiteHeader() {
                         <li key={item.href}>
                           <Link
                             href={item.href}
-                            className="block px-3 py-2 rounded-md hover:bg-[var(--cream)] text-sm text-[var(--ink)]"
+                            className="block px-3 py-2 rounded-full hover:bg-[var(--cream)] text-sm text-[var(--ink)]"
                           >
                             {item.label}
                           </Link>
@@ -177,7 +177,7 @@ export function SiteHeader() {
             <button
               onClick={toggle}
               aria-label="Toggle language"
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium border border-[var(--line)] hover:border-[var(--gold)] hover:text-[var(--maroon)] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium border border-[var(--line)] hover:border-[var(--gold)] hover:text-[var(--maroon)] transition-colors"
             >
               <Languages className="w-4 h-4" />
               {locale === "en" ? "हिंदी" : "EN"}
@@ -195,12 +195,12 @@ export function SiteHeader() {
             <button
               onClick={toggle}
               aria-label="Toggle language"
-              className="p-2 text-[var(--maroon-deep)] hover:text-[var(--maroon)]"
+              className="p-2 text-[var(--accent)] hover:text-[var(--maroon)]"
             >
               <Languages className="w-5 h-5" />
             </button>
             <button
-              className="p-2 -mr-2 text-[var(--maroon-deep)]"
+              className="p-2 -mr-2 text-[var(--accent)]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -313,7 +313,7 @@ function MobileLink({
       href={href}
       onClick={onClick}
       className={cn(
-        "block px-3 py-2.5 rounded-md text-sm transition-colors",
+        "block px-3 py-2.5 rounded-full text-sm transition-colors",
         active
           ? "bg-[var(--cream)] text-[var(--maroon)] font-semibold"
           : "text-[var(--ink)] hover:bg-[var(--cream)]"

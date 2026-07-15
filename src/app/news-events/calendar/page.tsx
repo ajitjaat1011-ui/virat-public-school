@@ -13,7 +13,7 @@ const MONTHS = [
 
 const CATEGORY_COLORS: Record<string, string> = {
   Academic: "bg-blue-100 text-blue-800 border-blue-300",
-  Cultural: "bg-[var(--gold)]/20 text-[var(--maroon-deep)] border-[var(--gold)]",
+  Cultural: "bg-[var(--gold)]/20 text-[var(--accent)] border-[var(--gold)]",
   Sports: "bg-green-100 text-green-800 border-green-300",
   Holiday: "bg-red-100 text-red-800 border-red-300",
 };
@@ -86,7 +86,7 @@ export default function CalendarPage() {
                 </div>
                 <button
                   disabled
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--maroon)] hover:text-[var(--maroon-deep)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--maroon)] hover:text-[var(--accent)] disabled:opacity-50 disabled:cursor-not-allowed"
                   title="ICS export coming soon"
                 >
                   <Download className="w-3.5 h-3.5" />
@@ -117,7 +117,7 @@ export default function CalendarPage() {
                                 </span>
                               </div>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-semibold text-[var(--maroon-deep)]">{e.title}</p>
+                                <p className="text-sm font-semibold text-[var(--accent)]">{e.title}</p>
                               </div>
                               <span className={`px-2 py-0.5 text-xs rounded border ${CATEGORY_COLORS[e.category]}`}>
                                 {e.category}

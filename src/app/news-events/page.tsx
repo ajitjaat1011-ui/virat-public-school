@@ -83,7 +83,7 @@ export default function NewsEventsPage() {
 
             <div className="space-y-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.news.heroTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -94,7 +94,7 @@ export default function NewsEventsPage() {
 
               {/* Recent news grid */}
               <div>
-                <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4">Recent Updates</h3>
+                <h3 className="text-lg font-bold text-[var(--accent)] mb-4">Recent Updates</h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {recent.map((item, idx) => (
                     <Card key={idx} className="border-[var(--line)] bg-[var(--surface)] transition-colors flex flex-col">
@@ -107,7 +107,7 @@ export default function NewsEventsPage() {
                             {item.cat}
                           </span>
                         </div>
-                        <h4 className="font-semibold text-[var(--maroon-deep)] mb-2 leading-snug">
+                        <h4 className="font-semibold text-[var(--accent)] mb-2 leading-snug">
                           {item.title}
                         </h4>
                         <p className="text-sm text-[var(--ink)] leading-relaxed flex-1">
@@ -115,7 +115,7 @@ export default function NewsEventsPage() {
                         </p>
                         <Link
                           href="/news-events/announcements"
-                          className="mt-3 text-sm font-medium text-[var(--maroon)] hover:text-[var(--maroon-deep)] inline-flex items-center"
+                          className="mt-3 text-sm font-medium text-[var(--maroon)] hover:text-[var(--accent)] inline-flex items-center"
                         >
                           {t.news.readMore}
                           <ArrowRight className="ml-1 w-3.5 h-3.5" />
@@ -132,7 +132,7 @@ export default function NewsEventsPage() {
                   <Link key={href} href={href} className="group">
                     <Card className="h-full border-[var(--line)] hover:border-[var(--gold)] hover:shadow-md transition-all bg-[var(--surface)]">
                       <CardContent className="pt-5">
-                        <h4 className="font-semibold text-[var(--maroon-deep)] mb-2 group-hover:text-[var(--maroon)] transition-colors">
+                        <h4 className="font-semibold text-[var(--accent)] mb-2 group-hover:text-[var(--maroon)] transition-colors">
                           {title}
                         </h4>
                         <p className="text-xs text-[var(--ink)] leading-relaxed line-clamp-3">{body}</p>

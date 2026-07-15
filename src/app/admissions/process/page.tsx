@@ -61,7 +61,7 @@ export default function AdmissionProcessPage() {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.admissions.processTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -81,7 +81,7 @@ export default function AdmissionProcessPage() {
                       </div>
                       <CardContent className="pt-5 flex-1">
                         <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-3">
-                          <h3 className="text-xl font-bold text-[var(--maroon-deep)]">
+                          <h3 className="text-xl font-bold text-[var(--accent)]">
                             {s.title}
                           </h3>
                           <span className="text-xs text-[var(--muted-ink)]">
@@ -108,7 +108,7 @@ export default function AdmissionProcessPage() {
               <Card className="bg-[var(--cream)] border-0">
                 <CardContent className="pt-6">
                   <p className="text-sm text-[var(--ink)] leading-relaxed">
-                    <strong className="text-[var(--maroon-deep)]">Important:</strong> For mid-session admissions (transfer cases), please contact the school office directly — the standard timeline above may be accelerated based on seat availability. A valid transfer certificate from the previous school is mandatory for such admissions.
+                    <strong className="text-[var(--accent)]">Important:</strong> For mid-session admissions (transfer cases), please contact the school office directly — the standard timeline above may be accelerated based on seat availability. A valid transfer certificate from the previous school is mandatory for such admissions.
                   </p>
                 </CardContent>
               </Card>

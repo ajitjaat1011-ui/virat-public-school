@@ -66,7 +66,7 @@ export default function FacultyPage() {
 
             <div className="space-y-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.academics.facultyTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -77,7 +77,7 @@ export default function FacultyPage() {
 
               {departments.map((dept) => (
                 <div key={dept.name}>
-                  <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-4 pb-2 border-b border-[var(--line)]">
+                  <h3 className="text-lg font-bold text-[var(--accent)] mb-4 pb-2 border-b border-[var(--line)]">
                     {dept.name}
                   </h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -91,7 +91,7 @@ export default function FacultyPage() {
                               </span>
                             </div>
                             <div className="min-w-0">
-                              <p className="font-semibold text-sm text-[var(--maroon-deep)] truncate">
+                              <p className="font-semibold text-sm text-[var(--accent)] truncate">
                                 {m.name}
                               </p>
                               <p className="text-xs text-[var(--maroon)] font-medium">

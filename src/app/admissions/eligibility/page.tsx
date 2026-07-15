@@ -31,7 +31,7 @@ export default function EligibilityPage() {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   {t.admissions.eligibilityTitle}
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -42,7 +42,7 @@ export default function EligibilityPage() {
 
               {/* Age criteria */}
               <div>
-                <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[var(--accent)] mb-1 flex items-center gap-2">
                   <CalendarClock className="w-5 h-5 text-[var(--maroon)]" />
                   Age Criteria (as on 31 March)
                 </h3>
@@ -61,7 +61,7 @@ export default function EligibilityPage() {
                     <tbody>
                       {t.admissions.ageCriteria.map((row, idx) => (
                         <tr key={idx} className={idx % 2 === 0 ? "bg-[var(--surface)]" : "bg-[var(--cream)]/50"}>
-                          <td className="px-4 py-3 font-medium text-[var(--maroon-deep)]">{row.class}</td>
+                          <td className="px-4 py-3 font-medium text-[var(--accent)]">{row.class}</td>
                           <td className="px-4 py-3 text-[var(--ink)]">{row.age}</td>
                           <td className="px-4 py-3 text-[var(--ink)]">
                             {parseInt(row.age) + 2} years (with principal&apos;s discretion)
@@ -78,7 +78,7 @@ export default function EligibilityPage() {
 
               {/* Documents */}
               <div>
-                <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[var(--accent)] mb-1 flex items-center gap-2">
                   <FileCheck className="w-5 h-5 text-[var(--maroon)]" />
                   Documents Required at Submission
                 </h3>
@@ -104,7 +104,7 @@ export default function EligibilityPage() {
               {/* Transfer cases note */}
               <Card className="bg-[var(--cream)] border-0">
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold text-[var(--maroon-deep)] mb-2">
+                  <h4 className="font-semibold text-[var(--accent)] mb-2">
                     Transfer Cases (Mid-Session Admissions)
                   </h4>
                   <p className="text-sm text-[var(--ink)] leading-relaxed">

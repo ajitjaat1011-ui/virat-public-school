@@ -29,12 +29,12 @@ export default function GalleryPage() {
   const albums: Album[] = [
     { title: "Annual Day 2026", date: "March 2026", count: 32, gradient: "from-[var(--maroon)] to-[var(--maroon-deep)]", emoji: "🎭" },
     { title: "Sports Day 2026", date: "February 2026", count: 28, gradient: "from-[var(--success)] to-[#1B5E20]", emoji: "🏆" },
-    { title: "Independence Day 2025", date: "August 2025", count: 18, gradient: "from-[var(--gold)] to-[#B8941E]", emoji: "🇮🇳" },
+    { title: "Independence Day 2025", date: "August 2025", count: 18, gradient: "from-[var(--gold)] to-blue-800", emoji: "🇮🇳" },
     { title: "Science Exhibition", date: "November 2025", count: 24, gradient: "from-blue-700 to-blue-900", emoji: "🔬" },
     { title: "Diwali Celebration", date: "November 2025", count: 15, gradient: "from-[var(--maroon-deep)] to-[var(--maroon)]", emoji: "🪔" },
     { title: "Inter-House Cricket", date: "June 2025", count: 21, gradient: "from-[var(--success)] to-[#1B5E20]", emoji: "🏏" },
     { title: "Children's Day", date: "November 2024", count: 19, gradient: "from-purple-700 to-purple-900", emoji: "🎈" },
-    { title: "Teachers' Day", date: "September 2024", count: 16, gradient: "from-[var(--gold)] to-[#B8941E]", emoji: "📚" },
+    { title: "Teachers' Day", date: "September 2024", count: 16, gradient: "from-[var(--gold)] to-blue-800", emoji: "📚" },
     { title: "Investiture Ceremony", date: "June 2024", count: 22, gradient: "from-[var(--maroon)] to-[var(--maroon-deep)]", emoji: "🎖️" },
   ];
 
@@ -76,7 +76,7 @@ export default function GalleryPage() {
                         </div>
                       </div>
                       <CardContent className="pt-3 pb-3">
-                        <h3 className="font-semibold text-[var(--maroon-deep)] text-sm group-hover:text-[var(--maroon)] transition-colors">
+                        <h3 className="font-semibold text-[var(--accent)] text-sm group-hover:text-[var(--maroon)] transition-colors">
                           {album.title}
                         </h3>
                         <p className="text-xs text-[var(--muted-ink)] mt-0.5">
@@ -147,7 +147,7 @@ export default function GalleryPage() {
               <Button
                 onClick={() => setLightbox(null)}
                 variant="outline"
-                className="border-white text-white hover:bg-[var(--surface)] hover:text-[var(--maroon-deep)]"
+                className="border-white text-white hover:bg-[var(--surface)] hover:text-[var(--accent)]"
               >
                 Close
               </Button>

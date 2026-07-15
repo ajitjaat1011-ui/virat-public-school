@@ -62,7 +62,7 @@ export default function ContactPage() {
             {/* Contact info */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[var(--maroon-deep)]">
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--accent)]">
                   Get in Touch
                 </h2>
                 <div className="gold-divider mt-3" />
@@ -78,7 +78,7 @@ export default function ContactPage() {
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <MapPin className="w-5 h-5 text-[var(--maroon)]" />
                     </div>
-                    <h3 className="text-sm font-semibold text-[var(--maroon-deep)] mb-1">{t.contact.addressTitle}</h3>
+                    <h3 className="text-sm font-semibold text-[var(--accent)] mb-1">{t.contact.addressTitle}</h3>
                     <p className="text-xs text-[var(--ink)] leading-relaxed">{t.contact.address}</p>
                   </CardContent>
                 </Card>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <Phone className="w-5 h-5 text-[var(--maroon)]" />
                     </div>
-                    <h3 className="text-sm font-semibold text-[var(--maroon-deep)] mb-1">{t.contact.phoneTitle}</h3>
+                    <h3 className="text-sm font-semibold text-[var(--accent)] mb-1">{t.contact.phoneTitle}</h3>
                     <p className="text-xs text-[var(--ink)]">{t.contact.phoneOffice}</p>
                     <p className="text-xs text-[var(--ink)]">{t.contact.phoneAdmissions}</p>
                   </CardContent>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <Mail className="w-5 h-5 text-[var(--maroon)]" />
                     </div>
-                    <h3 className="text-sm font-semibold text-[var(--maroon-deep)] mb-1">{t.contact.emailTitle}</h3>
+                    <h3 className="text-sm font-semibold text-[var(--accent)] mb-1">{t.contact.emailTitle}</h3>
                     <a href={`mailto:${t.contact.emailGeneral}`} className="text-xs text-[var(--maroon)] hover:underline block">
                       {t.contact.emailGeneral}
                     </a>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                     <div className="w-10 h-10 rounded-lg bg-[var(--cream)] flex items-center justify-center mb-3">
                       <Clock className="w-5 h-5 text-[var(--maroon)]" />
                     </div>
-                    <h3 className="text-sm font-semibold text-[var(--maroon-deep)] mb-1">{t.contact.hoursTitle}</h3>
+                    <h3 className="text-sm font-semibold text-[var(--accent)] mb-1">{t.contact.hoursTitle}</h3>
                     <p className="text-xs text-[var(--ink)] leading-relaxed">{t.contact.hours}</p>
                   </CardContent>
                 </Card>
@@ -168,7 +168,7 @@ export default function ContactPage() {
             <div>
               <Card className="border-[var(--line)] bg-[var(--surface)]">
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-bold text-[var(--maroon-deep)] mb-1">
+                  <h3 className="text-lg font-bold text-[var(--accent)] mb-1">
                     {t.contact.formTitle}
                   </h3>
                   <p className="text-sm text-[var(--muted-ink)] mb-5">
@@ -180,7 +180,7 @@ export default function ContactPage() {
                       <div className="w-16 h-16 rounded-full bg-[var(--success)]/10 flex items-center justify-center mx-auto mb-4">
                         <CheckCircle2 className="w-9 h-9 text-[var(--success)]" />
                       </div>
-                      <p className="text-base font-semibold text-[var(--maroon-deep)] mb-1">
+                      <p className="text-base font-semibold text-[var(--accent)] mb-1">
                         Message Sent
                       </p>
                       <p className="text-sm text-[var(--ink)] mb-5">
