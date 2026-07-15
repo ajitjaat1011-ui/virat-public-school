@@ -170,3 +170,17 @@
   [data-slot="card"] { background: rgba(255,255,255,.74); border-color: rgba(56,189,248,.28); box-shadow: 0 12px 38px rgba(16,42,114,.07); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 1.25rem; }
   input, textarea, select { background-color: rgba(255,255,255,.82) !important; }
 }
+
+/* Editorial design language: strong type, rules, rhythm and restrained surfaces. */
+@layer base {
+  h1, h2, h3, h4, h5, h6 { font-family: Georgia, "Times New Roman", var(--font-devanagari), serif; letter-spacing: -.035em; }
+}
+@layer components {
+  .editorial-display { font-family: Georgia, "Times New Roman", var(--font-devanagari), serif; font-weight: 700; letter-spacing: -.055em; }
+  .editorial-kicker { font-size: .7rem; line-height: 1; font-weight: 900; text-transform: uppercase; letter-spacing: .24em; color: var(--maroon); }
+  [data-slot="card"] { border-radius: .25rem; box-shadow: none; backdrop-filter: none; background: rgba(255,255,255,.92); }
+  [data-slot="button"] { font-weight: 800; letter-spacing: .01em; }
+  .card-flat { border-radius: .25rem; box-shadow: none; backdrop-filter: none; }
+  .card-flat:hover { transform: none; box-shadow: 8px 8px 0 var(--gold); }
+  .glass-panel { border-radius: .25rem; box-shadow: none; backdrop-filter: none; background: rgba(255,255,255,.96); border-color: var(--line); }
+}
