@@ -153,11 +153,11 @@ export default function ApplyPage() {
 
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-[280px_1fr] gap-8">
+          <div className="grid min-w-0 grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
             <SubNav title={t.nav.admissions} links={subLinks} />
 
-            <div>
-              <form onSubmit={onSubmit} className="space-y-8">
+            <div className="min-w-0 max-w-full">
+              <form onSubmit={onSubmit} className="min-w-0 max-w-full space-y-8">
                 {/* Student details */}
                 <Card className="border-[var(--line)] bg-[var(--surface)]">
                   <CardContent className="pt-6">

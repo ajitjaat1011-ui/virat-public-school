@@ -22,12 +22,12 @@ export function SubNav({ title, links }: SubNavProps) {
   const pathname = usePathname();
 
   return (
-    <aside className="glass-panel rounded-2xl p-3 lg:sticky lg:top-28 lg:self-start">
+    <aside className="glass-panel w-full min-w-0 max-w-full overflow-hidden rounded-2xl p-3 lg:sticky lg:top-28 lg:self-start">
       {/* Mobile label */}
       <p className="lg:hidden text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2 px-1">
         {title}
       </p>
-      <nav className="flex lg:flex-col gap-1.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 -mx-1 px-1">
+      <nav className="flex w-full min-w-0 lg:flex-col gap-1.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 -mx-1 px-1">
         {links.map((link) => {
           const active = pathname === link.href;
           return (
