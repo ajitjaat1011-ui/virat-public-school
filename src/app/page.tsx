@@ -24,73 +24,75 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO — solid maroon + subtle dot pattern, no busy image overlay */}
-      <section className="bg-[#F8FAFC] border-b border-[var(--line)]">
-        
-        <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-red-100/60 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" aria-hidden />
-        <div className="absolute -bottom-32 left-[20%] w-96 h-96 bg-blue-100/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" aria-hidden />
-        <div className="container mx-auto px-4 py-16 md:py-24 lg:py-28 relative">
-          <div className="max-w-3xl">
-            <p className="text-blue-600 uppercase tracking-[0.2em] text-[11px] md:text-xs font-semibold mb-4">
-              {t.motto} — {t.mottoTranslation}
-            </p>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--accent)] leading-[1.1] tracking-tight">
-              {t.schoolName}
-            </h1>
-            <p className="mt-3 text-lg md:text-2xl text-blue-700 font-medium">
-              {t.tagline}
-            </p>
-            <p className="mt-5 text-sm md:text-base lg:text-lg text-[var(--muted-ink)] leading-relaxed max-w-2xl">
-              {t.home.heroSubtitle}
-            </p>
-            <div className="mt-7 flex flex-col sm:flex-row gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold rounded-full"
-              >
-                <Link href="/admissions/apply">
-                  {t.home.heroCtaApply}
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border border-[var(--line)] text-[var(--accent)] hover:bg-[var(--line)] hover:text-[var(--accent)] bg-white transition-colors rounded-full"
-              >
-                <Link href="/academics">
-                  {t.home.heroCtaAcademics}
-                </Link>
-              </Button>
+      {/* BENTO GRID HERO */}
+      <section className="bg-[#F8FAFC] border-b border-[var(--line)] pt-8 pb-12 md:pt-16 md:pb-24">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-6 h-auto md:h-[500px]">
+            
+            {/* Main Hero Box (2x2) */}
+            <div className="bg-white border border-[var(--line)] rounded-[2rem] p-8 md:p-12 md:col-span-2 md:row-span-2 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+              <span className="text-[var(--accent)] text-xs md:text-sm font-bold tracking-widest uppercase mb-4">
+                {t.motto}
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--accent)] mb-6 leading-[1.1] tracking-tight">
+                {t.home.welcomeTitle}
+              </h1>
+              <p className="text-[var(--muted-ink)] mb-8 text-base md:text-lg leading-relaxed">
+                {t.home.heroSubtitle}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild size="lg" className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold rounded-full px-8">
+                  <Link href="/admissions/apply">
+                    {t.home.heroCtaApply}
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border border-[var(--line)] text-[var(--accent)] hover:bg-slate-50 rounded-full px-8">
+                  <Link href="/academics">{t.home.heroCtaAcademics}</Link>
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* WELCOME — single clean section, off-white base */}
-      <section className="py-14 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[var(--cream)] mb-5">
-              <GraduationCap className="w-7 h-7 text-[var(--maroon)]" />
+            {/* Quick Stats Box (1x1) */}
+            <div className="bg-[var(--accent)] text-white rounded-[2rem] p-8 md:col-span-1 md:row-span-1 flex flex-col justify-center shadow-sm relative overflow-hidden group">
+              <div className="absolute -right-4 -top-4 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700" aria-hidden />
+              <span className="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2 relative z-10">RBSE 2025-26</span>
+              <h4 className="text-4xl md:text-5xl font-extrabold mb-2 relative z-10 tracking-tight">98.5%</h4>
+              <p className="text-sm text-blue-100 relative z-10 font-medium">District Topper Score</p>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)]">
-              {t.home.welcomeTitle}
-            </h2>
-            <div className="gold-divider-center mt-4" />
-            <p className="mt-6 text-sm md:text-lg text-[var(--ink)] leading-relaxed">
-              {t.home.welcomeBody}
-            </p>
+
+            {/* Quick Contact Box (1x1) */}
+            <div className="bg-[var(--maroon)] text-white rounded-[2rem] p-8 md:col-span-1 md:row-span-1 flex flex-col justify-center shadow-sm relative overflow-hidden group">
+              <div className="absolute -left-4 -bottom-4 w-24 h-24 bg-black/10 rounded-full group-hover:scale-150 transition-transform duration-700" aria-hidden />
+              <Phone className="w-7 h-7 mb-4 relative z-10 text-white/90" />
+              <span className="text-red-200 text-xs font-bold uppercase tracking-widest mb-2 relative z-10">Quick Contact</span>
+              <a href="tel:+919636452501" className="text-xl md:text-2xl font-bold relative z-10 hover:text-red-100 transition-colors">
+                {t.contact.phoneOffice}
+              </a>
+            </div>
+
+            {/* Announcements Box (2x1) */}
+            <div className="bg-white border border-[var(--line)] rounded-[2rem] p-8 md:col-span-2 md:row-span-1 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[var(--accent)] text-xs font-bold tracking-widest uppercase">{t.home.latestNews}</span>
+                <Link href="/news-events/announcements" className="text-[var(--maroon)] text-sm font-semibold hover:underline flex items-center">
+                  {t.common.viewAll} <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                </Link>
+              </div>
+              <h4 className="text-xl md:text-2xl font-bold text-[var(--accent)] mb-2 leading-tight">Admissions Open for 2026-27</h4>
+              <p className="text-sm md:text-base text-[var(--muted-ink)] line-clamp-2">
+                Applications are now being accepted for all classes. Visit our Admissions page to apply online or contact the school office.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* FEATURES — three flat cards, no heavy borders */}
-      <section className="pb-14 md:pb-20">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-4 md:gap-6 md:grid-cols-3">
             {t.home.features.map((feature, idx) => {
               const Icon = featureIcons[idx];
               return (
@@ -112,9 +114,9 @@ export default function HomePage() {
       </section>
 
       {/* RBSE RESULTS 2025-26 — on cream surface, simplified topper cards */}
-      <section className="bg-[var(--cream)] py-14 md:py-20">
+      <section className="bg-[var(--cream)] py-10 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-10 max-w-2xl mx-auto">
+          <div className="text-center mb-6 md:mb-10 max-w-2xl mx-auto">
             <div className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[var(--maroon)] text-white text-[10px] font-semibold uppercase tracking-[0.15em] rounded-full mb-3">
               <Trophy className="w-3 h-3" />
               RBSE 2025-26
@@ -170,9 +172,9 @@ export default function HomePage() {
       </section>
 
       {/* LATEST NEWS STRIP — back to off-white, single hairline accent on cards */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="flex items-end justify-between mb-8 gap-4">
+          <div className="flex items-end justify-between mb-5 md:mb-8 gap-4">
             <div>
               <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)] flex items-center gap-3">
                 <Newspaper className="w-6 h-6 md:w-8 md:h-8 text-[var(--maroon)]" />
@@ -192,7 +194,7 @@ export default function HomePage() {
             </Button>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-4 md:gap-6 md:grid-cols-3">
             {[
               {
                 date: "Jul 2026",
@@ -259,9 +261,9 @@ export default function HomePage() {
       </section>
 
       {/* QUICK CONTACT / VISIT US — off-white section, map on side */}
-      <section className="py-14 md:py-20 bg-[var(--cream)]">
+      <section className="py-10 md:py-16 bg-[var(--cream)]">
         <div className="container mx-auto px-4">
-          <div className="grid gap-10 md:grid-cols-2 items-center">
+          <div className="grid gap-6 md:gap-10 md:grid-cols-2 items-center">
             <div>
               <h2 className="text-2xl md:text-4xl font-bold text-[var(--accent)]">
                 {t.home.quickContactTitle}
@@ -327,7 +329,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA BANNER — slim maroon strip */}
-      <section className="bg-[#F8FAFC] py-16 md:py-24 border-t border-[var(--line)]">
+      <section className="bg-[#F8FAFC] py-10 md:py-20 border-t border-[var(--line)]">
         
         
         <div className="container mx-auto px-4 text-center">

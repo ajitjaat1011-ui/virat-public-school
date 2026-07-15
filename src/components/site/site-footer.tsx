@@ -10,11 +10,11 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-[var(--accent)] text-white mt-auto">
-      <div className="container mx-auto px-4 py-12 md:py-14">
-        <div className="grid gap-10 md:grid-cols-12">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid gap-6 md:gap-10 md:grid-cols-12">
           {/* Brand — spans 4 cols on desktop */}
           <div className="md:col-span-4">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-3 md:mb-4">
               <div className="w-11 h-11 rounded-full bg-[var(--maroon)] flex items-center justify-center ring-1 ring-white/20">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
@@ -36,10 +36,10 @@ export function SiteFooter() {
 
           {/* Quick links — 3 cols */}
           <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-blue-200 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-blue-200 mb-3 md:mb-4">
               {t.footer.quickLinks}
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-1.5 md:space-y-2.5 text-sm">
               {[
                 { href: "/about-us", label: t.nav.about },
                 { href: "/academics", label: t.nav.academics },
@@ -62,10 +62,10 @@ export function SiteFooter() {
 
           {/* Contact — 5 cols */}
           <div className="md:col-span-5">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-blue-200 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-blue-200 mb-3 md:mb-4">
               {t.footer.contact}
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2 md:space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-blue-200 mt-0.5 flex-shrink-0" />
                 <span className="text-white/75">{t.contact.address}</span>
@@ -89,7 +89,7 @@ export function SiteFooter() {
             </ul>
 
             {/* Social */}
-            <div className="mt-5 flex items-center gap-2.5 flex-wrap">
+            <div className="mt-4 md:mt-5 flex items-center gap-2.5 flex-wrap">
               <span className="text-xs text-white/55 mr-1">{t.contact.social}:</span>
               <a
                 href="https://www.instagram.com/mahander_meena_86?igsh=MWYzZm5ocTM4YjJrNA=="
@@ -124,7 +124,7 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/55">
+        <div className="mt-6 md:mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/55">
           <p>{t.footer.rights.replace("{year}", String(year))}</p>
           <p className="italic">{t.footer.developedBy}</p>
         </div>
