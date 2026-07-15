@@ -72,7 +72,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--line)]">
       {/* Top utility strip — hidden on mobile, slim on desktop */}
-      <div className="hidden md:block bg-blue-50/90 backdrop-blur-md text-[var(--accent)] border-b border-blue-100/50 text-xs">
+      <div className="hidden md:block bg-[var(--accent)] text-white text-xs">
         <div className="container mx-auto flex items-center justify-between px-4 py-1.5">
           <p className="italic tracking-wide text-[var(--accent)]/80">
             {t.motto} — {t.mottoTranslation}

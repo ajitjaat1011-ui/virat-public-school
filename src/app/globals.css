@@ -55,7 +55,7 @@
 }
 
 :root {
-  --radius: 1.5rem; /* Claymorphism softness */ /* Softer border radius */
+  --radius: 1rem; /* Softer border radius */
   /* Brand palette — Virat Public School (refined: off-white base + charcoal text) */
   --maroon: #800000; /* Primary brand */
   --maroon-deep: #5C0000; /* Deep maroon */
@@ -175,18 +175,15 @@
   .ring-gold { box-shadow: 0 0 0 2px var(--gold); }
   /* Subtle elevated card — single hairline border + soft shadow on hover only */
   .card-flat {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: var(--radius-xl);
-  box-shadow: 0 10px 40px -10px rgba(30, 58, 138, 0.05);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  transition: all 0.2s ease;
 }
   .card-flat:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.12);
-  border-color: rgba(255, 255, 255, 1);
+  border-color: rgba(30, 58, 138, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
   /* Subtle dotted/line pattern for hero backgrounds (replaces busy images) */
   .bg-pattern-subtle {
@@ -199,12 +196,3 @@
   }
 }
 
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-.animate-blob { animation: blob 10s infinite; }
-.animation-delay-2000 { animation-delay: 2s; }
-.animation-delay-4000 { animation-delay: 4s; }

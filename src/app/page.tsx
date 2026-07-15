@@ -25,9 +25,8 @@ export default function HomePage() {
   return (
     <>
       {/* HERO — solid maroon + subtle dot pattern, no busy image overlay */}
-      <section className="relative bg-white overflow-hidden">
-        {/* Fluid Blobs for 2026 Glassmorphism */}
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" aria-hidden />
+      <section className="bg-[#F8FAFC] border-b border-[var(--line)]">
+        
         <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-red-100/60 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" aria-hidden />
         <div className="absolute -bottom-32 left-[20%] w-96 h-96 bg-blue-100/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" aria-hidden />
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-28 relative">
@@ -48,7 +47,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold shadow-sm rounded-full"
+                className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold rounded-full"
               >
                 <Link href="/admissions/apply">
                   {t.home.heroCtaApply}
@@ -59,7 +58,7 @@ export default function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-blue-200 text-[var(--accent)] hover:bg-white hover:text-[var(--maroon)] bg-white/50 backdrop-blur-sm shadow-sm hover:-translate-y-0.5 transition-transform duration-300 relative z-10"
+                className="border border-[var(--line)] text-[var(--accent)] hover:bg-[var(--line)] hover:text-[var(--accent)] bg-white transition-colors rounded-full"
               >
                 <Link href="/academics">
                   {t.home.heroCtaAcademics}
@@ -328,21 +327,21 @@ export default function HomePage() {
       </section>
 
       {/* CTA BANNER — slim maroon strip */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-blue-50/50">
-        <div className="absolute inset-0 bg-blue-100/30 backdrop-blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-200/40 rounded-full blur-[100px] pointer-events-none" />
+      <section className="bg-[#F8FAFC] py-16 md:py-24 border-t border-[var(--line)]">
+        
+        
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-xl md:text-3xl font-bold text-[var(--accent)] mb-3 relative z-10">
+          <h2 className="text-xl md:text-3xl font-bold text-[var(--accent)] mb-3 ">
             Ready to join the Virat Public School family?
           </h2>
-          <p className="text-[var(--muted-ink)] max-w-2xl mx-auto mb-6 text-sm md:text-base relative z-10">
+          <p className="text-[var(--muted-ink)] max-w-2xl mx-auto mb-6 text-sm md:text-base ">
             Take the first step today — our admissions team is here to guide you through every step of the process.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center relative z-10">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center ">
             <Button
               asChild
               size="lg"
-              className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold shadow-sm rounded-full"
+              className="bg-[var(--maroon)] hover:bg-[var(--maroon)]/90 text-white font-semibold rounded-full"
             >
               <Link href="/admissions/apply">
                 {t.nav.apply}
@@ -353,7 +352,7 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-blue-200 text-[var(--accent)] hover:bg-white hover:text-[var(--maroon)] bg-white/50 backdrop-blur-sm shadow-sm hover:-translate-y-0.5 transition-transform duration-300 relative z-10"
+              className="border border-[var(--line)] text-[var(--accent)] hover:bg-[var(--line)] hover:text-[var(--accent)] bg-white transition-colors rounded-full"
             >
               <Link href="/contact-us">{t.nav.contact}</Link>
             </Button>
